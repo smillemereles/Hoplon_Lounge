@@ -8,6 +8,8 @@ import MenuEntradas from "./pages/MenuEntradas";
 import MenuPlatos from "./pages/MenuPlatos";
 import MenuBebidas from "./pages/MenuBebidas";
 import MenuPostres from "./pages/MenuPostres";
+import MenuParrilla from "./pages/MenuParrilla";
+import MenuPicadas from "./pages/MenuPicadas";
 import Gallery from "./pages/Gallery";
 import Servicios from "./pages/Servicios";
 import NotFound from "./pages/NotFound";
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/menu/entradas" element={<MenuEntradas />} />
           <Route path="/menu/platos" element={<MenuPlatos />} />
+          <Route path="/menu/picadas" element={<MenuPicadas />} />
+          <Route path="/menu/parrilla" element={<MenuParrilla />} />
           <Route path="/menu/bebidas" element={<MenuBebidas />} />
           <Route path="/menu/postres" element={<MenuPostres />} />
           <Route path="/gallery" element={<Gallery />} />
