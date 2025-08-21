@@ -2,26 +2,32 @@ import { motion } from "framer-motion";
 
 const menuCategories = [
   {
-    title: "Entradas",
-    description: "Tapas y aperitivos que despiertan los sentidos",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2340&auto=format&fit=crop"
+    title: "PARAGUAYAN NIGHTS SHOW",
+    description: " Disfruta de una experiencia única con nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
+    image: "PUBLIC/bailarinas4.jpg"
   },
   {
-    title: "Plato Principal", 
-    description: "Carnes premium y pescados de la más alta calidad",
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=2340&auto=format&fit=crop"
+    title: "LOUNGE BAR", 
+    description: " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
+    image: "PUBLIC/LOUNGE.JPG.jpg"
   },
   {
-    title: "Postres",
-    description: "Dulces tentaciones para culminar la experiencia",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=2340&auto=format&fit=crop"
+    title: "CATERING & EVENTS",
+    description: "Ofrecemos servicios de catering para eventos privados y corporativos, adaptandonos a tus necesidades y presupuesto. Desde cenas elegantes hasta fiestas informales, nuestro equipo se encargará de cada detalle para que tu evento sea un éxito.",
+    image: "PUBLIC/CATERING.JPG.JPG"
   }
 ];
 
 const HoplonMenuCards = () => {
   return (
-    <section id="menu" className="py-24 bg-gradient-to-b from-hoplon-black to-hoplon-garnet">
-      <div className="container mx-auto px-6">
+    <section id="menu" className="py-24 bg-gradient-to-b from-hoplon-black to-hoplon-garnet relative overflow-hidden" style={{scrollMarginTop: '80px'}}>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-hoplon-gold rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-hoplon-white rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,11 +35,16 @@ const HoplonMenuCards = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-white mb-4">
-            Nuestros Menús
+          <h2 className="text-4xl md:text-5xl font-cinzel font-bold text-hoplon-white mb-4 uppercase tracking-wider">
+            Nuestros Servicios
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4"></div>
           <p className="text-xl text-hoplon-gold font-medium">
-            Una experiencia culinaria forjada con honor y tradición
+
+            En Hoplon Club diseñamos experiencias memorables que fusionan cultura, gastronomía y hospitalidad. 
+            Cada servicio está pensado para satisfacer distintas necesidades de nuestros clientes, 
+            desde el turismo cultural hasta eventos corporativos y sociales, siempre con identidad y excelencia.
+
           </p>
         </motion.div>
 

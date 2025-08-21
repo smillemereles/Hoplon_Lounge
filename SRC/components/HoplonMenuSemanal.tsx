@@ -2,67 +2,59 @@ import { motion } from "framer-motion";
 
 const menuItems = [
   {
-    name: "Chuletón de Buey Madurado",
-    price: "€45",
-    ingredients: "1kg de chuletón madurado 45 días, sal de Cádiz, aceite de oliva virgen extra"
+    name: "Noches de vinos",
+    price: "Martes",
+    ingredients: "VIVE UNA NOCHE DIVINA ENTRE COPAS Y MARIDAJES"
   },
   {
-    name: "Cordero Lechal Asado",
-    price: "€38",
-    ingredients: "Paletilla de cordero lechal, hierbas de la sierra, ajo confitado"
+    name: "Mens Night",
+    price: "Miercoles",
+    ingredients: "Disfruta de una noche exclusiva para hombres con descuentros especiales en bebidas y platos seleccionados"
   },
   {
-    name: "Pulpo a la Gallega Premium",
-    price: "€32",
-    ingredients: "Pulpo de ría, patatas cachelo, pimentón de La Vera, aceite de oliva"
+    name: "Noche de vinos",
+    price: "Jueves",
+    ingredients: "VIVE UNA NOCHE DIVINA ENTRE COPAS Y MARIDAJES"
   },
   {
-    name: "Ibérico de Bellota",
-    price: "€42",
-    ingredients: "Secreto ibérico de bellota, reducción de vino tinto, setas de temporada"
+    name: "Noche Acustica",
+    price: "Viernes",
+    ingredients: "Disfruta de una noche magica con musisca en vivo y una experiencia culinaria unica"
   },
   {
-    name: "Rodaballo Salvaje",
-    price: "€36",
-    ingredients: "Rodaballo salvaje del Cantábrico, espuma de mariscos, verduras de huerta"
-  },
-  {
-    name: "Cochinillo Confitado",
-    price: "€40",
-    ingredients: "Cochinillo segoviano, costra de hierbas, jugo natural"
-  },
-  {
-    name: "Tartar de Atún Rojo",
-    price: "€28",
-    ingredients: "Atún rojo de almadraba, aguacate, soja, wasabi, sésamo negro"
-  },
-  {
-    name: "Wagyu Español",
-    price: "€65",
-    ingredients: "Wagyu español A5, flor de sal, aceite de trufa negra"
+    name: "Girls Night",
+    price: "Sabado",
+    ingredients: "Disfruta de una noche exclusiva para mujeres con descuentos especiales en bebidas y platos seleccionados"
   }
 ];
 
 const HoplonMenuSemanal = () => {
   return (
-    <section className="py-24 bg-hoplon-white">
+    <section id="menu-semanal" className="py-24 bg-gradient-to-b from-hoplon-black via-hoplon-black to-hoplon-garnet relative overflow-hidden" style={{scrollMarginTop: '80px'}}>
       <div className="container mx-auto px-6">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-hoplon-gold rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-hoplon-garnet rounded-full blur-3xl"></div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-black mb-4">
-            Esta Semana
+          <h2 className="text-4xl md:text-5xl font-cinzel font-bold text-hoplon-white mb-4 uppercase tracking-wider">
+            Esta Semana en Hoplon Lounge
           </h2>
-          <p className="text-xl text-hoplon-garnet font-medium">
-            Menús Especiales
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4"></div>
+          <p className="text-xl text-hoplon-gold font-medium">
+            Eventos Especiales
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-8">
             {menuItems.map((item, index) => (
               <motion.div
@@ -74,16 +66,17 @@ const HoplonMenuSemanal = () => {
                 whileHover={{ scale: 1.02 }}
                 className="group"
               >
-                <div className="border-b border-hoplon-gold/30 pb-6 mb-6 group-hover:border-hoplon-gold transition-colors duration-300">
+                <div className="bg-hoplon-black/60 backdrop-blur-sm border border-hoplon-gold/20 rounded-lg p-6 group-hover:border-hoplon-gold group-hover:bg-hoplon-black/80 transition-all duration-300 shadow-lg">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-serif font-semibold text-hoplon-black group-hover:text-hoplon-garnet transition-colors duration-300">
+                    <h3 className="text-xl font-cinzel font-semibold text-hoplon-white group-hover:text-hoplon-gold transition-colors duration-300">
                       {item.name}
                     </h3>
                     <span className="text-xl font-bold text-hoplon-gold flex-shrink-0 ml-4">
                       {item.price}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-hoplon-gold/30 to-transparent mb-3"></div>
+                  <p className="text-hoplon-white/70 text-sm leading-relaxed group-hover:text-hoplon-white/90 transition-colors duration-300">
                     {item.ingredients}
                   </p>
                 </div>
