@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroLuxurySteak from "@/assets/hero-luxury-steak.jpg";
 
 const HoplonHero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offsetTop = element.offsetTop - 80; // Compensate for fixed navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -16,7 +19,7 @@ const HoplonHero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('${heroLuxurySteak}')`
+          backgroundImage: `url('PUBLIC/hero front page.png')`
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-hoplon-black/80 via-hoplon-black/60 to-hoplon-garnet/40"></div>
@@ -30,7 +33,7 @@ const HoplonHero = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-serif font-bold text-hoplon-white mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-cinzel font-bold text-hoplon-white mb-6 leading-tight uppercase tracking-wider"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.7 }}
@@ -40,12 +43,12 @@ const HoplonHero = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-hoplon-gold font-medium mb-12 font-serif"
+            className="text-xl md:text-2xl text-hoplon-gold font-medium mb-12 font-cinzel"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            Donde el honor espartano se encuentra con el sabor español.
+            Donde el honor espartano se encuentra con el sabor Paraguayo y Español.
           </motion.p>
 
           <motion.div 
@@ -71,7 +74,7 @@ const HoplonHero = () => {
                 className="bg-hoplon-garnet/80 border-hoplon-garnet text-hoplon-white hover:bg-hoplon-garnet hover:text-hoplon-white font-bold px-8 py-6 text-lg backdrop-blur-sm transition-all duration-300"
                 size="lg"
               >
-                VER MENÚ
+                NUESTROS SERVICIOS
               </Button>
             </motion.div>
           </motion.div>

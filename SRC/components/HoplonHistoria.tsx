@@ -4,12 +4,12 @@ import Counter from "./HoplonCounter";
 
 const HoplonHistoria = () => {
   return (
-    <section id="historia" className="relative py-24 overflow-hidden">
+    <section id="historia" className="relative py-24 overflow-hidden" style={{scrollMarginTop: '80px'}}>
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2574&auto=format&fit=crop')`
+          backgroundImage: `url('PUBLIC/hoplonexterior.jpg')`
         }}
       >
         <div className="absolute inset-0 bg-hoplon-black/70"></div>
@@ -26,7 +26,7 @@ const HoplonHistoria = () => {
         >
           <div className="bg-hoplon-white/95 backdrop-blur-sm rounded-lg p-8 md:p-12 shadow-2xl">
             <motion.h2 
-              className="text-3xl md:text-4xl font-serif font-bold text-hoplon-black mb-6 text-center"
+              className="text-3xl md:text-4xl font-cinzel font-bold text-hoplon-black mb-6 text-center uppercase tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -34,6 +34,7 @@ const HoplonHistoria = () => {
             >
               Nuestra Historia
             </motion.h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-6"></div>
             
             <motion.p 
               className="text-lg text-gray-700 leading-relaxed text-center font-medium"
@@ -42,12 +43,10 @@ const HoplonHistoria = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              En Hoplon Lounge, cada plato cuenta una historia de honor y tradición. 
-              Inspirados en la disciplina espartana y la pasión culinaria española, 
-              creamos experiencias gastronómicas que trascienden lo ordinario. 
-              Nuestros chefs maestros seleccionan solo los mejores cortes de carne 
-              y los vinos más exquisitos, forjando cada comida como una obra de arte 
-              digna de los más grandes guerreros.
+              Hoplon Club es un homenaje vivo a la grandeza de tres culturas: la griega, la hispánica y la paraguaya. 
+              Nos inspira el espíritu espartano, la tradición española y la identidad guaraní para crear experiencias
+              que fusionan historia, gastronomía y arte.Nuestro nombre evoca el escudo de los hoplitas, símbolo de honor y valentía,
+              valores que guían cada experiencia que ofrecemos.
             </motion.p>
           </div>
         </motion.div>
@@ -73,7 +72,7 @@ const HoplonHistoria = () => {
             >
               <Utensils className="w-12 h-12 text-hoplon-gold mx-auto mb-4" />
             </motion.div>
-            <Counter end={50} suffix="+" />
+            <Counter end={20} suffix="+" />
             <p className="text-hoplon-white font-medium mt-2">Variedades de Platos</p>
           </motion.div>
 
@@ -90,7 +89,7 @@ const HoplonHistoria = () => {
             >
               <Users className="w-12 h-12 text-hoplon-gold mx-auto mb-4" />
             </motion.div>
-            <Counter end={100} suffix="+" />
+            <Counter end={300} suffix="+" />
             <p className="text-hoplon-white font-medium mt-2">Capacidad de Comensales</p>
           </motion.div>
         </motion.div>

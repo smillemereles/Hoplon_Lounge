@@ -49,3 +49,4 @@ const Counter = ({ end, duration = 2000, suffix = "" }: CounterProps) => {
     </div>
   );
 };
+export default Counter;
