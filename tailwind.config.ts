@@ -132,7 +132,9 @@ export default {
 			},
 			fontFamily: {
 				'serif': ['Playfair Display', 'serif'],
-				'sans': ['Inter', 'sans-serif']
+				'sans': ['Inter', 'sans-serif'],
+				'cinzel': ['Cinzel', 'serif'],
+				'display': ['Cinzel', 'Playfair Display', 'serif']
 			}
 		}
 	},
