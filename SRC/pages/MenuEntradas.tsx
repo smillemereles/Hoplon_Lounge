@@ -4,53 +4,64 @@ import HoplonFooter from "@/components/HoplonFooter";
 
 const entradas = [
   {
-    name: "Jamón Ibérico de Bellota 36 Meses",
-    price: "€24",
-    ingredients: "Jamón ibérico curado 36 meses, pan cristal, tomate rallado, aceite virgen extra"
+    name: "Corte de Leónidas: Empanaditas de Carne Desmechada",
+    unidades: "6 unidades",
+    price: "45.000gs",
+    ingredients: "Carne desmechada, tierna y jugosa, cocida a fuego lento y acompañada por un sofrito casero de vegetales que realza su sabor ancestral"
   },
   {
     name: "Tartar de Atún Rojo Almadraba",
-    price: "€22",
+    price: "gs",
     ingredients: "Atún rojo de almadraba, aguacate, sésamo negro, wasabi, soja premium"
   },
   {
     name: "Croquetas de Jamón Trufadas",
-    price: "€16",
+    price: "gs",
     ingredients: "Bechamel artesanal, jamón ibérico, trufa negra, pan rallado casero"
   },
   {
     name: "Pulpo a la Gallega Premium",
-    price: "€26",
+    price: "gs",
     ingredients: "Pulpo de ría, patatas cachelo, pimentón de La Vera, aceite de oliva arbequina"
   },
   {
     name: "Foie Gras a la Plancha",
-    price: "€28",
+    price: "gs",
     ingredients: "Foie gras fresco, reducción de Pedro Ximénez, higos confitados"
   },
   {
     name: "Huevos Rotos con Trufa",
-    price: "€18",
+    price: "gs",
     ingredients: "Huevos camperos, patatas confitadas, trufa negra, jamón ibérico"
   },
   {
     name: "Ostras Gillardeau",
-    price: "€32",
+    price: "gs",
     ingredients: "Ostras francesas frescas, granita de limón, caviar Ossetra"
   },
   {
     name: "Carpaccio de Buey Madurado",
-    price: "€20",
+    price: "gs",
     ingredients: "Buey madurado 45 días, rúcula salvaje, parmesano 24 meses, aceite de trufa"
   }
 ];
 
+
 const MenuEntradas = () => {
   return (
-    <div className="min-h-screen bg-hoplon-white">
+    <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-hoplon-black via-gray-900 to-hoplon-black"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
+        <div className="w-full h-full bg-hoplon-gold rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
+        <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
+      </div>
+      
       <HoplonNavigation />
       
-      <section className="pt-32 pb-24">
+      <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -58,10 +69,11 @@ const MenuEntradas = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-black mb-4">
-              Entradas
+            <h1 className="text-4xl md:text-6xl font-cinzel font-bold text-hoplon-white mb-6 tracking-wider">
+              ENTRADAS
             </h1>
-            <p className="text-xl text-hoplon-garnet font-medium">
+            <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-6"></div>
+            <p className="text-xl text-hoplon-gold font-medium max-w-2xl mx-auto">
               El comienzo perfecto de una experiencia legendaria
             </p>
           </motion.div>
@@ -77,16 +89,16 @@ const MenuEntradas = () => {
                   whileHover={{ scale: 1.02 }}
                   className="group"
                 >
-                  <div className="border-b border-hoplon-gold/30 pb-6 mb-6 group-hover:border-hoplon-gold transition-colors duration-300">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-serif font-semibold text-hoplon-black group-hover:text-hoplon-garnet transition-colors duration-300">
+                  <div className="bg-hoplon-black/40 backdrop-blur-sm border border-hoplon-gold/20 rounded-lg p-6 hover:border-hoplon-gold/60 transition-all duration-300 hover:shadow-lg hover:shadow-hoplon-gold/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-cinzel font-semibold text-hoplon-white group-hover:text-hoplon-gold transition-colors duration-300">
                         {item.name}
                       </h3>
                       <span className="text-xl font-bold text-hoplon-gold flex-shrink-0 ml-4">
                         {item.price}
                       </span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-300 text-sm leading-relaxed">
                       {item.ingredients}
                     </p>
                   </div>
@@ -102,4 +114,4 @@ const MenuEntradas = () => {
   );
 };
 
-export default MenuEntradas
+export default MenuEntradas;

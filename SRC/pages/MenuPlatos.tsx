@@ -4,53 +4,82 @@ import HoplonFooter from "@/components/HoplonFooter";
 
 const platos = [
   {
-    name: "Chuletón de Buey Madurado 60 Días",
-    price: "€52",
-    ingredients: "1.2kg de chuletón madurado en cámara, sal de Cádiz, aceite de oliva virgen extra"
+    name: "Picanha en fetas",
+    price: "100.000gs",
+    ingredients: "Picanha de res, sal marina, chimichurri casero, papas rústicas"
   },
   {
-    name: "Wagyu Español A5",
-    price: "€68",
-    ingredients: "Wagyu español grado A5, flor de sal, aceite de trufa negra, verduras de temporada"
+    name: "Ojo de Bife y verduras asadas",
+    price: "80.000gs",
+    ingredients: " Ojo de bife, verduras de temporada asadaas "
   },
   {
-    name: "Cordero Lechal Asado al Horno",
-    price: "€42",
-    ingredients: "Paletilla de cordero lechal, hierbas aromáticas, ajo confitado, jugo natural"
+    name: "Parrilla Familiar",
+    price: "215.000gs",
+    ingredients: "Asado de tira, vacío, chorizo, morcilla, ensalada mixta, papas al horno"
   },
   {
-    name: "Rodaballo Salvaje del Cantábrico",
-    price: "€38",
-    ingredients: "Rodaballo salvaje, espuma de mariscos, verduras de huerta, aceite de perejil"
+    name: "Picanha en tira con encebollado",
+    price: "80.000gs",
+    ingredients: " picanha de res, cebolla caramelizada, chimichurri, tostadas de pan y salsa de ajo"
   },
   {
-    name: "Secreto Ibérico de Bellota",
-    price: "€36",
-    ingredients: "Secreto ibérico bellota, reducción de vino tinto, setas de temporada"
+    name: "Cachopo con patatas y morrones",
+    price: "105.000gs",
+    ingredients: "Cachopo de ternera, jamón serrano, queso manchego, pimientos asados, papas fritas"
   },
   {
-    name: "Lubina en Costra de Sal",
-    price: "€34",
-    ingredients: "Lubina salvaje, costra de sal marina, limón confitado, aceite de hierbas"
+    name: "Pechuga de pollo marinada en colchon de vegetales",
+    price: "40.000gs",
+    ingredients: "Pechuga de pollo, pimientos, cebolla, calabacín, especias mediterráneas"
   },
   {
-    name: "Cochinillo Segoviano Confitado",
-    price: "€45",
-    ingredients: "Cochinillo segoviano, costra de romero, jugo natural, patatas panadera"
+    name: "Lomo de Perseo",
+    price: "120.000gs",
+    ingredients: "medallon de lomo a la parrilla, cremoso alligot de mandico"
   },
   {
-    name: "Rape en Salsa Verde",
-    price: "€32",
-    ingredients: "Rape fresco, almejas, espárragos verdes, salsa verde tradicional"
+    name: "Cazuela de carne desmechada ",
+    price: "50.000gs",
+    ingredients: " Carne de res desmechada, papas, zanahorias, cebolla, especias, arroz"
+  },
+  {
+    name: "Hamburguesa Hoplon",
+    price: "45.000gs",
+    ingredients: "Carne de res, queso cheddar, lechuga, tomate, cebolla morada, pan brioche, papas fritas"
+  },
+  {
+    name: "baguette de carne   ",
+    price: "35.000gs",
+    ingredients: "Baguette de carne de res, cebolla caramelizada, queso fundido, mostaza y mayonesa, papas fritas"
+  },
+  {
+    name: "Pinchos marunos de pollo, con mandioca frita",
+    price: "35.000gs",
+    ingredients: "Pinchos de pollo marinados, especias árabes, mandioca frita, salsa de yogur"
+  },
+  {
+    name: "Tortilla española alioli de ajo asado",
+    price: "35.000gs",
+    ingredients: "Tortilla de patatas, cebolla, huevo, alioli de ajo asado"
   }
 ];
 
 const MenuPlatos = () => {
   return (
-    <div className="min-h-screen bg-hoplon-white">
+    <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-hoplon-black via-gray-900 to-hoplon-black"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
+        <div className="w-full h-full bg-hoplon-gold rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
+        <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
+      </div>
+      
       <HoplonNavigation />
       
-      <section className="pt-32 pb-24">
+      <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -58,10 +87,11 @@ const MenuPlatos = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-black mb-4">
-              Platos Principales
+            <h1 className="text-4xl md:text-6xl font-cinzel font-bold text-hoplon-white mb-6 tracking-wider">
+              PLATOS PRINCIPALES
             </h1>
-            <p className="text-xl text-hoplon-garnet font-medium">
+            <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-6"></div>
+            <p className="text-xl text-hoplon-gold font-medium max-w-2xl mx-auto">
               Carnes y pescados de la más alta calidad
             </p>
           </motion.div>
@@ -77,16 +107,16 @@ const MenuPlatos = () => {
                   whileHover={{ scale: 1.02 }}
                   className="group"
                 >
-                  <div className="border-b border-hoplon-gold/30 pb-6 mb-6 group-hover:border-hoplon-gold transition-colors duration-300">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-serif font-semibold text-hoplon-black group-hover:text-hoplon-garnet transition-colors duration-300">
+                  <div className="bg-hoplon-black/40 backdrop-blur-sm border border-hoplon-gold/20 rounded-lg p-6 hover:border-hoplon-gold/60 transition-all duration-300 hover:shadow-lg hover:shadow-hoplon-gold/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-cinzel font-semibold text-hoplon-white group-hover:text-hoplon-gold transition-colors duration-300">
                         {item.name}
                       </h3>
                       <span className="text-xl font-bold text-hoplon-gold flex-shrink-0 ml-4">
                         {item.price}
                       </span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-300 text-sm leading-relaxed">
                       {item.ingredients}
                     </p>
                   </div>

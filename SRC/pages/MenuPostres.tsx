@@ -4,53 +4,52 @@ import HoplonFooter from "@/components/HoplonFooter";
 
 const postres = [
   {
-    name: "Coulant de Chocolate Negro 70%",
-    price: "€12",
+    name: "Brownie de chocolate",
+    price: "35.000gs",
     ingredients: "Chocolate Valrhona, corazón líquido, helado de vainilla bourbon"
   },
   {
     name: "Crema Catalana Trufada",
-    price: "€10",
+    price: "28.000gs",
     ingredients: "Crema catalana tradicional, trufa negra, azúcar caramelizado"
   },
   {
     name: "Tiramisu de Autor",
-    price: "€11",
+    price: "28.000gs",
     ingredients: "Mascarpone italiano, café espresso, cacao en polvo, bizcocho de soletilla"
   },
   {
-    name: "Tarta de Queso al Horno",
-    price: "€9",
-    ingredients: "Queso cremoso, base de galleta, coulis de frutos rojos"
-  },
-  {
-    name: "Milhojas de Crema Pastelera",
-    price: "€13",
-    ingredients: "Hojaldre artesanal, crema pastelera, almendra tostada, azúcar glass"
-  },
-  {
     name: "Helado Artesanal Trío",
-    price: "€8",
+    price: "28.000gs",
     ingredients: "Tres sabores de temporada, chocolate, vainilla, frutos rojos"
   },
   {
-    name: "Flan de Huevo Casero",
-    price: "€7",
+    name: "Budin de Pan Casero",
+    price: "20.000gs",
     ingredients: "Huevos camperos, leche fresca, caramelo líquido, nata montada"
   },
   {
-    name: "Torrija Moderna",
-    price: "€10",
-    ingredients: "Pan brioche, leche canela, helado de turrón, miel de romero"
+    name: "Crepe de dulce de leche con helado y coñac flameado",
+    price: "35.000gs",
+    ingredients: "Crepe francés, dulce de leche artesanal, helado de crema, coñac flameado"
   }
 ];
 
 const MenuPostres = () => {
   return (
-    <div className="min-h-screen bg-hoplon-white">
+    <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-hoplon-black via-gray-900 to-hoplon-black"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
+        <div className="w-full h-full bg-hoplon-gold rounded-full blur-xl"></div>
+      </div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
+        <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
+      </div>
+      
       <HoplonNavigation />
       
-      <section className="pt-32 pb-24">
+      <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -58,10 +57,11 @@ const MenuPostres = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-black mb-4">
-              Postres
+            <h1 className="text-4xl md:text-6xl font-cinzel font-bold text-hoplon-white mb-6 tracking-wider">
+              POSTRES
             </h1>
-            <p className="text-xl text-hoplon-garnet font-medium">
+            <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-6"></div>
+            <p className="text-xl text-hoplon-gold font-medium max-w-2xl mx-auto">
               El final perfecto de una experiencia legendaria
             </p>
           </motion.div>
@@ -77,16 +77,16 @@ const MenuPostres = () => {
                   whileHover={{ scale: 1.02 }}
                   className="group"
                 >
-                  <div className="border-b border-hoplon-gold/30 pb-6 mb-6 group-hover:border-hoplon-gold transition-colors duration-300">
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-xl font-serif font-semibold text-hoplon-black group-hover:text-hoplon-garnet transition-colors duration-300">
+                  <div className="bg-hoplon-black/40 backdrop-blur-sm border border-hoplon-gold/20 rounded-lg p-6 hover:border-hoplon-gold/60 transition-all duration-300 hover:shadow-lg hover:shadow-hoplon-gold/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-cinzel font-semibold text-hoplon-white group-hover:text-hoplon-gold transition-colors duration-300">
                         {item.name}
                       </h3>
                       <span className="text-xl font-bold text-hoplon-gold flex-shrink-0 ml-4">
                         {item.price}
                       </span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-300 text-sm leading-relaxed">
                       {item.ingredients}
                     </p>
                   </div>
