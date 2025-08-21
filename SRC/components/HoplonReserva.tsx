@@ -5,18 +5,18 @@ import { Button } from "@/components/ui/button";
 const HoplonReserva = () => {
   const handleWhatsAppClick = () => {
     const message = "Hola quiero hacer una reserva en Hoplon";
-    const phoneNumber = "549XXXXXXXXX"; // Replace with actual phone number
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phoneNumber = "+595 994 467566"; // Replace with actual phone number
+    const url = `https://wa.link/nmczzr?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 
   return (
-    <section id="reserva" className="relative py-24 overflow-hidden">
+    <section id="reserva" className="relative py-24 overflow-hidden" style={{scrollMarginTop: '80px'}}>
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2574&auto=format&fit=crop')`
+          backgroundImage: `url('PUBLIC/RESERVA.JPG.jpg')`
         }}
       >
         <div className="absolute inset-0 bg-hoplon-black/75"></div>
@@ -31,9 +31,10 @@ const HoplonReserva = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-hoplon-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-cinzel font-bold text-hoplon-white mb-8 uppercase tracking-wider">
             Reservá Tu Mesa Ahora
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-8"></div>
           
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -73,9 +74,9 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Dirección</h3>
             <p className="text-hoplon-white text-sm">
-              Calle de la Elegancia 123<br />
-              Centro Histórico<br />
-              Madrid, España
+              Avenida Mariscal José F. Estrigarriba con, Picuiba 5<br />
+              Lago de la Republica<br />
+              Ciudad del Este, Parafuay
             </p>
           </motion.div>
 
@@ -95,8 +96,9 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Teléfonos</h3>
             <p className="text-hoplon-white text-sm">
-              +34 911 123 456<br />
-              +34 911 123 457<br />
+              +595994467566<br />
+              +595983800020<br />
+              +595983810005<br />
               WhatsApp disponible
             </p>
           </motion.div>
@@ -117,9 +119,8 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Email</h3>
             <p className="text-hoplon-white text-sm">
-              reservas@hoplonlounge.es<br />
-              info@hoplonlounge.es<br />
-              eventos@hoplonlounge.es
+              comercial@lto.com<br />
+              hoplonmarketing@gmail.com
             </p>
           </motion.div>
 
@@ -139,9 +140,9 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Horarios</h3>
             <p className="text-hoplon-white text-sm">
-              Lun-Jue: 19:00-01:00<br />
-              Vie-Sáb: 19:00-02:00<br />
-              Dom: 19:00-00:00
+              Lun: Cerrado<br />
+              Mart-Sáb: 19:00-00:00<br />
+              Dom: Cerrado
             </p>
           </motion.div>
         </motion.div>
