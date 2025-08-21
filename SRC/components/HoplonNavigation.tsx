@@ -17,9 +17,28 @@ const HoplonNavigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    // If we're not on the home page, navigate to home first
+    if (window.location.pathname !== '/') {
+      navigate('/', { replace: true });
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth"
+        });
+      }
     }
   };
 
@@ -37,17 +56,33 @@ const HoplonNavigation = () => {
         <div className="flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-serif font-bold text-hoplon-gold cursor-pointer"
-            onClick={() => scrollToSection("hero")}
+            className="cursor-pointer"
+            onClick={() => {
+              if (window.location.pathname === '/') {
+                scrollToSection("hero");
+              } else {
+                navigate('/');
+              }
+            }}
           >
-            HOPLON
+            <img 
+              src="PUBLIC/logo.png" 
+              alt="Hoplon Club Logo" 
+              className="h-12 w-auto"
+            />
           </motion.div>
           
           <div className="hidden md:flex space-x-8">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("hero")}
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  scrollToSection("hero");
+                } else {
+                  navigate('/');
+                }
+              }}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Inicio
@@ -77,9 +112,12 @@ const HoplonNavigation = () => {
                   >
                     {[
                       { name: "Entradas", path: "/menu/entradas" },
+                      { name: "Picadas", path: "/menu/picadas" },
                       { name: "Platos", path: "/menu/platos" },
+                      { name: "Sabores a la parrilla ", path: "/menu/parrilla" },
                       { name: "Bebidas", path: "/menu/bebidas" },
                       { name: "Postres", path: "/menu/postres" }
+                    
                     ].map((item) => (
                       <motion.button
                         key={item.name}
@@ -119,7 +157,14 @@ const HoplonNavigation = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection("reserva")}
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  scrollToSection("reserva");
+                } else {
+                  navigate('/', { replace: true });
+                  setTimeout(() => scrollToSection("reserva"), 100);
+                }
+              }}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Contacto

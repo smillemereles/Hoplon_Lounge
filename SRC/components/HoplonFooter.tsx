@@ -3,8 +3,8 @@ import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 
 const HoplonFooter = () => {
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/hoplonclubpy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/hoplonclub", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Youtube, href: "#", label: "YouTube" }
   ];
