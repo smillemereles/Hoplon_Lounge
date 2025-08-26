@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/((?!assets|favicon\\.ico|robots\\.txt|manifest\\.json).*)", "dest": "/index.html" }
+  ]
+}

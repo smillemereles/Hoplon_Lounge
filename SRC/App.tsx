@@ -55,7 +55,12 @@ export default function App() {
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/maintenance" element={<MaintenanceNotice countdownMinutes={30} />} />
             {/* catch-all */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} 
+            /><BrowserRouter><ScrollToTop 
+            /><Routes>
+               {/* tus rutas */}
+               </Routes>
+               </BrowserRouter>
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
