@@ -46,19 +46,19 @@ const galleryImages = [
   {
     id: 7,
     category: "El Restaurante",
-    title: "Ambiente Elegante",
+    title: "Ambiente de la piscina",
     image: "PUBLIC/picsina.jpg.JPG",
   },
   {
     id: 8,
     category: "El Restaurante",
-    title: "Sala Principal",
+    title: "fachada del Restaurante",
     image: "PUBLIC/hoplonexterior.jpg",
   },
   {
     id: 9,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Barra del lounge",
     image: "PUBLIC/LOUNGE.JPG.jpg",
   },
   {
@@ -76,7 +76,7 @@ const galleryImages = [
   {
     id: 12,
     category: "El Restaurante",
-    title: "Mesa Privada",
+    title: "Logo Exterior",
     image: "PUBLIC/logoexterior.jpg.jpg",
   },
    {
@@ -118,55 +118,55 @@ const galleryImages = [
    {
     id: 19,
     category: "Nuestros Platos",
-    title: "Budin de Pan",
+    title: "Torta en copita",
     image: "PUBLIC/postres2.jpg",
   },
   {
     id: 20,
     category: "Nuestros Platos",
-    title: "Tortas en Copa",
+    title: "Budin de Pan",
     image: "PUBLIC/postre3.jpg",
   },
   {
     id: 21,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Mesas del Restaurante",
     image: "PUBLIC/mesas1.jpg",
   },
   {
     id: 22,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Ecenario Principal",
     image: "PUBLIC/mesas2.jpg",
   },
   {
     id: 23,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Mesas del Restaurante",
     image: "PUBLIC/mesas3.jpg",
   },
   {
     id: 24,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Mesas del Restaurante",
     image: "PUBLIC/mesas4.jpg",
   },
   {
     id: 25,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Exterior del Restaurante",
     image: "PUBLIC/exterior.jpg.JPG",
   },
   {
     id: 26,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Estructura de Mesas",
     image: "PUBLIC/estructura de mesas.jpg.jpg",
   },
    {
     id: 27,
     category: "El Restaurante",
-    title: "Barra de Bar",
+    title: "Preparacion de Mesa",
     image: "PUBLIC/preparaciondemesa.jpg",
   },
    {

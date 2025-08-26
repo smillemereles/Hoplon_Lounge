@@ -19,13 +19,13 @@ const services = [
   {
     title: "Fiestas",
     description: "Celebra tus momentos especiales en un ambiente único. Música, cocteles y gastronomía de primer nivel.",
-    image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?q=80&w=2340&auto=format&fit=crop",
+    image: "",
     features: ["Música en vivo", "Barra libre premium", "Decoración temática"]
   },
   {
     title: "Cumpleaños",
     description: "Haz de tu cumpleaños una experiencia legendaria. Tortas especiales y sorpresas únicas.",
-    Image:"PUBLIC/IMG_0704.JPG",
+    Image:"",
     features: ["Torta personalizada", "Decoración especial", "Menú de cumpleaños"]
   }
 ];

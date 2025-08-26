@@ -66,7 +66,7 @@ const HoplonNavigation = () => {
             }}
           >
             <img 
-              src="PUBLIC/logo.png" 
+              src="PUBLIC/LOGO HOPLON SIMPLIFICADO CREMA.png" 
               alt="Hoplon Club Logo" 
               className="h-12 w-auto"
             />
