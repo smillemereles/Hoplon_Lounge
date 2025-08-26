@@ -3,68 +3,27 @@ import HoplonNavigation from "@/components/HoplonNavigation";
 import HoplonFooter from "@/components/HoplonFooter";
 
 const parrilla = [
-  {
-    name: "Picanha en fetas",
-    price: "100.000gs",
-    ingredients: "Picanha de res, sal marina, chimichurri casero, papas rústicas"
+   {
+    name: "Mix de Chorizos y Chipa Guazú Cremoso",
+    price: "Gs.60.000",
+    ingredients: "Tres chorizos asados, intensos y ahumados, acompañados por una porción de chipa guazú cremosa que une la dulzura del choclo con la riqueza del queso Paraguayo. Una combinación clásica que reconforta y conquista."
   },
   {
-    name: "Ojo de Bife y verduras asadas",
-    price: "80.000gs",
-    ingredients: " Ojo de bife, verduras de temporada asadaas "
+    name: "Ojo de Bife y Vegetales Asados",
+    price: "Gs.80.000",
+    ingredients: "Corte generoso de ojo de bife de 300gr, sellado a la parrilla para lograr una jugosidad profunda. Se acompaña de vegetales frescos asados al fuego. Una porción individual para los que respetan la carne... y la tratan como se merece."
   },
   {
-    name: "Parrilla Familiar",
-    price: "215.000gs",
-    ingredients: "Asado de tira, vacío, chorizo, morcilla, ensalada mixta, papas al horno"
+    name: "Picaña, Papas Fritas y Ensalada Verde",
+    price: "Gs.100.000",
+    ingredients: "Picaña jugosa, cocinada al punto y cortada en finas fetas para realzar su sabor. Acompañada de papas fritas crujientes y una ensalada verde fresca. Una combinación simple, precisa y fiel al fuego."
   },
   {
-    name: "Picanha en tira con encebollado",
-    price: "80.000gs",
-    ingredients: " picanha de res, cebolla caramelizada, chimichurri, tostadas de pan y salsa de ajo"
-  },
-  {
-    name: "Cachopo con patatas y morrones",
-    price: "105.000gs",
-    ingredients: "Cachopo de ternera, jamón serrano, queso manchego, pimientos asados, papas fritas"
-  },
-  {
-    name: "Pechuga de pollo marinada en colchon de vegetales",
-    price: "40.000gs",
-    ingredients: "Pechuga de pollo, pimientos, cebolla, calabacín, especias mediterráneas"
-  },
-  {
-    name: "Lomo de Perseo",
-    price: "120.000gs",
-    ingredients: "medallon de lomo a la parrilla, cremoso alligot de mandico"
-  },
-  {
-    name: "Cazuela de carne desmechada ",
-    price: "50.000gs",
-    ingredients: " Carne de res desmechada, papas, zanahorias, cebolla, especias, arroz"
-  },
-  {
-    name: "Hamburguesa Hoplon",
-    price: "45.000gs",
-    ingredients: "Carne de res, queso cheddar, lechuga, tomate, cebolla morada, pan brioche, papas fritas"
-  },
-  {
-    name: "baguette de carne   ",
-    price: "35.000gs",
-    ingredients: "Baguette de carne de res, cebolla caramelizada, queso fundido, mostaza y mayonesa, papas fritas"
-  },
-  {
-    name: "Pinchos marunos de pollo, con mandioca frita",
-    price: "35.000gs",
-    ingredients: "Pinchos de pollo marinados, especias árabes, mandioca frita, salsa de yogur"
-  },
-  {
-    name: "Tortilla española alioli de ajo asado",
-    price: "35.000gs",
-    ingredients: "Tortilla de patatas, cebolla, huevo, alioli de ajo asado"
+    name: "Parrilla Hoplon Familiar",
+    price: "Gs.215.000",
+    ingredients: "Tres cortes jugosos de picaña, chorizo y chorizos parrilleros, sellados a la brasa hasta alcanzar su punto de gloria. Se acompañan con arroz pilaf, papas fritas doradas, ensalada rusa y salsas tradicionales: chimichurri, criolla y picante. Una alianza de fuego y sabor para conquistar la mesa."
   }
 ];
-
 const MenuParrilla = () => {
   return (
     <div className="min-h-screen bg-hoplon-black relative overflow-hidden">

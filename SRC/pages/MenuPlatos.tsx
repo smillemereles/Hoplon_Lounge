@@ -3,65 +3,25 @@ import HoplonNavigation from "@/components/HoplonNavigation";
 import HoplonFooter from "@/components/HoplonFooter";
 
 const platos = [
-  {
-    name: "Picanha en fetas",
-    price: "100.000gs",
-    ingredients: "Picanha de res, sal marina, chimichurri casero, papas rústicas"
-  },
-  {
-    name: "Ojo de Bife y verduras asadas",
-    price: "80.000gs",
-    ingredients: " Ojo de bife, verduras de temporada asadaas "
-  },
-  {
-    name: "Parrilla Familiar",
-    price: "215.000gs",
-    ingredients: "Asado de tira, vacío, chorizo, morcilla, ensalada mixta, papas al horno"
-  },
-  {
-    name: "Picanha en tira con encebollado",
-    price: "80.000gs",
-    ingredients: " picanha de res, cebolla caramelizada, chimichurri, tostadas de pan y salsa de ajo"
-  },
-  {
-    name: "Cachopo con patatas y morrones",
-    price: "105.000gs",
-    ingredients: "Cachopo de ternera, jamón serrano, queso manchego, pimientos asados, papas fritas"
-  },
-  {
-    name: "Pechuga de pollo marinada en colchon de vegetales",
-    price: "40.000gs",
-    ingredients: "Pechuga de pollo, pimientos, cebolla, calabacín, especias mediterráneas"
+   {
+    name: "Pechuga de Pollo Marinada, en Colchón de Vegetales",
+    price: "Gs.40.000",
+    ingredients: "Pechuga de pollo marinada con especias nobles, asada al punto y servida sobre un colchón de vegetales salteados. Ligero, sabroso y con el equilibrio de un guerrero."
   },
   {
     name: "Lomo de Perseo",
-    price: "120.000gs",
-    ingredients: "medallon de lomo a la parrilla, cremoso alligot de mandico"
+    price: "Gs.90.000",
+    ingredients: "Medallón de lomo a la parrilla, tierno y jugoso, servido sobre un cremoso aligot de mandioca. Este pure excepcional, elaborado con mandioca y una mezcla rica de quesos, ofrece una textura elástica y un sabor que eleva la experiencia. Perseo tal vez haya vencido a Medusa y Andrómeda. Valiente y astuto, siempre luchó con honor y propósito."
   },
   {
-    name: "Cazuela de carne desmechada ",
-    price: "50.000gs",
-    ingredients: " Carne de res desmechada, papas, zanahorias, cebolla, especias, arroz"
+    name: "Lachopp (Milanesa) de Ares, con Patatas y Morrones",
+    price: "Gs.45.000",
+    ingredients: "Milanesa jugosa española de filete de ternera relleno con jamón y queso intenso, empanizado y frita hasta alcanzar su color doradísimo. Se sirve con patatas doradas y morrones asados. Un plato que lleva el nombre de Ares por su fuerza, intensidad y su coraza. *Pita, Dios de la guerra, era temido hasta por los campos de batalla. Impulsivo, feroz y apasionado, simboliza la fuerza bruta y el coraje sin límites*"
   },
   {
-    name: "Hamburguesa Hoplon",
-    price: "45.000gs",
-    ingredients: "Carne de res, queso cheddar, lechuga, tomate, cebolla morada, pan brioche, papas fritas"
-  },
-  {
-    name: "baguette de carne   ",
-    price: "35.000gs",
-    ingredients: "Baguette de carne de res, cebolla caramelizada, queso fundido, mostaza y mayonesa, papas fritas"
-  },
-  {
-    name: "Pinchos marunos de pollo, con mandioca frita",
-    price: "35.000gs",
-    ingredients: "Pinchos de pollo marinados, especias árabes, mandioca frita, salsa de yogur"
-  },
-  {
-    name: "Tortilla española alioli de ajo asado",
-    price: "35.000gs",
-    ingredients: "Tortilla de patatas, cebolla, huevo, alioli de ajo asado"
+    name: "Salmón con Puré Cremoso de Zapallo",
+    price: "Gs.50.000",
+    ingredients: "Salmón fresco sobre cama de puré cremoso de zapallo butternut, terminado con hierbas aromáticas y un toque de limón. Una combinación armoniosa que celebra los sabores de temporada."
   }
 ];
 

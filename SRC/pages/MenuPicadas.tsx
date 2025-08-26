@@ -4,64 +4,19 @@ import HoplonFooter from "@/components/HoplonFooter";
 
 const picadas = [
   {
-    name: "Picanha en fetas",
-    price: "100.000gs",
-    ingredients: "Picanha de res, sal marina, chimichurri casero, papas rústicas"
+    name: "Papas Fritas en Salsa Andaluza",
+    price: "Gs.30.000",
+    ingredients: "Papas doradas y crujientes acompañadas de nuestra distintiva Salsa Andaluza: cremosa, sabrosa y con personalidad. Un clásico con acento de.sur."
   },
   {
-    name: "Ojo de Bife y verduras asadas",
-    price: "80.000gs",
-    ingredients: " Ojo de bife, verduras de temporada asadaas "
+    name: "Picada: Jamón, Queso y Aceitunas",
+    price: "Gs.40.000",
+    ingredients: "Cubos de jamón y queso listos para el ataque, escoltados por aceitunas verdes. Simple, directo y perfecto para abrir la batalla del sabor. Para compartir... o defender con honor."
   },
   {
-    name: "Parrilla Familiar",
-    price: "215.000gs",
-    ingredients: "Asado de tira, vacío, chorizo, morcilla, ensalada mixta, papas al horno"
-  },
-  {
-    name: "Picanha en tira con encebollado",
-    price: "80.000gs",
-    ingredients: " picanha de res, cebolla caramelizada, chimichurri, tostadas de pan y salsa de ajo"
-  },
-  {
-    name: "Cachopo con patatas y morrones",
-    price: "105.000gs",
-    ingredients: "Cachopo de ternera, jamón serrano, queso manchego, pimientos asados, papas fritas"
-  },
-  {
-    name: "Pechuga de pollo marinada en colchon de vegetales",
-    price: "40.000gs",
-    ingredients: "Pechuga de pollo, pimientos, cebolla, calabacín, especias mediterráneas"
-  },
-  {
-    name: "Lomo de Perseo",
-    price: "120.000gs",
-    ingredients: "medallon de lomo a la parrilla, cremoso alligot de mandico"
-  },
-  {
-    name: "Cazuela de carne desmechada ",
-    price: "50.000gs",
-    ingredients: " Carne de res desmechada, papas, zanahorias, cebolla, especias, arroz"
-  },
-  {
-    name: "Hamburguesa Hoplon",
-    price: "45.000gs",
-    ingredients: "Carne de res, queso cheddar, lechuga, tomate, cebolla morada, pan brioche, papas fritas"
-  },
-  {
-    name: "baguette de carne   ",
-    price: "35.000gs",
-    ingredients: "Baguette de carne de res, cebolla caramelizada, queso fundido, mostaza y mayonesa, papas fritas"
-  },
-  {
-    name: "Pinchos marunos de pollo, con mandioca frita",
-    price: "35.000gs",
-    ingredients: "Pinchos de pollo marinados, especias árabes, mandioca frita, salsa de yogur"
-  },
-  {
-    name: "Tortilla española alioli de ajo asado",
-    price: "35.000gs",
-    ingredients: "Tortilla de patatas, cebolla, huevo, alioli de ajo asado"
+    name: "Picaña en Tiritas Encebollada",
+    price: "Gs.80.000",
+    ingredients: "Tiras tiernas de picaña salteadas con cebolla hasta alcanzar su punto de caramelización. Jugosas, intensas, servidas con mandioca frita y salsa completan la experiencia. Un bocado que no se rinde."
   }
 ];
 

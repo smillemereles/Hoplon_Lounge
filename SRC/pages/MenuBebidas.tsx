@@ -3,45 +3,40 @@ import HoplonNavigation from "@/components/HoplonNavigation";
 import HoplonFooter from "@/components/HoplonFooter";
 
 const bebidas = [
-  {
-    name: "Vega Sicilia Único 2010",
-    price: "180.00gs",
-    ingredients: "Vino tinto reserva gran reserva, Ribera del Duero, madera noble"
+ {
+    name: "Caipirinha",
+    price: "30.000Gs",
+    ingredients: "La esencia de la costa carioca brasilera: cachaza mezclada a la cachaça con un galope embriagador de menta con la brisa ácida de limón. Resultado: los sabores auténticos clásicos sobre un trago de RG."
   },
   {
-    name: "Whisky Macallan 18 Años",
-    price: "gs",
-    ingredients: "Whisky escocés single malt, 18 años, barricas de roble jerez"
+    name: "Daiquiri Frozen de Frutilla",
+    price: "35.000Gs",
+    ingredients: "Un clásico reverdado: la dulzura de las frutillas frescas se fusiona con la acidez perfecta de la lima y la fuerza sutil del ron blanco. Servido con hielo fracturado, sabor perfecto para los amantes de los momentos frescos y exquisitos."
   },
   {
-    name: "Gin Tonic Premium Hendrick's",
-    price: "gs",
-    ingredients: "Gin Hendrick's, tónica Fever-Tree, pepino, enebro, limón"
+    name: "Piña Colada",
+    price: "35.000Gs",
+    ingredients: "Descubre el misterio de un clásico tropical: cremoso... y piña vibrante se fusionan con el aroma del coco tostado. Luces de coco y ron cristalino coronan esta experiencia refrescante."
   },
   {
-    name: "Champagne Dom Pérignon 2012",
-    price: "gs",
-    ingredients: "Champagne vintage, método champenoise, burbujas elegantes"
+    name: "Moscow Mule",
+    price: "45.000Gs",
+    ingredients: "Vodka, jengibre picante y cítrico en una mezcla refrescante y vibrante. Servido en vaso de cobre con menta y naranja deshidratada. Una experiencia única para conquistar la noche."
   },
   {
-    name: "Old Fashioned de Autor",
-    price: "gs",
-    ingredients: "Bourbon premium, azúcar demerara, bitter de naranja, cereza"
+    name: "Aperol Spritz Premium",
+    price: "35.000Gs",
+    ingredients: "Aperol Spritz Premium: vibrante rebarbado con un toque de naranja fresca decorada con frutas frescas como frambuesa, durazno, lima y menta, en una copa balanceada y llamativa."
   },
   {
-    name: "Martini Dry Clásico",
-    price: "gs",
-    ingredients: "Gin premium, vermut seco, aceituna española, twist de limón"
+    name: "Mocktail (Bebida Sin Alcohol)",
+    price: "30.000Gs",
+    ingredients: "El Néctar Helado de la Victoria celebra sus frutos: Sprite con menta fresca, frozen de mango, frambuesas y limón. Refrescante y vibrante, es el brindis especial por Esparta de corona con abanico de mango y cereza, ofreciendo sabor más fresco del día."
   },
   {
-    name: "Rioja Gran Reserva 2015",
-    price: "gs",
-    ingredients: "Tempranillo, crianza 24 meses, D.O.Ca. Rioja, taninos sedosos"
-  },
-  {
-    name: "Manhattan Premium",
-    price: "gs",
-    ingredients: "Whisky americano, vermut rojo, bitter Angostura, cereza confitada"
+    name: "Gin Tónico Cítrico",
+    price: "30.000Gs",
+    ingredients: "La frescura del gin realzada con vibrantes notas de cítricos. Un clásico revitalizado. Servido con lima, ralladura de naranja, una rama de romero, un cóctel refrescante y aromático."
   }
 ];
 
@@ -49,11 +44,11 @@ const MenuBebidas = () => {
   return (
     <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-hoplon-black via-hoplon-garnet/20 to-hoplon-black"></div>
-      <div className="absolute top-20 left-10 w-32 h-32 opacity-15">
+      <div className="absolute inset-0 bg-gradient-to-br from-hoplon-black via-gray-900 to-hoplon-black"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 opacity-10">
         <div className="w-full h-full bg-hoplon-gold rounded-full blur-xl"></div>
       </div>
-      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-15">
+      <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
         <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
       </div>
       
@@ -87,7 +82,7 @@ const MenuBebidas = () => {
                   whileHover={{ scale: 1.02 }}
                   className="group"
                 >
-                  <div className="bg-hoplon-garnet/10 backdrop-blur-sm border border-hoplon-gold/30 rounded-lg p-6 hover:border-hoplon-gold/70 transition-all duration-300 hover:shadow-lg hover:shadow-hoplon-gold/30">
+                  <div className="bg-hoplon-black/40 backdrop-blur-sm border border-hoplon-gold/20 rounded-lg p-6 hover:border-hoplon-gold/60 transition-all duration-300 hover:shadow-lg hover:shadow-hoplon-gold/20">
                     <div className="flex justify-between items-start mb-4">
                       <h3 className="text-xl font-cinzel font-semibold text-hoplon-white group-hover:text-hoplon-gold transition-colors duration-300">
                         {item.name}

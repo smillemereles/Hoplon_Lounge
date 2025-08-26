@@ -3,46 +3,35 @@ import HoplonNavigation from "@/components/HoplonNavigation";
 import HoplonFooter from "@/components/HoplonFooter";
 
 const entradas = [
-  {
-    name: "Corte de Leónidas: Empanaditas de Carne Desmechada",
-    unidades: "6 unidades",
-    price: "45.000gs",
-    ingredients: "Carne desmechada, tierna y jugosa, cocida a fuego lento y acompañada por un sofrito casero de vegetales que realza su sabor ancestral"
+   {
+    name: "Corte de Leonidas",
+    price: "6 empanadas: Gs.45.000",
+    ingredients: "Carne desmechada, tierna y jugosa, cocida a fuego lento y acompañada por un sofrito casero de vegetales que realza su sabor ancestral."
   },
   {
-    name: "Tartar de Atún Rojo Almadraba",
-    price: "gs",
-    ingredients: "Atún rojo de almadraba, aguacate, sésamo negro, wasabi, soja premium"
+    name: "Corte de Leonidas",
+    price: "10 empanadas: Gs.60.000",
+    ingredients: "Carne desmechada, tierna y jugosa, cocida a fuego lento y acompañada por un sofrito casero de vegetales que realza su sabor ancestral."
   },
   {
-    name: "Croquetas de Jamón Trufadas",
-    price: "gs",
-    ingredients: "Bechamel artesanal, jamón ibérico, trufa negra, pan rallado casero"
+    name: "Filo de Ares",
+    price: "6 empanadas: Gs.50.000",
+    ingredients: "Chorizo, queso mozzarella fundido y cebolla caramelizada, en una fusión de sabores que despiertan los sentidos. Dulce, picante y audaz."
+  },
+   {
+    name: "Filo de Ares",
+    price: "10 empanadas: Gs.40.000",
+    ingredients: "Chorizo, queso mozzarella fundido y cebolla caramelizada, en una fusión de sabores que despiertan los sentidos. Dulce, picante y audaz."
   },
   {
-    name: "Pulpo a la Gallega Premium",
-    price: "gs",
-    ingredients: "Pulpo de ría, patatas cachelo, pimentón de La Vera, aceite de oliva arbequina"
+    name: "Tabla Imperial",
+    price: "Gs.160.000",
+    ingredients: "Para 3-4 personas. Selección de embutidos y quesos nobles, acompañada de uvas frescas, frutos secos, aceitunas, mermeladas y tostadas crujientes. Todo coronado por un toque de hummus/paté"
   },
-  {
-    name: "Foie Gras a la Plancha",
-    price: "gs",
-    ingredients: "Foie gras fresco, reducción de Pedro Ximénez, higos confitados"
-  },
-  {
-    name: "Huevos Rotos con Trufa",
-    price: "gs",
-    ingredients: "Huevos camperos, patatas confitadas, trufa negra, jamón ibérico"
-  },
-  {
-    name: "Ostras Gillardeau",
-    price: "gs",
-    ingredients: "Ostras francesas frescas, granita de limón, caviar Ossetra"
-  },
-  {
-    name: "Carpaccio de Buey Madurado",
-    price: "gs",
-    ingredients: "Buey madurado 45 días, rúcula salvaje, parmesano 24 meses, aceite de trufa"
+{
+    name: "Pizza casera (varios sabores)",
+    price: "Gs.65.000",
+    ingredients: "Peperoni, calabresa, napolitana, pollo catupiry cuatro quesos (escoger 2 sabor)"
   }
 ];
 
