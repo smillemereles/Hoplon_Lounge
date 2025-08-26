@@ -15,7 +15,8 @@ import MenuPicadas from "./pages/MenuPicadas";
 import Gallery from "./pages/Gallery";
 import Servicios from "./pages/Servicios";
 import NotFound from "./pages/NotFound";
-import { MaintenanceNotice } from "./pages/Maintenance"; // si exporta default, usa: import MaintenanceNotice from "./pages/Maintenance";
+import MaintenanceNotice from "./pages/Maintenance";
+
 
 const queryClient = new QueryClient();
 
