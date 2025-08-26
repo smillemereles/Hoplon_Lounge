@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const menuCategories = [
   {
     title: "PARAGUAYAN NIGHTS SHOW",
-    description: " Disfruta de una experiencia única con nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
+    description: " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
     image: "PUBLIC/bailarinas4.jpg"
   },
   {
@@ -20,9 +20,26 @@ const menuCategories = [
 
 const HoplonMenuCards = () => {
   return (
-    <section id="menu" className="py-24 bg-gradient-to-b from-hoplon-black to-hoplon-garnet relative overflow-hidden" style={{scrollMarginTop: '80px'}}>
+    <section id="menu" className="py-24 relative overflow-hidden" style={{scrollMarginTop: '80px'}}>
+      
+      {/* VIDEO DE FONDO - Reemplaza el gradiente */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="PUBLIC/IMG_1940.MOV" type="video/mp4" />
+        {/* Fallback para navegadores que no soporten el video */}
+        <div className="absolute inset-0 bg-gradient-to-b from-hoplon-black to-hoplon-garnet"></div>
+      </video>
+      
+      {/* Overlay oscuro para mejor legibilidad del texto */}
+      <div className="absolute inset-0 bg-black/50 z-1"></div>
+
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 z-2">
         <div className="absolute top-20 left-10 w-32 h-32 bg-hoplon-gold rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-hoplon-white rounded-full blur-3xl"></div>
       </div>
