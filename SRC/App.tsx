@@ -11,6 +11,8 @@ import MenuPostres from "./pages/MenuPostres";
 import Gallery from "./pages/Gallery";
 import Servicios from "./pages/Servicios";
 import NotFound from "./pages/NotFound";
+import MenuParrilla from "./pages/MenuParrilla";
+import MenuPicadas from "./pages/MenuPicadas";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,9 @@ const App = () => (
           <Route path="/menu/postres" element={<MenuPostres />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/menu/parrilla" element={<MenuParrilla />} />
+          <Route path="/menu/picadas" element={<MenuPicadas />} />
+          r
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
