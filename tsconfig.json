@@ -7,7 +7,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./SRC/*"]
+      "@/*": ["./src/*"]
     },
     "noImplicitAny": true,
     "noUnusedParameters": true,

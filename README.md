@@ -26,16 +26,16 @@ Una aplicación web moderna y elegante para el restaurante Hoplon Lounge, donde 
 
 ```
 Hoplon_Lounge/
-├── SRC/
+├── src/
 │   ├── components/          # Componentes reutilizables
 │   ├── pages/              # Páginas de la aplicación
-│   ├── Hooks/              # Hooks personalizados
+│   ├── hooks/              # Hooks personalizados
 │   ├── lib/                # Utilidades y constantes
 │   ├── assets/             # Recursos estáticos
 │   ├── App.tsx             # Componente principal
 │   ├── main.tsx            # Punto de entrada
 │   └── index.css           # Estilos globales
-├── PUBLIC/                  # Archivos públicos
+├── public/                  # Archivos públicos
 ├── package.json            # Dependencias del proyecto
 ├── tsconfig.json           # Configuración de TypeScript
 ├── vite.config.ts          # Configuración de Vite

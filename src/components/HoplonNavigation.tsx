@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { useScrollNavigation } from "@/Hooks/useScrollNavigation";
+import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { ROUTES, NAVIGATION_ITEMS, SECTIONS, NAVBAR_SCROLL_THRESHOLD, ANIMATION_DURATIONS } from "@/lib/constants";
 
 const HoplonNavigation = () => {
@@ -60,7 +60,7 @@ const HoplonNavigation = () => {
             onClick={handleLogoClick}
           >
             <img 
-              src="PUBLIC/LOGO HOPLON SIMPLIFICADO CREMA.png" 
+              src="public/LOGO HOPLON SIMPLIFICADO CREMA.png" 
               alt="Hoplon Club Logo" 
               className="h-12 w-auto"
             />
