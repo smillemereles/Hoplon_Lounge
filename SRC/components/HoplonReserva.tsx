@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "src/components/ui/button";
 
 const HoplonReserva = () => {
   const handleWhatsAppClick = () => {

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import HoplonNavigation from "@/components/HoplonNavigation";
-import HoplonFooter from "@/components/HoplonFooter";
+import { Button } from "src/components/ui/button";
+import HoplonNavigation from "src/components/HoplonNavigation";
+import HoplonFooter from "src/components/HoplonFooter";
 
 const services = [
   {

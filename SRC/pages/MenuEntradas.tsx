@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import HoplonNavigation from "@/components/HoplonNavigation";
-import HoplonFooter from "@/components/HoplonFooter";
+import HoplonNavigation from "src/components/HoplonNavigation";
+import HoplonFooter from "src/components/HoplonFooter";
 
 const entradas = [
    {

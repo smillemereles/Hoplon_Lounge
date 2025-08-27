@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import HoplonNavigation from "@/components/HoplonNavigation";
-import HoplonFooter from "@/components/HoplonFooter";
+import HoplonNavigation from "src/components/HoplonNavigation";
+import HoplonFooter from "src/components/HoplonFooter";
 import galleryAppetizers from "@/assets/gallery-appetizers.jpg";
 import galleryDrinks from "@/assets/gallery-drinks.jpg";
 import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
