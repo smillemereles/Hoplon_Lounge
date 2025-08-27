@@ -1,44 +1,44 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useScrollNavigation } from "@/Hooks/useScrollNavigation";
+import { ROUTES, NAVIGATION_ITEMS, SECTIONS, NAVBAR_SCROLL_THRESHOLD, ANIMATION_DURATIONS } from "@/lib/constants";
 
 const HoplonNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const { handleNavigation } = useScrollNavigation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > NAVBAR_SCROLL_THRESHOLD);
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate to home first
-    if (window.location.pathname !== '/') {
-      navigate('/', { replace: true });
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offsetTop = element.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth"
-          });
-        }
-      }, 100);
+  const handleLogoClick = () => {
+    if (window.location.pathname === ROUTES.HOME) {
+      handleNavigation(ROUTES.HOME, SECTIONS.HERO);
     } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offsetTop = element.offsetTop - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth"
-        });
-      }
+      handleNavigation(ROUTES.HOME);
+    }
+  };
+
+  const handleInicioClick = () => {
+    if (window.location.pathname === ROUTES.HOME) {
+      handleNavigation(ROUTES.HOME, SECTIONS.HERO);
+    } else {
+      handleNavigation(ROUTES.HOME);
+    }
+  };
+
+  const handleContactoClick = () => {
+    if (window.location.pathname === ROUTES.HOME) {
+      handleNavigation(ROUTES.HOME, SECTIONS.RESERVA);
+    } else {
+      handleNavigation(ROUTES.HOME, SECTIONS.RESERVA);
     }
   };
 
@@ -57,13 +57,7 @@ const HoplonNavigation = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="cursor-pointer"
-            onClick={() => {
-              if (window.location.pathname === '/') {
-                scrollToSection("hero");
-              } else {
-                navigate('/');
-              }
-            }}
+            onClick={handleLogoClick}
           >
             <img 
               src="PUBLIC/LOGO HOPLON SIMPLIFICADO CREMA.png" 
@@ -76,13 +70,7 @@ const HoplonNavigation = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                if (window.location.pathname === '/') {
-                  scrollToSection("hero");
-                } else {
-                  navigate('/');
-                }
-              }}
+              onClick={handleInicioClick}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Inicio
@@ -106,24 +94,16 @@ const HoplonNavigation = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: ANIMATION_DURATIONS.FAST }}
                     className="absolute top-full left-0 mt-2 w-48 bg-hoplon-white shadow-xl rounded-lg overflow-hidden z-50"
                     onMouseLeave={() => setIsMenuOpen(false)}
                   >
-                    {[
-                      { name: "Entradas", path: "/menu/entradas" },
-                      { name: "Picadas", path: "/menu/picadas" },
-                      { name: "Platos", path: "/menu/platos" },
-                      { name: "Sabores a la parrilla ", path: "/menu/parrilla" },
-                      { name: "Bebidas", path: "/menu/bebidas" },
-                      { name: "Postres", path: "/menu/postres" }
-                    
-                    ].map((item) => (
+                    {NAVIGATION_ITEMS.map((item) => (
                       <motion.button
                         key={item.name}
                         whileHover={{ backgroundColor: "hsl(var(--hoplon-gold) / 0.1)" }}
                         onClick={() => {
-                          navigate(item.path);
+                          handleNavigation(item.path);
                           setIsMenuOpen(false);
                         }}
                         className="w-full text-left px-4 py-3 text-hoplon-black hover:text-hoplon-garnet transition-colors duration-200 font-medium border-b border-gray-100 last:border-b-0"
@@ -139,7 +119,7 @@ const HoplonNavigation = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate("/gallery")}
+              onClick={() => handleNavigation(ROUTES.GALLERY)}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Gallery
@@ -148,7 +128,7 @@ const HoplonNavigation = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate("/servicios")}
+              onClick={() => handleNavigation(ROUTES.SERVICIOS)}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Servicios
@@ -157,14 +137,7 @@ const HoplonNavigation = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                if (window.location.pathname === '/') {
-                  scrollToSection("reserva");
-                } else {
-                  navigate('/', { replace: true });
-                  setTimeout(() => scrollToSection("reserva"), 100);
-                }
-              }}
+              onClick={handleContactoClick}
               className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
             >
               Contacto
