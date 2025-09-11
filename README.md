@@ -138,8 +138,8 @@ Este proyecto es privado y propiedad de Hoplon Lounge.
 
 ## 📞 Contacto
 
-- **Desarrollador**: [Tu Nombre]
-- **Email**: [tu-email@ejemplo.com]
+- **Desarrollador**: [smillemereles]
+- **Email**: smillemereles@gmailM.com
 - **Proyecto**: [https://github.com/usuario/hoplon-lounge](https://github.com/usuario/hoplon-lounge)
 
 ---
