@@ -9,7 +9,7 @@ const HoplonHero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('public/hero front page.png')`
@@ -25,7 +25,7 @@ const HoplonHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.VERY_SLOW, delay: 0.5 }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-cinzel font-bold text-hoplon-white mb-6 leading-tight uppercase tracking-wider"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -34,8 +34,8 @@ const HoplonHero = () => {
             Solo Servimos Platos{" "}
             <span className="text-hoplon-gold">Legendarios</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl md:text-2xl text-hoplon-gold font-medium mb-12 font-cinzel"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const HoplonHero = () => {
             Donde el honor espartano se encuentra con el sabor Paraguayo y Español.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ const HoplonHero = () => {
                 RESERVAR MESA
               </Button>
             </motion.div>
-            
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => scrollToSection(SECTIONS.MENU)}
@@ -74,7 +74,7 @@ const HoplonHero = () => {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const HoplonHero = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-6 h-10 border-2 border-hoplon-gold rounded-full flex justify-center"
           >
-            <motion.div 
+            <motion.div
               className="w-1 h-3 bg-hoplon-gold rounded-full mt-2"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
