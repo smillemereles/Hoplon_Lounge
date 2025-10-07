@@ -16,7 +16,7 @@ const HoplonReserva = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('PUBLIC/RESERVA.JPG.jpg')`
+          backgroundImage: `url('/RESERVA.svg')`
         }}
       >
         <div className="absolute inset-0 bg-hoplon-black/75"></div>

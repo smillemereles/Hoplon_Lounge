@@ -5,175 +5,177 @@ import HoplonFooter from "src/components/HoplonFooter";
 import galleryAppetizers from "@/assets/gallery-appetizers.jpg";
 import galleryDrinks from "@/assets/gallery-drinks.jpg";
 import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
+import servicesCelebrations from "@/assets/services-celebrations.jpg";
+import servicesPrivateEvents from "@/assets/services-private-events.jpg";
 
 const galleryImages = [
   {
     id: 1,
     category: "Nuestros Platos",
     title: "Prrilla de Carnes",
-    image: "PUBLIC/parrilla2.jpg.jpg",
+    image: galleryRestaurant,
   },
   {
     id: 2,
     category: "Nuestros Platos",
     title: "Vori Vori",
-    image: "PUBLIC/BORIBORI.JPG.jpg",
+    image: galleryAppetizers,
   },
   {
     id: 3,
     category: "Nuestros Platos",
     title: "Picada de carnes premium",
-    image: "PUBLIC/CARNES.JPG.jpg",
+    image: galleryAppetizers,
   },
   {
     id: 4,
     category: "Bebidas",
     title: "Pina Colada",
-    image: "PUBLIC/pinhacolada.jpg.jpg",
+    image: galleryDrinks,
   },
   {
     id: 5,
     category: "Bebidas",
     title: "Caipirinhas",
-    image: "PUBLIC/caipirinhas.jpg.jpg",
+    image: galleryDrinks,
   },
   {
     id: 6,
     category: "Bebidas",
     title: "Daikiri de Frutilla",
-    image: "PUBLIC/daikirifrozen,jpg.jpg",
+    image: galleryDrinks,
   },
   {
     id: 7,
     category: "El Restaurante",
     title: "Ambiente de la piscina",
-    image: "PUBLIC/picsina.jpg.JPG",
+    image: "/picsina.svg",
   },
   {
     id: 8,
     category: "El Restaurante",
     title: "fachada del Restaurante",
-    image: "PUBLIC/hoplonexterior.jpg",
+    image: galleryRestaurant,
   },
   {
     id: 9,
     category: "El Restaurante",
     title: "Barra del lounge",
-    image: "PUBLIC/LOUNGE.JPG.jpg",
+    image: galleryRestaurant,
   },
   {
     id: 10,
     category: "Nuestros Platos",
     title: "Picanha a la parrilla",
-    image: "PUBLIC/PICANHA.JPG.JPG",
+    image: "/PICANHA.svg",
   },
   {
     id: 11,
     category: "Bebidas",
     title: "Gin Tonic Premium",
-    image: "PUBLIC/gindepomelo.jpg.jpg",
+    image: "/gindepomelo.svg",
   },
   {
     id: 12,
     category: "El Restaurante",
     title: "Logo Exterior",
-    image: "PUBLIC/logoexterior.jpg.jpg",
+    image: "/logoexterior.svg",
   },
    {
     id: 13,
     category: "Nuestros Platos",
     title: "Sopa Paraguaya",
-    image: "PUBLIC/SOPA.JPG.jpg",
+    image: "/SOPA.svg",
   },
    {
     id: 14,
     category: "Nuestros Platos",
     title: "Tabla de Frios",
-    image: "PUBLIC/tabla-de-frios.jgp.JPG",
+    image: "/tabla-de-frios.svg",
   },
     {
     id: 15,
     category: "Nuestros Platos",
     title: "Parrilla de carnes",
-    image: "PUBLIC/parrilla.jpg.jpg",
+    image: "/parrilla.svg",
   },
     {
     id: 16,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Nights Show",
-    image: "PUBLIC/BUFFET,JPG.jpg",
+    image: "/BUFFET.svg",
   },
     {
     id: 17,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Night Show",
-    image: "PUBLIC/buffet2.jpg.jpg",
+    image: "/buffet2.svg",
   },
    {
     id: 18,
     category: "Nuestros Platos",
     title: "Budin de Pan",
-    image: "PUBLIC/postres1.jpg",
+    image: "/postres1.svg",
   },
    {
     id: 19,
     category: "Nuestros Platos",
     title: "Torta en copita",
-    image: "PUBLIC/postres2.jpg",
+    image: "/postres2.svg",
   },
   {
     id: 20,
     category: "Nuestros Platos",
     title: "Budin de Pan",
-    image: "PUBLIC/postre3.jpg",
+    image: "/postre3.svg",
   },
   {
     id: 21,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "PUBLIC/mesas1.jpg",
+    image: "/mesas1.svg",
   },
   {
     id: 22,
     category: "El Restaurante",
     title: "Ecenario Principal",
-    image: "PUBLIC/mesas2.jpg",
+    image: "/mesas2.svg",
   },
   {
     id: 23,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "PUBLIC/mesas3.jpg",
+    image: "/mesas3.svg",
   },
   {
     id: 24,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "PUBLIC/mesas4.jpg",
+    image: "/mesas4.svg",
   },
   {
     id: 25,
     category: "El Restaurante",
     title: "Exterior del Restaurante",
-    image: "PUBLIC/exterior.jpg.JPG",
+    image: "/exterior.svg",
   },
   {
     id: 26,
     category: "El Restaurante",
     title: "Estructura de Mesas",
-    image: "PUBLIC/estructura de mesas.jpg.jpg",
+    image: "/estructura de mesas.svg",
   },
    {
     id: 27,
     category: "El Restaurante",
     title: "Preparacion de Mesa",
-    image: "PUBLIC/preparaciondemesa.jpg",
+    image: "/preparaciondemesa.svg",
   },
    {
     id: 28,
     category: "Bebidas",
     title: "Moscow Mule",
-    image: "PUBLIC/moscomulle.jpg.jpg",
+    image: "/moscomulle.svg",
   }
 ];
 
@@ -202,28 +204,28 @@ const Gallery = () => {
         {/* Decorative Food Elements */}
         <div className="absolute top-20 left-20 hidden lg:block opacity-30">
           <img 
-            src="PUBLIC/CATERING.JPG.JPG" 
+            src="/CATERING.svg" 
             alt="" 
             className="w-32 h-32 object-cover rounded-lg transform rotate-12"
           />
         </div>
         <div className="absolute top-40 right-20 hidden lg:block opacity-20">
           <img 
-            src="PUBLIC/buffet2.jpg.jpg" 
+            src="/buffet2.svg" 
             alt="" 
             className="w-28 h-28 object-cover rounded-lg transform -rotate-12"
           />
         </div>
         <div className="absolute bottom-20 left-32 hidden lg:block opacity-25">
           <img 
-            src="PUBLIC/parrilla.jpg.jpg"
+            src="/parrilla.svg"
             alt="" 
             className="w-24 h-24 object-cover rounded-lg transform rotate-45"
           />
         </div>
         <div className="absolute bottom-32 right-32 hidden lg:block opacity-20">
           <img 
-            src="PUBLIC/vinos.jpg.jpg"
+            src="/vinos.svg"
             alt="" 
             className="w-30 h-30 object-cover rounded-lg transform -rotate-6"
           />

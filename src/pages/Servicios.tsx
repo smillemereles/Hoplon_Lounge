@@ -7,13 +7,13 @@ const services = [
   {
     title: "Eventos Privados,Experiencia Coworking",
     description: "Espacios exclusivos para celebraciones corporativas y reuniones especiales. Menús personalizados y servicio de primera clase.",
-    image: "PUBLIC/vistadecamarotes.JPG",
+    image: "/vistadecamarotes.svg",
     features: ["Menús personalizados", "Servicio exclusivo", "Espacios privados"]
   },
   {
     title: "Reservas Especiales",
     description: "Experiencias gastronómicas únicas con maridajes especiales y degustaciones de vinos premium.",
-    image: "PUBLIC/mesaslounge.jpg.JPG",
+    image: "/mesaslounge.svg",
     features: ["Maridajes únicos", "Degustaciones", "Mesa preferencial"]
   },
   {
@@ -196,7 +196,7 @@ const Servicios = () => {
             viewport={{ once: true }}
             className="relative mt-32 mb-24 h-96 rounded-3xl overflow-hidden"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('PUBLIC/upscalemedia-transformed (1).png')`,
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/upscalemedia-transformed (1).png')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
