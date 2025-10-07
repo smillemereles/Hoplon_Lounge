@@ -13,7 +13,7 @@ const HoplonNavigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > NAVBAR_SCROLL_THRESHOLD);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -47,8 +47,8 @@ const HoplonNavigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-hoplon-black/90 backdrop-blur-md shadow-lg" 
+        isScrolled
+          ? "bg-hoplon-black/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -59,13 +59,13 @@ const HoplonNavigation = () => {
             className="cursor-pointer"
             onClick={handleLogoClick}
           >
-            <img 
-              src="public/LOGO HOPLON SIMPLIFICADO CREMA.png" 
-              alt="Hoplon Club Logo" 
+            <img
+              src="/LOGO HOPLON SIMPLIFICADO CREMA.png"
+              alt="Hoplon Club Logo"
               className="h-12 w-auto"
             />
           </motion.div>
-          
+
           <div className="hidden md:flex space-x-8">
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -75,7 +75,7 @@ const HoplonNavigation = () => {
             >
               Inicio
             </motion.button>
-            
+
             {/* Menu Dropdown */}
             <div className="relative">
               <motion.button
@@ -87,7 +87,7 @@ const HoplonNavigation = () => {
                 <span>Menú</span>
                 <ChevronDown size={16} className={`transition-transform duration-300 ${isMenuOpen ? 'rotate-180' : ''}`} />
               </motion.button>
-              
+
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div
