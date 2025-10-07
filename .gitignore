@@ -102,14 +102,6 @@ temp/
 # Vercel
 .vercel
 
-{
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
+# Ensure public folder is included (add this line to be explicit)
+!public/
+!public/**/*
