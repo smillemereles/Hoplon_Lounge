@@ -102,4 +102,14 @@ temp/
 # Vercel
 .vercel
 
-# Public assets (if they contain sensitive data)
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

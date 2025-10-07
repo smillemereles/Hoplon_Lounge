@@ -51,9 +51,9 @@ const MenuBebidas = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
         <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
       </div>
-      
+
       <HoplonNavigation />
-      
+
       <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div

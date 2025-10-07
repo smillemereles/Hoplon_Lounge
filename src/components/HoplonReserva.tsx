@@ -13,7 +13,7 @@ const HoplonReserva = () => {
   return (
     <section id="reserva" className="relative py-24 overflow-hidden" style={{scrollMarginTop: '80px'}}>
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('PUBLIC/RESERVA.JPG.jpg')`
@@ -35,7 +35,7 @@ const HoplonReserva = () => {
             Reservá Tu Mesa Ahora
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-8"></div>
-          
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -58,7 +58,7 @@ const HoplonReserva = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto"
         >
-          <motion.div 
+          <motion.div
             className="text-center group"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -80,7 +80,7 @@ const HoplonReserva = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="text-center group"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -99,11 +99,10 @@ const HoplonReserva = () => {
               +595994467566<br />
               +595983800020<br />
               +595983810005<br />
-              WhatsApp disponible
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="text-center group"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -124,7 +123,7 @@ const HoplonReserva = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="text-center group"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
