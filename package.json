@@ -26,7 +26,8 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf dist node_modules/.vite",
     "test": "echo \"No tests specified\" && exit 0",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "generate-placeholders": "node scripts/download-images.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
