@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import servicesCelebrations from "@/assets/services-celebrations.jpg";
-import servicesPrivateEvents from "@/assets/services-private-events.jpg";
-import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
+// import servicesCelebrations from "@/assets/services-celebrations.jpg";
+// import servicesPrivateEvents from "@/assets/services-private-events.jpg";
+// import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
 
 const menuCategories = [
   {
     title: "PARAGUAYAN NIGHTS SHOW",
     description: " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
-    image: servicesCelebrations
+    image: "/FIESTADECUMPLEANHOS.JPG"
   },
   {
     title: "LOUNGE BAR", 
     description: " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
-    image: galleryRestaurant
+    image: "/LOUNGE.JPG.jpg"
   },
   {
     title: "CATERING & EVENTS",
     description: "Ofrecemos servicios de catering para eventos privados y corporativos, adaptandonos a tus necesidades y presupuesto. Desde cenas elegantes hasta fiestas informales, nuestro equipo se encargará de cada detalle para que tu evento sea un éxito.",
-    image: servicesPrivateEvents
+    image: "/CATERING.JPG"
   }
 ];
 
