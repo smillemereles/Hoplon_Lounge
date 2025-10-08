@@ -31,25 +31,25 @@ const galleryImages = [
     id: 4,
     category: "Bebidas",
     title: "Pina Colada",
-    image: "/caipirinhas.jpg.jpg",
+    image: "/caipirinhas.jpg",
   },
   {
     id: 5,
     category: "Bebidas",
     title: "Caipirinhas",
-    image: "/caipirinhas.jpg.jpg",
+    image: "/caipirinhas.jpg",
   },
   {
     id: 6,
     category: "Bebidas",
     title: "Daikiri de Frutilla",
-    image: "/caipirinhas.jpg.jpg",
+    image: "/caipirinhas.jpg",
   },
   {
     id: 7,
     category: "El Restaurante",
     title: "Ambiente de la piscina",
-    image: "/picsina.svg",
+    image: "/picsina.jpg",
   },
   {
     id: 8,
@@ -67,115 +67,115 @@ const galleryImages = [
     id: 10,
     category: "Nuestros Platos",
     title: "Picanha a la parrilla",
-    image: "/PICANHA.svg",
+    image: "/PICANHA.jpg",
   },
   {
     id: 11,
     category: "Bebidas",
     title: "Gin Tonic Premium",
-    image: "/gindepomelo.svg",
+    image: "/gindepomelo.jpg",
   },
   {
     id: 12,
     category: "El Restaurante",
     title: "Logo Exterior",
-    image: "/logoexterior.svg",
+    image: "/logoexterior.jpg",
   },
    {
     id: 13,
     category: "Nuestros Platos",
     title: "Sopa Paraguaya",
-    image: "/SOPA.svg",
+    image: "/SOPA.jpg",
   },
    {
     id: 14,
     category: "Nuestros Platos",
     title: "Tabla de Frios",
-    image: "/tabla-de-frios.svg",
+    image: "/tabla-de-frios.jpg",
   },
     {
     id: 15,
     category: "Nuestros Platos",
     title: "Parrilla de carnes",
-    image: "/parrilla.svg",
+    image: "/parrilla.jpg",
   },
     {
     id: 16,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Nights Show",
-    image: "/BUFFET.svg",
+    image: "/BUFFET.jpg",
   },
     {
     id: 17,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Night Show",
-    image: "/buffet2.svg",
+    image: "/buffet2.jpg",
   },
    {
     id: 18,
     category: "Nuestros Platos",
     title: "Budin de Pan",
-    image: "/postres1.svg",
+    image: "/postres1.jpg",
   },
    {
     id: 19,
     category: "Nuestros Platos",
     title: "Torta en copita",
-    image: "/postres2.svg",
+    image: "/postres2.jpg",
   },
   {
     id: 20,
     category: "Nuestros Platos",
     title: "Budin de Pan",
-    image: "/postre3.svg",
+    image: "/postre3.jpg",
   },
   {
     id: 21,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "/mesas1.svg",
+    image: "/mesas1.jpg",
   },
   {
     id: 22,
     category: "El Restaurante",
     title: "Ecenario Principal",
-    image: "/mesas2.svg",
+    image: "/mesas2.jpg",
   },
   {
     id: 23,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "/mesas3.svg",
+    image: "/mesas3.jpg",
   },
   {
     id: 24,
     category: "El Restaurante",
     title: "Mesas del Restaurante",
-    image: "/mesas4.svg",
+    image: "/mesas4.jpg",
   },
   {
     id: 25,
     category: "El Restaurante",
     title: "Exterior del Restaurante",
-    image: "/exterior.svg",
+    image: "/exterior.jpg",
   },
   {
     id: 26,
     category: "El Restaurante",
     title: "Estructura de Mesas",
-    image: "/estructura de mesas.svg",
+    image: "/estructurademesas.jpg",
   },
    {
     id: 27,
     category: "El Restaurante",
     title: "Preparacion de Mesa",
-    image: "/preparaciondemesa.svg",
+    image: "/preparaciondemesa.jpg",
   },
    {
     id: 28,
     category: "Bebidas",
     title: "Moscow Mule",
-    image: "/moscomulle.svg",
+    image: "/moscomulle.jpg",
   }
 ];
 
@@ -204,28 +204,28 @@ const Gallery = () => {
         {/* Decorative Food Elements */}
         <div className="absolute top-20 left-20 hidden lg:block opacity-30">
           <img 
-            src="/CATERING.svg" 
+            src="/CATERING.JPG" 
             alt="" 
             className="w-32 h-32 object-cover rounded-lg transform rotate-12"
           />
         </div>
         <div className="absolute top-40 right-20 hidden lg:block opacity-20">
           <img 
-            src="/buffet2.svg" 
+            src="/buffet2.jpg" 
             alt="" 
             className="w-28 h-28 object-cover rounded-lg transform -rotate-12"
           />
         </div>
         <div className="absolute bottom-20 left-32 hidden lg:block opacity-25">
           <img 
-            src="/parrilla.svg"
+            src="/parrilla.jpg"
             alt="" 
             className="w-24 h-24 object-cover rounded-lg transform rotate-45"
           />
         </div>
         <div className="absolute bottom-32 right-32 hidden lg:block opacity-20">
           <img 
-            src="/vinos.svg"
+            src="/vinos.jpg"
             alt="" 
             className="w-30 h-30 object-cover rounded-lg transform -rotate-6"
           />

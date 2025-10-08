@@ -12,7 +12,7 @@ const menuCategories = [
   {
     title: "LOUNGE BAR", 
     description: " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
-    image: "/LOUNGE.JPG.jpg"
+    image: "/LOUNGE.jpg"
   },
   {
     title: "CATERING & EVENTS",
