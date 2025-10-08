@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Button } from "src/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const HoplonReserva = () => {
   const handleWhatsAppClick = () => {
     const message = "Hola quiero hacer una reserva en Hoplon";
-    const phoneNumber = "+595 994 467566"; // Replace with actual phone number
-    const url = `https://wa.link/nmczzr?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    const phoneNumber = "+595994467566";
+    const url = `https://wa.me/${phoneNumber.replace(/\s+/g, "")}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   };
 
   return (
-    <section id="reserva" className="relative py-24 overflow-hidden" style={{scrollMarginTop: '80px'}}>
+    <section
+      id="reserva"
+      className="relative py-24 overflow-hidden"
+      style={{ scrollMarginTop: "80px" }}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('PUBLIC/RESERVA.JPG.jpg')`
+          backgroundImage: `url('/RESERVA.JPG.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-hoplon-black/75"></div>
@@ -36,10 +40,7 @@ const HoplonReserva = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-8"></div>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               onClick={handleWhatsAppClick}
               className="bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold px-12 py-6 text-xl hover:shadow-lg hover:shadow-hoplon-gold/40 transition-all duration-300"
@@ -75,8 +76,9 @@ const HoplonReserva = () => {
             <h3 className="text-hoplon-gold font-semibold mb-2">Dirección</h3>
             <p className="text-hoplon-white text-sm">
               Avenida Mariscal José F. Estrigarriba con, Picuiba 5<br />
-              Lago de la Republica<br />
-              Ciudad del Este, Parafuay
+              Lago de la República
+              <br />
+              Ciudad del Este, Paraguay
             </p>
           </motion.div>
 
@@ -96,9 +98,11 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Teléfonos</h3>
             <p className="text-hoplon-white text-sm">
-              +595994467566<br />
-              +595983800020<br />
-              +595983810005<br />
+              +595 994 467566
+              <br />
+              +595 983 800020
+              <br />
+              +595 983 810005
             </p>
           </motion.div>
 
@@ -118,7 +122,8 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Email</h3>
             <p className="text-hoplon-white text-sm">
-              comercial@lto.com<br />
+              comercial@lto.com
+              <br />
               hoplonmarketing@gmail.com
             </p>
           </motion.div>
@@ -139,8 +144,10 @@ const HoplonReserva = () => {
             </motion.div>
             <h3 className="text-hoplon-gold font-semibold mb-2">Horarios</h3>
             <p className="text-hoplon-white text-sm">
-              Lun: Cerrado<br />
-              Mart-Sáb: 19:00-00:00<br />
+              Lun: Cerrado
+              <br />
+              Mart-Sáb: 19:00-00:00
+              <br />
               Dom: Cerrado
             </p>
           </motion.div>
