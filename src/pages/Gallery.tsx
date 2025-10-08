@@ -12,26 +12,26 @@ const galleryImages = [
   {
     id: 1,
     category: "Nuestros Platos",
-    title: "Prrilla de Carnes",
-    image: "/carneenlaparrilla.jpg",
+    title: "Parrilla de Carnes",
+    image: "/CARNES.jpg",
   },
   {
     id: 2,
     category: "Nuestros Platos",
     title: "Vori Vori",
-    image: "/bailarinas4.jpg",
+    image: "/BORIBORI.jpg",
   },
   {
     id: 3,
     category: "Nuestros Platos",
     title: "Picada de carnes premium",
-    image: "/bailarinas4.jpg",
+    image: "/parrilla2.jpg",
   },
   {
     id: 4,
     category: "Bebidas",
     title: "Pina Colada",
-    image: "/caipirinhas.jpg",
+    image: "/pinhacolada.jpg",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const galleryImages = [
     id: 6,
     category: "Bebidas",
     title: "Daikiri de Frutilla",
-    image: "/caipirinhas.jpg",
+    image: "/daikirifrozen.jpg",
   },
   {
     id: 7,
@@ -55,13 +55,13 @@ const galleryImages = [
     id: 8,
     category: "El Restaurante",
     title: "fachada del Restaurante",
-    image: "/carneenlaparrilla.jpg",
+    image: "/hoplonexterior.jpg",
   },
   {
     id: 9,
     category: "El Restaurante",
     title: "Barra del lounge",
-    image: "/carneenlaparrilla.jpg",
+    image: "/LOUNGE.jpg",
   },
   {
     id: 10,
@@ -184,14 +184,14 @@ const categories = ["Todo", "Nuestros Platos", "El Restaurante", "Bebidas"];
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("Todo");
 
-  const filteredImages = activeCategory === "Todo" 
-    ? galleryImages 
+  const filteredImages = activeCategory === "Todo"
+    ? galleryImages
     : galleryImages.filter(image => image.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-hoplon-black">
       <HoplonNavigation />
-      
+
       {/* Hero Section with decorative food elements */}
       <section className="relative pt-32 pb-16 bg-hoplon-black overflow-hidden">
         {/* Decorative Background Pattern */}
@@ -203,30 +203,30 @@ const Gallery = () => {
 
         {/* Decorative Food Elements */}
         <div className="absolute top-20 left-20 hidden lg:block opacity-30">
-          <img 
-            src="/CATERING.JPG" 
-            alt="" 
+          <img
+            src="/CATERING.JPG"
+            alt=""
             className="w-32 h-32 object-cover rounded-lg transform rotate-12"
           />
         </div>
         <div className="absolute top-40 right-20 hidden lg:block opacity-20">
-          <img 
-            src="/buffet2.jpg" 
-            alt="" 
+          <img
+            src="/buffet2.jpg"
+            alt=""
             className="w-28 h-28 object-cover rounded-lg transform -rotate-12"
           />
         </div>
         <div className="absolute bottom-20 left-32 hidden lg:block opacity-25">
-          <img 
+          <img
             src="/parrilla.jpg"
-            alt="" 
+            alt=""
             className="w-24 h-24 object-cover rounded-lg transform rotate-45"
           />
         </div>
         <div className="absolute bottom-32 right-32 hidden lg:block opacity-20">
-          <img 
+          <img
             src="/vinos.jpg"
-            alt="" 
+            alt=""
             className="w-30 h-30 object-cover rounded-lg transform -rotate-6"
           />
         </div>
@@ -240,7 +240,7 @@ const Gallery = () => {
           >
             Nuestra Galeria
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
