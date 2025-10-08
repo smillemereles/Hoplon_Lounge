@@ -41,7 +41,7 @@ const galleryImages = [
     id: 6,
     category: "Bebidas",
     title: "Daikiri de Frutilla",
-    image: "PUBLIC/daikirifrozen,jpg.jpg",
+    image: "public/daikirifrozen.jpg",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const galleryImages = [
     id: 11,
     category: "Bebidas",
     title: "Gin Tonic Premium",
-    image: "PUBLIC/gindepomelo.jpg.jpg",
+    image: "public/gindepomelo.jpg",
   },
   {
     id: 12,
@@ -79,43 +79,43 @@ const galleryImages = [
     title: "Logo Exterior",
     image: "PUBLIC/logoexterior.jpg.jpg",
   },
-   {
+  {
     id: 13,
     category: "Nuestros Platos",
     title: "Sopa Paraguaya",
     image: "PUBLIC/SOPA.JPG.jpg",
   },
-   {
+  {
     id: 14,
     category: "Nuestros Platos",
     title: "Tabla de Frios",
     image: "PUBLIC/tabla-de-frios.jgp.JPG",
   },
-    {
+  {
     id: 15,
     category: "Nuestros Platos",
     title: "Parrilla de carnes",
     image: "PUBLIC/parrilla.jpg.jpg",
   },
-    {
+  {
     id: 16,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Nights Show",
     image: "PUBLIC/BUFFET,JPG.jpg",
   },
-    {
+  {
     id: 17,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Night Show",
     image: "PUBLIC/buffet2.jpg.jpg",
   },
-   {
+  {
     id: 18,
     category: "Nuestros Platos",
     title: "Budin de Pan",
     image: "PUBLIC/postres1.jpg",
   },
-   {
+  {
     id: 19,
     category: "Nuestros Platos",
     title: "Torta en copita",
@@ -155,7 +155,7 @@ const galleryImages = [
     id: 25,
     category: "El Restaurante",
     title: "Exterior del Restaurante",
-    image: "PUBLIC/exterior.jpg.JPG",
+    image: "public/exterior.jpg",
   },
   {
     id: 26,
@@ -163,18 +163,18 @@ const galleryImages = [
     title: "Estructura de Mesas",
     image: "PUBLIC/estructura de mesas.jpg.jpg",
   },
-   {
+  {
     id: 27,
     category: "El Restaurante",
     title: "Preparacion de Mesa",
     image: "PUBLIC/preparaciondemesa.jpg",
   },
-   {
+  {
     id: 28,
     category: "Bebidas",
     title: "Moscow Mule",
     image: "PUBLIC/moscomulle.jpg.jpg",
-  }
+  },
 ];
 
 const categories = ["Todo", "Nuestros Platos", "El Restaurante", "Bebidas"];
@@ -182,14 +182,15 @@ const categories = ["Todo", "Nuestros Platos", "El Restaurante", "Bebidas"];
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("Todo");
 
-  const filteredImages = activeCategory === "Todo" 
-    ? galleryImages 
-    : galleryImages.filter(image => image.category === activeCategory);
+  const filteredImages =
+    activeCategory === "Todo"
+      ? galleryImages
+      : galleryImages.filter(image => image.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-hoplon-black">
       <HoplonNavigation />
-      
+
       {/* Hero Section with decorative food elements */}
       <section className="relative pt-32 pb-16 bg-hoplon-black overflow-hidden">
         {/* Decorative Background Pattern */}
@@ -201,30 +202,30 @@ const Gallery = () => {
 
         {/* Decorative Food Elements */}
         <div className="absolute top-20 left-20 hidden lg:block opacity-30">
-          <img 
-            src="PUBLIC/CATERING.JPG.JPG" 
-            alt="" 
+          <img
+            src="PUBLIC/CATERING.JPG.JPG"
+            alt=""
             className="w-32 h-32 object-cover rounded-lg transform rotate-12"
           />
         </div>
         <div className="absolute top-40 right-20 hidden lg:block opacity-20">
-          <img 
-            src="PUBLIC/buffet2.jpg.jpg" 
-            alt="" 
+          <img
+            src="PUBLIC/buffet2.jpg.jpg"
+            alt=""
             className="w-28 h-28 object-cover rounded-lg transform -rotate-12"
           />
         </div>
         <div className="absolute bottom-20 left-32 hidden lg:block opacity-25">
-          <img 
+          <img
             src="PUBLIC/parrilla.jpg.jpg"
-            alt="" 
+            alt=""
             className="w-24 h-24 object-cover rounded-lg transform rotate-45"
           />
         </div>
         <div className="absolute bottom-32 right-32 hidden lg:block opacity-20">
-          <img 
+          <img
             src="PUBLIC/vinos.jpg.jpg"
-            alt="" 
+            alt=""
             className="w-30 h-30 object-cover rounded-lg transform -rotate-6"
           />
         </div>
@@ -238,14 +239,15 @@ const Gallery = () => {
           >
             Nuestra Galeria
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-xl md:text-2xl text-hoplon-gold font-light tracking-wide"
           >
-            Descubri el arte y la esencia de Hoplon Lounge a traves de nuestra galleria.
+            Descubri el arte y la esencia de Hoplon Lounge a traves de nuestra
+            galleria.
           </motion.p>
         </div>
       </section>
@@ -260,7 +262,7 @@ const Gallery = () => {
             className="flex justify-center mb-16"
           >
             <div className="flex flex-wrap gap-2 bg-hoplon-white/5 p-1 rounded-lg backdrop-blur-sm border border-hoplon-gold/10">
-              {categories.map((category) => (
+              {categories.map(category => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}

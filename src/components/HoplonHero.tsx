@@ -7,12 +7,15 @@ const HoplonHero = () => {
   const { scrollToSection } = useScrollNavigation();
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('public/hero front page.png')`
+          backgroundImage: `url('public/herofrontpage.png')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-hoplon-black/80 via-hoplon-black/60 to-hoplon-garnet/40"></div>
@@ -41,7 +44,8 @@ const HoplonHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: ANIMATION_DURATIONS.VERY_SLOW, delay: 1 }}
           >
-            Donde el honor espartano se encuentra con el sabor Paraguayo y Español.
+            Donde el honor espartano se encuentra con el sabor Paraguayo y
+            Español.
           </motion.p>
 
           <motion.div

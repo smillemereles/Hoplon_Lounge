@@ -3,25 +3,31 @@ import { motion } from "framer-motion";
 const menuCategories = [
   {
     title: "PARAGUAYAN NIGHTS SHOW",
-    description: " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
-    image: "PUBLIC/bailarinas4.jpg"
+    description:
+      " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
+    image: "PUBLIC/bailarinas4.jpg",
   },
   {
-    title: "LOUNGE BAR", 
-    description: " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
-    image: "PUBLIC/LOUNGE.JPG.jpg"
+    title: "LOUNGE BAR",
+    description:
+      " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
+    image: "PUBLIC/LOUNGE.JPG.jpg",
   },
   {
     title: "CATERING & EVENTS",
-    description: "Ofrecemos servicios de catering para eventos privados y corporativos, adaptandonos a tus necesidades y presupuesto. Desde cenas elegantes hasta fiestas informales, nuestro equipo se encargará de cada detalle para que tu evento sea un éxito.",
-    image: "PUBLIC/CATERING.JPG.JPG"
-  }
+    description:
+      "Ofrecemos servicios de catering para eventos privados y corporativos, adaptandonos a tus necesidades y presupuesto. Desde cenas elegantes hasta fiestas informales, nuestro equipo se encargará de cada detalle para que tu evento sea un éxito.",
+    image: "public/CATERING.JPG",
+  },
 ];
 
 const HoplonMenuCards = () => {
   return (
-    <section id="menu" className="py-24 relative overflow-hidden" style={{scrollMarginTop: '80px'}}>
-      
+    <section
+      id="menu"
+      className="py-24 relative overflow-hidden"
+      style={{ scrollMarginTop: "80px" }}
+    >
       {/* VIDEO DE FONDO - Reemplaza el gradiente */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -34,7 +40,7 @@ const HoplonMenuCards = () => {
         {/* Fallback para navegadores que no soporten el video */}
         <div className="absolute inset-0 bg-gradient-to-b from-hoplon-black to-hoplon-garnet"></div>
       </video>
-      
+
       {/* Overlay oscuro para mejor legibilidad del texto */}
       <div className="absolute inset-0 bg-black/50 z-1"></div>
 
@@ -57,11 +63,11 @@ const HoplonMenuCards = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4"></div>
           <p className="text-xl text-hoplon-gold font-medium">
-
-            En Hoplon Club diseñamos experiencias memorables que fusionan cultura, gastronomía y hospitalidad. 
-            Cada servicio está pensado para satisfacer distintas necesidades de nuestros clientes, 
-            desde el turismo cultural hasta eventos corporativos y sociales, siempre con identidad y excelencia.
-
+            En Hoplon Club diseñamos experiencias memorables que fusionan
+            cultura, gastronomía y hospitalidad. Cada servicio está pensado para
+            satisfacer distintas necesidades de nuestros clientes, desde el
+            turismo cultural hasta eventos corporativos y sociales, siempre con
+            identidad y excelencia.
           </p>
         </motion.div>
 
@@ -73,10 +79,10 @@ const HoplonMenuCards = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 rotateY: 5,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               className="group cursor-pointer"
             >
@@ -94,9 +100,7 @@ const HoplonMenuCards = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <motion.h3 
-                    className="text-2xl font-serif font-bold text-hoplon-black mb-3 group-hover:text-hoplon-garnet transition-colors duration-300"
-                  >
+                  <motion.h3 className="text-2xl font-serif font-bold text-hoplon-black mb-3 group-hover:text-hoplon-garnet transition-colors duration-300">
                     {category.title}
                   </motion.h3>
                   <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
@@ -105,14 +109,10 @@ const HoplonMenuCards = () => {
                 </div>
 
                 {/* Hover Effect Overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-hoplon-gold/10 to-hoplon-garnet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                />
+                <motion.div className="absolute inset-0 bg-gradient-to-r from-hoplon-gold/10 to-hoplon-garnet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Gold Border on Hover */}
-                <motion.div
-                  className="absolute inset-0 border-2 border-hoplon-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"
-                />
+                <motion.div className="absolute inset-0 border-2 border-hoplon-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
               </div>
             </motion.div>
           ))}
