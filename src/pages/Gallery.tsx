@@ -2,48 +2,48 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import HoplonNavigation from "src/components/HoplonNavigation";
 import HoplonFooter from "src/components/HoplonFooter";
-import galleryAppetizers from "@/assets/gallery-appetizers.jpg";
-import galleryDrinks from "@/assets/gallery-drinks.jpg";
-import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
-import servicesCelebrations from "@/assets/services-celebrations.jpg";
-import servicesPrivateEvents from "@/assets/services-private-events.jpg";
+// import galleryAppetizers from "@/assets/gallery-appetizers.jpg";
+// import galleryDrinks from "@/assets/gallery-drinks.jpg";
+// import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
+// import servicesCelebrations from "@/assets/services-celebrations.jpg";
+// import servicesPrivateEvents from "@/assets/services-private-events.jpg";
 
 const galleryImages = [
   {
     id: 1,
     category: "Nuestros Platos",
     title: "Prrilla de Carnes",
-    image: galleryRestaurant,
+    image: "/carneenlaparrilla.jpg",
   },
   {
     id: 2,
     category: "Nuestros Platos",
     title: "Vori Vori",
-    image: galleryAppetizers,
+    image: "/bailarinas4.jpg",
   },
   {
     id: 3,
     category: "Nuestros Platos",
     title: "Picada de carnes premium",
-    image: galleryAppetizers,
+    image: "/bailarinas4.jpg",
   },
   {
     id: 4,
     category: "Bebidas",
     title: "Pina Colada",
-    image: galleryDrinks,
+    image: "/caipirinhas.jpg.jpg",
   },
   {
     id: 5,
     category: "Bebidas",
     title: "Caipirinhas",
-    image: galleryDrinks,
+    image: "/caipirinhas.jpg.jpg",
   },
   {
     id: 6,
     category: "Bebidas",
     title: "Daikiri de Frutilla",
-    image: galleryDrinks,
+    image: "/caipirinhas.jpg.jpg",
   },
   {
     id: 7,
@@ -55,13 +55,13 @@ const galleryImages = [
     id: 8,
     category: "El Restaurante",
     title: "fachada del Restaurante",
-    image: galleryRestaurant,
+    image: "/carneenlaparrilla.jpg",
   },
   {
     id: 9,
     category: "El Restaurante",
     title: "Barra del lounge",
-    image: galleryRestaurant,
+    image: "/carneenlaparrilla.jpg",
   },
   {
     id: 10,
