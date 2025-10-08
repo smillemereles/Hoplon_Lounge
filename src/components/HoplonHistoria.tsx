@@ -9,7 +9,7 @@ const HoplonHistoria = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/hoplonexterior.svg')`
+          backgroundImage: `url('/hoplonexterior.jpg')`
         }}
       >
         <div className="absolute inset-0 bg-hoplon-black/70"></div>

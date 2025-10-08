@@ -7,13 +7,13 @@ const services = [
   {
     title: "Eventos Privados,Experiencia Coworking",
     description: "Espacios exclusivos para celebraciones corporativas y reuniones especiales. Menús personalizados y servicio de primera clase.",
-    image: "/vistadecamarotes.svg",
+    image: "/vistadecamarotes.JPG",
     features: ["Menús personalizados", "Servicio exclusivo", "Espacios privados"]
   },
   {
     title: "Reservas Especiales",
     description: "Experiencias gastronómicas únicas con maridajes especiales y degustaciones de vinos premium.",
-    image: "/mesaslounge.svg",
+    image: "/mesaslounge.jpg",
     features: ["Maridajes únicos", "Degustaciones", "Mesa preferencial"]
   },
   {
