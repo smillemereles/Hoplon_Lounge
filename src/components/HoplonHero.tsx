@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { SECTIONS, ANIMATION_DURATIONS } from "@/lib/constants";
+// import heroLuxurySteak from "@/assets/hero-luxury-steak.jpg";
 
 const HoplonHero = () => {
   const { scrollToSection } = useScrollNavigation();
@@ -15,7 +16,7 @@ const HoplonHero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('public/herofrontpage.png')`,
+          backgroundImage: `url('/hero front page.png')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-hoplon-black/80 via-hoplon-black/60 to-hoplon-garnet/40"></div>
