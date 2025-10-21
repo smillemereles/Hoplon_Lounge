@@ -1,12 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import HoplonNavigation from "src/components/HoplonNavigation";
 import HoplonFooter from "src/components/HoplonFooter";
-// import galleryAppetizers from "@/assets/gallery-appetizers.jpg";
-// import galleryDrinks from "@/assets/gallery-drinks.jpg";
-// import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
-// import servicesCelebrations from "@/assets/services-celebrations.jpg";
-// import servicesPrivateEvents from "@/assets/services-private-events.jpg";
 
 const galleryImages = [
   {
@@ -48,8 +43,8 @@ const galleryImages = [
   {
     id: 7,
     category: "El Restaurante",
-    title: "Ambiente de la piscina",
-    image: "/picsina.jpg",
+    title: "Nuestras bailarinas",
+    image: "/nuestrasbailarinas.jpg",
   },
   {
     id: 8,
@@ -67,7 +62,7 @@ const galleryImages = [
     id: 10,
     category: "Nuestros Platos",
     title: "Picanha a la parrilla",
-    image: "/PICANHA.jpg",
+    image: "/picañaalaparrilla.jpg",
   },
   {
     id: 11,
@@ -81,43 +76,43 @@ const galleryImages = [
     title: "Logo Exterior",
     image: "/logoexterior.jpg",
   },
-   {
+  {
     id: 13,
     category: "Nuestros Platos",
     title: "Sopa Paraguaya",
     image: "/SOPA.jpg",
   },
-   {
+  {
     id: 14,
     category: "Nuestros Platos",
     title: "Tabla de Frios",
-    image: "/tabla-de-frios.jpg",
+    image: "/tabladefrios.jpeg",
   },
-    {
+  {
     id: 15,
     category: "Nuestros Platos",
     title: "Parrilla de carnes",
     image: "/parrilla.jpg",
   },
-    {
+  {
     id: 16,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Nights Show",
     image: "/BUFFET.jpg",
   },
-    {
+  {
     id: 17,
     category: "Nuestros Platos",
     title: "Buffet Paraguayan Night Show",
     image: "/buffet2.jpg",
   },
-   {
+  {
     id: 18,
     category: "Nuestros Platos",
     title: "Budin de Pan",
     image: "/postres1.jpg",
   },
-   {
+  {
     id: 19,
     category: "Nuestros Platos",
     title: "Torta en copita",
@@ -165,28 +160,34 @@ const galleryImages = [
     title: "Estructura de Mesas",
     image: "/estructurademesas.jpg",
   },
-   {
+  {
     id: 27,
     category: "El Restaurante",
     title: "Preparacion de Mesa",
     image: "/preparaciondemesa.jpg",
   },
-   {
+  {
     id: 28,
     category: "Bebidas",
     title: "Moscow Mule",
     image: "/moscomulle.jpg",
-  }
+  },
 ];
 
 const categories = ["Todo", "Nuestros Platos", "El Restaurante", "Bebidas"];
 
 const Gallery = () => {
+  // Scroll al top cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState("Todo");
 
-  const filteredImages = activeCategory === "Todo"
-    ? galleryImages
-    : galleryImages.filter(image => image.category === activeCategory);
+  const filteredImages =
+    activeCategory === "Todo"
+      ? galleryImages
+      : galleryImages.filter(image => image.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-hoplon-black">
@@ -247,7 +248,8 @@ const Gallery = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-xl md:text-2xl text-hoplon-gold font-light tracking-wide"
           >
-            Descubri el arte y la esencia de Hoplon Lounge a traves de nuestra galleria.
+            Descubri el arte y la esencia de Hoplon Lounge a traves de nuestra
+            galleria.
           </motion.p>
         </div>
       </section>
@@ -262,7 +264,7 @@ const Gallery = () => {
             className="flex justify-center mb-16"
           >
             <div className="flex flex-wrap gap-2 bg-hoplon-white/5 p-1 rounded-lg backdrop-blur-sm border border-hoplon-gold/10">
-              {categories.map((category) => (
+              {categories.map(category => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
