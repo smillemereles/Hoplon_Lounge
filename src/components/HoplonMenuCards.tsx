@@ -5,7 +5,7 @@ const menuCategories = [
     title: "PARAGUAYAN NIGHT SHOW",
     description:
       " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
-    image: "/FIESTADECUMPLEANHOS.JPG",
+    image: "/bailarinas4.jpg",
   },
   {
     title: "LOUNGE BAR",
