@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
-// import servicesCelebrations from "@/assets/services-celebrations.jpg";
-// import servicesPrivateEvents from "@/assets/services-private-events.jpg";
-// import galleryRestaurant from "@/assets/gallery-restaurant.jpg";
 
 const menuCategories = [
   {
-    title: "PARAGUAYAN NIGHTS SHOW",
+    title: "PARAGUAYAN NIGHT SHOW",
     description:
       " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
     image: "/FIESTADECUMPLEANHOS.JPG",
@@ -31,7 +28,7 @@ const HoplonMenuCards = () => {
       className="py-24 relative overflow-hidden"
       style={{ scrollMarginTop: "80px" }}
     >
-      {/* VIDEO DE FONDO - Reemplaza el gradiente */}
+      {/* VIDEO DE FONDO */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         autoPlay
@@ -39,8 +36,7 @@ const HoplonMenuCards = () => {
         muted
         playsInline
       >
-        <source src="/IMG_1940.MOV" type="video/mp4" />
-        {/* Fallback para navegadores que no soporten el video */}
+        <source src="/[HOPLON] VIDEO 15S.mp4" type="video/mp4" />
         <div className="absolute inset-0 bg-gradient-to-b from-hoplon-black to-hoplon-garnet"></div>
       </video>
 
@@ -48,9 +44,9 @@ const HoplonMenuCards = () => {
       <div className="absolute inset-0 bg-black/50 z-1"></div>
 
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-5 z-2">
+      <div className="absolute inset-0 opacity-10 z-2">
         <div className="absolute top-20 left-10 w-32 h-32 bg-hoplon-gold rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-hoplon-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-hoplon-gold rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -84,12 +80,11 @@ const HoplonMenuCards = () => {
               viewport={{ once: true }}
               whileHover={{
                 scale: 1.05,
-                rotateY: 5,
                 transition: { duration: 0.3 },
               }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden rounded-lg bg-hoplon-white shadow-2xl hover:shadow-hoplon-gold/20 transition-all duration-500">
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-hoplon-gold/95 to-hoplon-gold-dark/90 backdrop-blur-sm shadow-2xl hover:shadow-xl hover:shadow-hoplon-gold/40 transition-all duration-500 border border-hoplon-gold/30 hover:border-hoplon-gold/60">
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
                   <motion.img
@@ -99,27 +94,64 @@ const HoplonMenuCards = () => {
                     whileHover={{ scale: 1.1 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-hoplon-black/60 to-transparent"></div>
+
+                  {/* Decorative overlay on image */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-hoplon-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <motion.h3 className="text-2xl font-serif font-bold text-hoplon-black mb-3 group-hover:text-hoplon-garnet transition-colors duration-300">
+                <div className="p-6 relative">
+                  {/* Decorative elements */}
+                  <div className="absolute top-2 left-2">
+                    <div className="w-8 h-1 bg-hoplon-black/20"></div>
+                  </div>
+                  <div className="absolute bottom-2 right-2">
+                    <div className="w-6 h-6 border border-hoplon-black/20 rotate-45"></div>
+                  </div>
+
+                  <motion.h3
+                    className="text-xl font-cinzel font-bold text-hoplon-black mb-3 group-hover:text-hoplon-black/90 transition-colors duration-300 uppercase tracking-wider"
+                    whileHover={{ scale: 1.02 }}
+                  >
                     {category.title}
                   </motion.h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+
+                  <div className="w-12 h-0.5 bg-hoplon-black/30 mb-3 group-hover:w-16 transition-all duration-300"></div>
+
+                  <p className="text-hoplon-black/90 leading-relaxed font-medium group-hover:text-hoplon-black transition-colors duration-300 text-sm">
                     {category.description}
                   </p>
                 </div>
 
-                {/* Hover Effect Overlay */}
-                <motion.div className="absolute inset-0 bg-gradient-to-r from-hoplon-gold/10 to-hoplon-garnet/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Enhanced hover effects */}
+                <motion.div className="absolute inset-0 bg-gradient-to-r from-hoplon-gold/10 to-hoplon-gold-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl" />
 
-                {/* Gold Border on Hover */}
-                <motion.div className="absolute inset-0 border-2 border-hoplon-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none" />
+                {/* Subtle glow effect */}
+                <motion.div className="absolute -inset-1 bg-gradient-to-r from-hoplon-gold via-hoplon-gold-dark to-hoplon-gold rounded-xl opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300 -z-10" />
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Call to Action Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="bg-gradient-to-br from-hoplon-gold/20 to-hoplon-gold-dark/30 backdrop-blur-sm rounded-xl p-8 border border-hoplon-gold/40 hover:border-hoplon-gold/60 hover:shadow-lg hover:shadow-hoplon-gold/30 transition-all duration-300 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-cinzel font-bold text-hoplon-white mb-4 tracking-wider">
+              ¿Interesado en nuestros servicios?
+            </h3>
+            <p className="text-hoplon-gold/90 mb-6 font-medium">
+              Contactanos para conocer más detalles y crear la experiencia
+              perfecta para ti
+            </p>
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto"></div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
