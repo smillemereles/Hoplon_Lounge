@@ -1,30 +1,40 @@
 import { motion } from "framer-motion";
 import HoplonNavigation from "src/components/HoplonNavigation";
 import HoplonFooter from "src/components/HoplonFooter";
-
+import { useEffect } from "react";
 const parrilla = [
-   {
+  {
     name: "Mix de Chorizos y Chipa Guazú Cremoso",
     price: "Gs.60.000",
-    ingredients: "Tres chorizos asados, intensos y ahumados, acompañados por una porción de chipa guazú cremosa que une la dulzura del choclo con la riqueza del queso Paraguayo. Una combinación clásica que reconforta y conquista."
+    ingredients:
+      "Tres chorizos asados, intensos y ahumados, acompañados por una porción de chipa guazú cremosa que une la dulzura del choclo con la riqueza del queso Paraguayo. Una combinación clásica que reconforta y conquista.",
   },
   {
     name: "Ojo de Bife y Vegetales Asados",
     price: "Gs.80.000",
-    ingredients: "Corte generoso de ojo de bife de 300gr, sellado a la parrilla para lograr una jugosidad profunda. Se acompaña de vegetales frescos asados al fuego. Una porción individual para los que respetan la carne... y la tratan como se merece."
+    ingredients:
+      "Corte generoso de ojo de bife de 300gr, sellado a la parrilla para lograr una jugosidad profunda. Se acompaña de vegetales frescos asados al fuego. Una porción individual para los que respetan la carne... y la tratan como se merece.",
   },
   {
     name: "Picaña, Papas Fritas y Ensalada Verde",
     price: "Gs.100.000",
-    ingredients: "Picaña jugosa, cocinada al punto y cortada en finas fetas para realzar su sabor. Acompañada de papas fritas crujientes y una ensalada verde fresca. Una combinación simple, precisa y fiel al fuego."
+    ingredients:
+      "Picaña jugosa, cocinada al punto y cortada en finas fetas para realzar su sabor. Acompañada de papas fritas crujientes y una ensalada verde fresca. Una combinación simple, precisa y fiel al fuego.",
   },
   {
     name: "Parrilla Hoplon Familiar",
     price: "Gs.215.000",
-    ingredients: "Tres cortes jugosos de picaña, chorizo y chorizos parrilleros, sellados a la brasa hasta alcanzar su punto de gloria. Se acompañan con arroz pilaf, papas fritas doradas, ensalada rusa y salsas tradicionales: chimichurri, criolla y picante. Una alianza de fuego y sabor para conquistar la mesa."
-  }
+    ingredients:
+      "Tres cortes jugosos de picaña, chorizo y chorizos parrilleros, sellados a la brasa hasta alcanzar su punto de gloria. Se acompañan con arroz pilaf, papas fritas doradas, ensalada rusa y salsas tradicionales: chimichurri, criolla y picante. Una alianza de fuego y sabor para conquistar la mesa.",
+  },
 ];
+
 const MenuParrilla = () => {
+  // Scroll al top cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
       {/* Background decorative elements */}
@@ -35,9 +45,9 @@ const MenuParrilla = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
         <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
       </div>
-      
+
       <HoplonNavigation />
-      
+
       <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
@@ -51,7 +61,7 @@ const MenuParrilla = () => {
             </h1>
             <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-6"></div>
             <p className="text-xl text-hoplon-gold font-medium max-w-2xl mx-auto">
-                Carnes y pescados de la más alta calidad
+              Carnes y pescados de la más alta calidad
             </p>
           </motion.div>
 

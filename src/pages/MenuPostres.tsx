@@ -6,33 +6,43 @@ const postres = [
   {
     name: "Brownie de chocolate",
     price: "35.000gs",
-    ingredients: "Chocolate Valrhona, corazón líquido, helado de vainilla bourbon"
+    ingredients:
+      "Chocolate Valrhona, corazón líquido, helado de vainilla bourbon",
   },
   {
     name: "Crema Catalana Trufada",
     price: "28.000gs",
-    ingredients: "Crema catalana tradicional, trufa negra, azúcar caramelizado"
+    ingredients: "Crema catalana tradicional, trufa negra, azúcar caramelizado",
   },
   {
     name: "Tiramisu de Autor",
     price: "28.000gs",
-    ingredients: "Mascarpone italiano, café espresso, cacao en polvo, bizcocho de soletilla"
+    ingredients:
+      "Mascarpone italiano, café espresso, cacao en polvo, bizcocho de soletilla",
   },
   {
     name: "Helado Artesanal Trío",
     price: "28.000gs",
-    ingredients: "Tres sabores de temporada, chocolate, vainilla, frutos rojos"
+    ingredients: "Tres sabores de temporada, chocolate, vainilla, frutos rojos",
   },
   {
     name: "Budin de Pan Casero",
     price: "20.000gs",
-    ingredients: "Huevos camperos, leche fresca, caramelo líquido, nata montada"
+    ingredients:
+      "Huevos camperos, leche fresca, caramelo líquido, nata montada",
+  },
+  {
+    name: "Tarta de la Abuela",
+    price: "30.000gs",
+    ingredients:
+      "Capas de galleta, dulce de leche artesanal, crema chantilly, chocolate rallado",
   },
   {
     name: "Crepe de dulce de leche con helado y coñac flameado",
     price: "35.000gs",
-    ingredients: "Crepe francés, dulce de leche artesanal, helado de crema, coñac flameado"
-  }
+    ingredients:
+      "Crepe francés, dulce de leche artesanal, helado de crema, coñac flameado",
+  },
 ];
 
 const MenuPostres = () => {
@@ -46,9 +56,9 @@ const MenuPostres = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 opacity-10">
         <div className="w-full h-full bg-hoplon-garnet rounded-full blur-xl"></div>
       </div>
-      
+
       <HoplonNavigation />
-      
+
       <section className="pt-32 pb-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
