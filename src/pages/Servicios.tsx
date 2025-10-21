@@ -34,7 +34,7 @@ const services = [
     title: "Cumpleaños",
     description:
       "Haz de tu cumpleaños una experiencia legendaria. Tortas especiales y sorpresas únicas.",
-    image: "/cumpleaños.jpg", // ✅ Corregido: "image" en minúscula
+    image: "/FIESTADECUMPLEANHOS.JPG", // ✅ Corregido: "image" en minúscula
     features: [
       "Torta personalizada",
       "Decoración especial",
