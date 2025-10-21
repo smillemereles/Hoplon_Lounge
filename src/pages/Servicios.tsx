@@ -1,41 +1,60 @@
 import { motion } from "framer-motion";
-import { Button } from "src/components/ui/button";
-import HoplonNavigation from "src/components/HoplonNavigation";
-import HoplonFooter from "src/components/HoplonFooter";
+import { Button } from "@/components/ui/button";
+import HoplonNavigation from "@/components/HoplonNavigation";
+import HoplonFooter from "@/components/HoplonFooter";
+import { useEffect } from "react";
 
 const services = [
   {
     title: "Eventos Privados,Experiencia Coworking",
-    description: "Espacios exclusivos para celebraciones corporativas y reuniones especiales. Menús personalizados y servicio de primera clase.",
+    description:
+      "Espacios exclusivos para celebraciones corporativas y reuniones especiales. Menús personalizados y servicio de primera clase.",
     image: "/vistadecamarotes.JPG",
-    features: ["Menús personalizados", "Servicio exclusivo", "Espacios privados"]
+    features: [
+      "Menús personalizados",
+      "Servicio exclusivo",
+      "Espacios privados",
+    ],
   },
   {
     title: "Reservas Especiales",
-    description: "Experiencias gastronómicas únicas con maridajes especiales y degustaciones de vinos premium.",
-    image: "/mesaslounge.jpg",
-    features: ["Maridajes únicos", "Degustaciones", "Mesa preferencial"]
+    description:
+      "Experiencias gastronómicas únicas con maridajes especiales y degustaciones de vinos premium.",
+    image: "/esenario2.jpg.JPG",
+    features: ["Maridajes únicos", "Degustaciones", "Mesa preferencial"],
   },
   {
     title: "Fiestas",
-    description: "Celebra tus momentos especiales en un ambiente único. Música, cocteles y gastronomía de primer nivel.",
-    image: "",
-    features: ["Música en vivo", "Barra libre premium", "Decoración temática"]
+    description:
+      "Celebra tus momentos especiales en un ambiente único. Música, cocteles y gastronomía de primer nivel.",
+    image: "/fiestas.jpg",
+    features: ["Música en vivo", "Barra libre premium", "Decoración temática"],
   },
   {
     title: "Cumpleaños",
-    description: "Haz de tu cumpleaños una experiencia legendaria. Tortas especiales y sorpresas únicas.",
-    Image:"",
-    features: ["Torta personalizada", "Decoración especial", "Menú de cumpleaños"]
-  }
+    description:
+      "Haz de tu cumpleaños una experiencia legendaria. Tortas especiales y sorpresas únicas.",
+    image: "/cumpleaños.jpg", // ✅ Corregido: "image" en minúscula
+    features: [
+      "Torta personalizada",
+      "Decoración especial",
+      "Menú de cumpleaños",
+    ],
+  },
 ];
 
 const Servicios = () => {
+  // Scroll al top cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleReservarEvento = () => {
-    const message = "Hola, quiero consultar sobre reservar un evento especial en Hoplon Lounge";
-    const phoneNumber = "549XXXXXXXXX"; // Reemplazar con el número real
-    const whatsappUrl = `https://wa.link/nmczzr?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const message =
+      "Hola, quiero consultar sobre reservar un evento especial en Hoplon Lounge";
+    const phoneNumber = "595994467566";
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=%2B${phoneNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -49,9 +68,9 @@ const Servicios = () => {
         <div className="absolute top-60 left-1/3 w-1 h-1 bg-hoplon-gold/25 rounded-full"></div>
         <div className="absolute bottom-20 right-1/4 w-2 h-2 bg-hoplon-gold/20 rounded-full"></div>
       </div>
-      
+
       <HoplonNavigation />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-24 relative">
         {/* Elementos decorativos flotantes */}
@@ -64,7 +83,7 @@ const Servicios = () => {
         <div className="absolute bottom-20 left-20 opacity-25">
           <div className="w-4 h-4 border border-hoplon-gold/50 rotate-45"></div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -104,7 +123,7 @@ const Servicios = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 className={`relative bg-gradient-to-br from-hoplon-black/80 to-hoplon-garnet/20 backdrop-blur-sm rounded-3xl p-8 border border-hoplon-gold/20 shadow-2xl ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 } flex flex-col lg:flex-row items-center gap-12`}
               >
                 {/* Decorative elements */}
@@ -151,7 +170,7 @@ const Servicios = () => {
                       {service.title}
                     </motion.h2>
                   </div>
-                  
+
                   <p className="text-lg text-hoplon-white/80 leading-relaxed font-light">
                     {service.description}
                   </p>
@@ -162,11 +181,16 @@ const Servicios = () => {
                         key={featureIndex}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: featureIndex * 0.1,
+                        }}
                         className="flex items-center space-x-3 bg-hoplon-black/30 p-3 rounded-lg border border-hoplon-gold/10"
                       >
                         <div className="w-2 h-2 bg-hoplon-gold rounded-full"></div>
-                        <span className="text-hoplon-white font-medium text-sm">{feature}</span>
+                        <span className="text-hoplon-white font-medium text-sm">
+                          {feature}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
@@ -197,15 +221,18 @@ const Servicios = () => {
             className="relative mt-32 mb-24 h-96 rounded-3xl overflow-hidden"
             style={{
               backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/upscalemedia-transformed (1).png')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center max-w-4xl px-8">
-                <div className="text-6xl text-hoplon-gold font-cinzel mb-6">"</div>
+                <div className="text-6xl text-hoplon-gold font-cinzel mb-6">
+                  "
+                </div>
                 <p className="text-2xl md:text-3xl text-hoplon-white font-light italic leading-relaxed mb-8">
-                  "En Hoplon Lounge, creamos momentos deliciosos que abrazan el corazón y perduran como recetas de familia"
+                  "En Hoplon Lounge, creamos momentos deliciosos que abrazan el
+                  corazón y perduran como recetas de familia"
                 </p>
                 <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-4"></div>
                 <p className="text-hoplon-gold text-lg font-medium tracking-widest uppercase">
@@ -238,7 +265,7 @@ const Servicios = () => {
             </div>
 
             <div className="relative z-10">
-              <motion.h3 
+              <motion.h3
                 className="text-4xl md:text-5xl font-cinzel font-bold text-hoplon-white mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -247,13 +274,14 @@ const Servicios = () => {
                 ¿Listo para una Experiencia Legendaria?
               </motion.h3>
               <div className="w-32 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-8"></div>
-              <motion.p 
+              <motion.p
                 className="text-xl text-hoplon-gold/90 mb-12 font-light max-w-2xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Contacta con nosotros y crearemos el evento perfecto que refleje la grandeza de tus celebraciones más importantes
+                Contacta con nosotros y crearemos el evento perfecto que refleje
+                la grandeza de tus celebraciones más importantes
               </motion.p>
               <motion.div
                 whileHover={{ scale: 1.05 }}

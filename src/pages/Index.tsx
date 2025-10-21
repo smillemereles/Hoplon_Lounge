@@ -2,14 +2,14 @@ import { Helmet } from "react-helmet";
 import HoplonNavigation from "@/components/HoplonNavigation";
 import HoplonHero from "@/components/HoplonHero";
 import HoplonHistoria from "@/components/HoplonHistoria";
-import HoplonMenuSemanal from "@/components/HoplonMenuSemanal";
+// import HoplonMenuSemanal from "@/components/HoplonMenuSemanal"; // Temporalmente desactivado
 import HoplonMenuCards from "@/components/HoplonMenuCards";
 import HoplonReserva from "@/components/HoplonReserva";
 import HoplonFooter from "@/components/HoplonFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-hoplon-black">
       <Helmet>
         <title>Hoplon Lounge – Restaurante en Ciudad del Este</title>
         <meta
@@ -56,7 +56,7 @@ const Index = () => {
       <HoplonNavigation />
       <HoplonHero />
       <HoplonHistoria />
-      <HoplonMenuSemanal />
+      {/* <HoplonMenuSemanal /> */} {/* Temporalmente desactivado */}
       <HoplonMenuCards />
       <HoplonReserva />
       <HoplonFooter />
