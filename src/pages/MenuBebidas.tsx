@@ -1,46 +1,59 @@
 import { motion } from "framer-motion";
-import HoplonNavigation from "src/components/HoplonNavigation";
-import HoplonFooter from "src/components/HoplonFooter";
+import HoplonNavigation from "@/components/HoplonNavigation";
+import HoplonFooter from "@/components/HoplonFooter";
+import { useEffect } from "react";
 
 const bebidas = [
- {
+  {
     name: "Caipirinha",
     price: "30.000Gs",
-    ingredients: "La esencia de la costa carioca brasilera: cachaza mezclada a la cachaça con un galope embriagador de menta con la brisa ácida de limón. Resultado: los sabores auténticos clásicos sobre un trago de RG."
+    ingredients:
+      "La esencia de la costa carioca brasilera: cachaza mezclada a la cachaça con un galope embriagador de menta con la brisa ácida de limón. Resultado: los sabores auténticos clásicos sobre un trago de RG.",
   },
   {
     name: "Daiquiri Frozen de Frutilla",
     price: "35.000Gs",
-    ingredients: "Un clásico reverdado: la dulzura de las frutillas frescas se fusiona con la acidez perfecta de la lima y la fuerza sutil del ron blanco. Servido con hielo fracturado, sabor perfecto para los amantes de los momentos frescos y exquisitos."
+    ingredients:
+      "Un clásico reverdado: la dulzura de las frutillas frescas se fusiona con la acidez perfecta de la lima y la fuerza sutil del ron blanco. Servido con hielo fracturado, sabor perfecto para los amantes de los momentos frescos y exquisitos.",
   },
   {
     name: "Piña Colada",
     price: "35.000Gs",
-    ingredients: "Descubre el misterio de un clásico tropical: cremoso... y piña vibrante se fusionan con el aroma del coco tostado. Luces de coco y ron cristalino coronan esta experiencia refrescante."
+    ingredients:
+      "Descubre el misterio de un clásico tropical: cremoso... y piña vibrante se fusionan con el aroma del coco tostado. Luces de coco y ron cristalino coronan esta experiencia refrescante.",
   },
   {
     name: "Moscow Mule",
     price: "45.000Gs",
-    ingredients: "Vodka, jengibre picante y cítrico en una mezcla refrescante y vibrante. Servido en vaso de cobre con menta y naranja deshidratada. Una experiencia única para conquistar la noche."
+    ingredients:
+      "Vodka, jengibre picante y cítrico en una mezcla refrescante y vibrante. Servido en vaso de cobre con menta y naranja deshidratada. Una experiencia única para conquistar la noche.",
   },
   {
     name: "Aperol Spritz Premium",
     price: "35.000Gs",
-    ingredients: "Aperol Spritz Premium: vibrante rebarbado con un toque de naranja fresca decorada con frutas frescas como frambuesa, durazno, lima y menta, en una copa balanceada y llamativa."
+    ingredients:
+      "Aperol Spritz Premium: vibrante rebarbado con un toque de naranja fresca decorada con frutas frescas como frambuesa, durazno, lima y menta, en una copa balanceada y llamativa.",
   },
   {
     name: "Mocktail (Bebida Sin Alcohol)",
     price: "30.000Gs",
-    ingredients: "El Néctar Helado de la Victoria celebra sus frutos: Sprite con menta fresca, frozen de mango, frambuesas y limón. Refrescante y vibrante, es el brindis especial por Esparta de corona con abanico de mango y cereza, ofreciendo sabor más fresco del día."
+    ingredients:
+      "El Néctar Helado de la Victoria celebra sus frutos: Sprite con menta fresca, frozen de mango, frambuesas y limón. Refrescante y vibrante, es el brindis especial por Esparta de corona con abanico de mango y cereza, ofreciendo sabor más fresco del día.",
   },
   {
     name: "Gin Tónico Cítrico",
     price: "30.000Gs",
-    ingredients: "La frescura del gin realzada con vibrantes notas de cítricos. Un clásico revitalizado. Servido con lima, ralladura de naranja, una rama de romero, un cóctel refrescante y aromático."
-  }
+    ingredients:
+      "La frescura del gin realzada con vibrantes notas de cítricos. Un clásico revitalizado. Servido con lima, ralladura de naranja, una rama de romero, un cóctel refrescante y aromático.",
+  },
 ];
 
 const MenuBebidas = () => {
+  // Scroll al top cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-hoplon-black relative overflow-hidden">
       {/* Background decorative elements */}
@@ -67,7 +80,7 @@ const MenuBebidas = () => {
             </h1>
             <div className="w-24 h-1 bg-hoplon-gold mx-auto mb-6"></div>
             <p className="text-xl text-hoplon-gold font-medium max-w-2xl mx-auto">
-              Vinos, cocteles y destilados de primera calidad
+              Vinos, cócteles y destilados de primera calidad
             </p>
           </motion.div>
 
