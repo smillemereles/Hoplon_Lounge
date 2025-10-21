@@ -1,43 +1,44 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import Gallery from "./pages/Gallery";
 import MenuEntradas from "./pages/MenuEntradas";
-import MenuPlatos from "./pages/MenuPlatos";
+import MenuPicadas from "./pages/MenuPicadas";
 import MenuBebidas from "./pages/MenuBebidas";
 import MenuPostres from "./pages/MenuPostres";
-import Gallery from "./pages/Gallery";
 import Servicios from "./pages/Servicios";
 import NotFound from "./pages/NotFound";
-import MenuPicadas from "./pages/MenuPicadas";
+import MenuPlatos from "./pages/MenuPlatos";
 import MenuParrilla from "./pages/MenuParrilla";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/menu/entradas" element={<MenuEntradas />} />
-          <Route path="/menu/platos" element={<MenuPlatos />} />
-          <Route path="/menu/bebidas" element={<MenuBebidas />} />
-          <Route path="/menu/postres" element={<MenuPostres />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/menu/picadas" element={<MenuPicadas />} />
-          <Route path="/menu/parrilla" element={<MenuParrilla />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/menu-entradas" element={<MenuEntradas />} />
+            <Route path="/menu-picadas" element={<MenuPicadas />} />
+            <Route path="/menu-bebidas" element={<MenuBebidas />} />
+            <Route path="/menu-postres" element={<MenuPostres />} />
+            <Route path="/menu-platos" element={<MenuPlatos />} />
+            <Route path="/menu-parrilla" element={<MenuParrilla />} />
+            <Route path="/servicios" element={<Servicios />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
 
 export default App;

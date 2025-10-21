@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useScrollNavigation } from "@/hooks/useScrollNavigation";
-import {
-  ROUTES,
-  NAVIGATION_ITEMS,
-  SECTIONS,
-  NAVBAR_SCROLL_THRESHOLD,
-  ANIMATION_DURATIONS,
-} from "@/lib/constants";
+import { Link, useLocation } from "react-router-dom";
+
+const menuItems = [
+  { name: "Entradas", path: "/menu-entradas" },
+  { name: "Picadas", path: "/menu-picadas" },
+  { name: "Bebidas", path: "/menu-bebidas" },
+  { name: "Parrilla", path: "/menu-parrilla" },
+  { name: "Platos", path: "/menu-platos" },
+  { name: "Postres", path: "/menu-postres" },
+];
 
 const HoplonNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { handleNavigation } = useScrollNavigation();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > NAVBAR_SCROLL_THRESHOLD);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -37,35 +39,34 @@ const HoplonNavigation = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleLogoClick = () => {
-    if (window.location.pathname === ROUTES.HOME) {
-      handleNavigation(ROUTES.HOME, SECTIONS.HERO);
-    } else {
-      handleNavigation(ROUTES.HOME);
-    }
+  // Cerrar menús cuando cambia la ruta
+  useEffect(() => {
     setIsMobileMenuOpen(false);
-  };
+    setIsMenuOpen(false);
+  }, [location]);
 
-  const handleInicioClick = () => {
-    if (window.location.pathname === ROUTES.HOME) {
-      handleNavigation(ROUTES.HOME, SECTIONS.HERO);
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     } else {
-      handleNavigation(ROUTES.HOME);
+      window.location.href = `/#${sectionId}`;
     }
     setIsMobileMenuOpen(false);
   };
 
   const handleContactoClick = () => {
-    if (window.location.pathname === ROUTES.HOME) {
-      handleNavigation(ROUTES.HOME, SECTIONS.RESERVA);
-    } else {
-      handleNavigation(ROUTES.HOME, SECTIONS.RESERVA);
-    }
-    setIsMobileMenuOpen(false);
+    scrollToSection("reserva");
   };
 
-  const handleMobileNavigation = (path: string, section?: string) => {
-    handleNavigation(path, section);
+  const handleInicioClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.location.href = "/";
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -86,13 +87,14 @@ const HoplonNavigation = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="cursor-pointer z-60"
-              onClick={handleLogoClick}
             >
-              <img
-                src="/logo-hoplon.png"
-                alt="Hoplon Club Logo"
-                className="h-12 w-auto"
-              />
+              <Link to="/">
+                <img
+                  src="/logo-hoplon.png"
+                  alt="Hoplon Club Logo"
+                  className="h-12 w-auto"
+                />
+              </Link>
             </motion.div>
 
             {/* Menú de escritorio */}
@@ -130,40 +132,44 @@ const HoplonNavigation = () => {
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute top-full left-0 mt-2 bg-hoplon-black/95 backdrop-blur-lg rounded-lg shadow-xl border border-hoplon-gold/20 min-w-[200px]"
                     >
-                      {NAVIGATION_ITEMS.map(item => (
-                        <button
+                      {menuItems.map(item => (
+                        <Link
                           key={item.name}
-                          onClick={() => {
-                            handleNavigation(item.path);
-                            setIsMenuOpen(false);
-                          }}
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
                           className="block w-full text-left px-4 py-3 text-hoplon-white hover:text-hoplon-gold hover:bg-hoplon-gold/10 transition-colors first:rounded-t-lg last:rounded-b-lg"
                         >
                           {item.name}
-                        </button>
+                        </Link>
                       ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleNavigation(ROUTES.GALLERY)}
-                className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
               >
-                Gallery
-              </motion.button>
+                <Link
+                  to="/gallery"
+                  className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
+                >
+                  Gallery
+                </Link>
+              </motion.div>
 
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleNavigation(ROUTES.SERVICIOS)}
-                className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
               >
-                Servicios
-              </motion.button>
+                <Link
+                  to="/servicios"
+                  className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
+                >
+                  Servicios
+                </Link>
+              </motion.div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -266,37 +272,49 @@ const HoplonNavigation = () => {
                         Menú
                       </h3>
                       <div className="flex flex-col space-y-3 ml-4">
-                        {NAVIGATION_ITEMS.map(item => (
-                          <motion.button
+                        {menuItems.map(item => (
+                          <motion.div
                             key={item.name}
                             whileHover={{ x: 10 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => handleMobileNavigation(item.path)}
-                            className="text-left text-hoplon-white hover:text-hoplon-gold transition-colors duration-300"
                           >
-                            {item.name}
-                          </motion.button>
+                            <Link
+                              to={item.path}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block text-hoplon-white hover:text-hoplon-gold transition-colors duration-300"
+                            >
+                              {item.name}
+                            </Link>
+                          </motion.div>
                         ))}
                       </div>
                     </div>
 
-                    <motion.button
+                    <motion.div
                       whileHover={{ x: 10 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => handleMobileNavigation(ROUTES.GALLERY)}
-                      className="text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
                     >
-                      Gallery
-                    </motion.button>
+                      <Link
+                        to="/servicios"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
+                      >
+                        Servicios
+                      </Link>
+                    </motion.div>
 
-                    <motion.button
+                    <motion.div
                       whileHover={{ x: 10 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => handleMobileNavigation(ROUTES.SERVICIOS)}
-                      className="text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
                     >
-                      Servicios
-                    </motion.button>
+                      <Link
+                        to="/gallery"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
+                      >
+                        Gallery
+                      </Link>
+                    </motion.div>
 
                     <motion.button
                       whileHover={{ x: 10 }}
