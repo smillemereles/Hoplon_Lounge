@@ -111,3 +111,9 @@ public/Thumbs.db
 # Ensure public folder is included (add this line to be explicit)
 !public/
 !public/**/*
+# Backup directories
+backup-images-*/
+
+# Analysis scripts
+analyze-images.mjs
+delete-unused-images.sh
