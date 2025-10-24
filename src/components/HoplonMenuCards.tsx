@@ -1,27 +1,37 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const menuCategories = [
   {
     title: "PARAGUAYAN NIGHT SHOW",
     description:
       " Nuestro show de danzas paraguayas, donde la cultura y la tradición se unen para ofrecerte una velada inolvidable. Sumérgete en la música y el baile mientras degustas nuestros platos típicos.",
-    image: "/bailarinas4.jpg",
+    image: "/pose.jpg",
+    route: "/paraguayan-night-show",
   },
   {
     title: "LOUNGE BAR",
     description:
       " Disfruta de una experiencia única en nuestro Lounge Bar, donde la elegancia y el confort se unen para ofrecerte un ambiente exclusivo. Saborea nuestros cócteles artesanales y una selección de vinos premium mientras te relajas en un entorno sofisticado.",
     image: "/LOUNGE.jpg",
+    route: "",
   },
   {
     title: "CATERING & EVENTS",
     description:
       "Ofrecemos servicios de catering para eventos privados y corporativos, adaptandonos a tus necesidades y presupuesto. Desde cenas elegantes hasta fiestas informales, nuestro equipo se encargará de cada detalle para que tu evento sea un éxito.",
     image: "/CATERING.JPG",
+    route: "/servicios",
   },
 ];
 
 const HoplonMenuCards = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (route: string) => {
+    navigate(route);
+  };
+
   return (
     <section
       id="menu"
@@ -83,6 +93,7 @@ const HoplonMenuCards = () => {
                 transition: { duration: 0.3 },
               }}
               className="group cursor-pointer"
+              onClick={() => handleCardClick(category.route)}
             >
               <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-hoplon-gold/95 to-hoplon-gold-dark/90 backdrop-blur-sm shadow-2xl hover:shadow-xl hover:shadow-hoplon-gold/40 transition-all duration-500 border border-hoplon-gold/30 hover:border-hoplon-gold/60">
                 {/* Image */}
@@ -97,6 +108,13 @@ const HoplonMenuCards = () => {
 
                   {/* Decorative overlay on image */}
                   <div className="absolute inset-0 bg-gradient-to-br from-hoplon-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* Click indicator */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-hoplon-gold/90 text-hoplon-black px-4 py-2 rounded-lg font-bold text-sm uppercase tracking-wider">
+                      Ver más
+                    </div>
+                  </div>
                 </div>
 
                 {/* Content */}

@@ -51,7 +51,7 @@ const Servicios = () => {
 
   const handleReservarEvento = () => {
     const message =
-      "Hola, quiero consultar sobre reservar un evento especial en Hoplon Lounge";
+      "Hola, quiero consultar sobre reservar un evento especial en Hoplon Club";
     const phoneNumber = "595994467566";
     const whatsappUrl = `https://api.whatsapp.com/send/?phone=%2B${phoneNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
     window.open(whatsappUrl, "_blank");
