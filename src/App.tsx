@@ -13,6 +13,7 @@ import Servicios from "./pages/Servicios";
 import NotFound from "./pages/NotFound";
 import MenuPlatos from "./pages/MenuPlatos";
 import MenuParrilla from "./pages/MenuParrilla";
+import ParaguayanNightShow from "./pages/ParaguayanNightShow";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,10 @@ function App() {
             <Route path="/menu-postres" element={<MenuPostres />} />
             <Route path="/menu-platos" element={<MenuPlatos />} />
             <Route path="/menu-parrilla" element={<MenuParrilla />} />
+            <Route
+              path="/paraguayan-night-show"
+              element={<ParaguayanNightShow />}
+            />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

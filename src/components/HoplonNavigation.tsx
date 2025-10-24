@@ -3,13 +3,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-const menuItems = [
-  { name: "Entradas", path: "/menu-entradas" },
-  { name: "Picadas", path: "/menu-picadas" },
-  { name: "Bebidas", path: "/menu-bebidas" },
-  { name: "Parrilla", path: "/menu-parrilla" },
-  { name: "Platos", path: "/menu-platos" },
-  { name: "Postres", path: "/menu-postres" },
+const navigationItems = [
+  { name: "INICIO", href: "/" },
+  {
+    name: "MENÚ",
+    href: "#",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Entradas", href: "/menu-entradas" },
+      { name: "Parrilla", href: "/menu-parrilla" },
+      { name: "Bebidas", href: "/menu-bebidas" },
+      { name: "Postres", href: "/menu-postres" },
+    ],
+  },
+  { name: "PARAGUAYAN NIGHT SHOW", href: "/paraguayan-night-show" }, // Nueva entrada
+  { name: "SERVICIOS", href: "/servicios" },
+  { name: "GALERÍA", href: "/gallery" },
 ];
 
 const HoplonNavigation = () => {
@@ -132,16 +141,18 @@ const HoplonNavigation = () => {
                       exit={{ opacity: 0, y: -10 }}
                       className="absolute top-full left-0 mt-2 bg-hoplon-black/95 backdrop-blur-lg rounded-lg shadow-xl border border-hoplon-gold/20 min-w-[200px]"
                     >
-                      {menuItems.map(item => (
-                        <Link
-                          key={item.name}
-                          to={item.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className="block w-full text-left px-4 py-3 text-hoplon-white hover:text-hoplon-gold hover:bg-hoplon-gold/10 transition-colors first:rounded-t-lg last:rounded-b-lg"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+                      {navigationItems
+                        .find(item => item.name === "MENÚ")
+                        ?.dropdownItems?.map(item => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block w-full text-left px-4 py-3 text-hoplon-white hover:text-hoplon-gold hover:bg-hoplon-gold/10 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -168,6 +179,18 @@ const HoplonNavigation = () => {
                   className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
                 >
                   Servicios
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/paraguayan-night-show"
+                  className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
+                >
+                  Paraguayan Night Show
                 </Link>
               </motion.div>
 
@@ -272,21 +295,23 @@ const HoplonNavigation = () => {
                         Menú
                       </h3>
                       <div className="flex flex-col space-y-3 ml-4">
-                        {menuItems.map(item => (
-                          <motion.div
-                            key={item.name}
-                            whileHover={{ x: 10 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <Link
-                              to={item.path}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="block text-hoplon-white hover:text-hoplon-gold transition-colors duration-300"
+                        {navigationItems
+                          .find(item => item.name === "MENÚ")
+                          ?.dropdownItems?.map(item => (
+                            <motion.div
+                              key={item.name}
+                              whileHover={{ x: 10 }}
+                              whileTap={{ scale: 0.95 }}
                             >
-                              {item.name}
-                            </Link>
-                          </motion.div>
-                        ))}
+                              <Link
+                                to={item.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block text-hoplon-white hover:text-hoplon-gold transition-colors duration-300"
+                              >
+                                {item.name}
+                              </Link>
+                            </motion.div>
+                          ))}
                       </div>
                     </div>
 
@@ -313,6 +338,19 @@ const HoplonNavigation = () => {
                         className="block text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
                       >
                         Gallery
+                      </Link>
+                    </motion.div>
+
+                    <motion.div
+                      whileHover={{ x: 10 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Link
+                        to="/paraguayan-night-show"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
+                      >
+                        Paraguayan Night Show
                       </Link>
                     </motion.div>
 
