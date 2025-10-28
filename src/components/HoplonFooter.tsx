@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import { Instagram, Facebook, MessageCircle } from "lucide-react";
 
 const HoplonFooter = () => {
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/hoplonclubpy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/hoplonclub", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Youtube, href: "#", label: "YouTube" }
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/hoplonclubpy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      label: "Instagram",
+    },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/hoplonclub",
+      label: "Facebook",
+    },
+    {
+      icon: MessageCircle,
+      href: "https://wa.me/595981234567",
+      label: "WhatsApp",
+    },
   ];
 
   return (
@@ -20,13 +31,13 @@ const HoplonFooter = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <motion.h3 
+          <motion.h3
             className="text-3xl font-serif font-bold text-hoplon-gold mb-6"
             whileHover={{ scale: 1.05 }}
           >
             HOPLON LOUNGE
           </motion.h3>
-          
+
           <div className="flex justify-center space-x-6 mb-8">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -35,10 +46,10 @@ const HoplonFooter = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-hoplon-white/10 rounded-full flex items-center justify-center hover:bg-hoplon-gold hover:text-hoplon-black transition-all duration-300"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   rotate: 5,
-                  boxShadow: "0 0 20px hsl(var(--hoplon-gold) / 0.4)"
+                  boxShadow: "0 0 20px hsl(var(--hoplon-gold) / 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -63,9 +74,9 @@ const HoplonFooter = () => {
         >
           {[
             "Política de Privacidad",
-            "Términos y Condiciones", 
+            "Términos y Condiciones",
             "Política de Cookies",
-            "Contacto"
+            "Contacto",
           ].map((link, index) => (
             <motion.a
               key={index}
