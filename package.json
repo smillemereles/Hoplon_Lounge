@@ -28,7 +28,8 @@
     "test": "echo \"No tests specified\" && exit 0",
     "prepare": "husky install",
     "generate-placeholders": "node scripts/download-images.js",
-    "analyze-images": "node scripts/optimize-images.js"
+    "analyze-images": "node scripts/optimize-images.js",
+    "prebuild": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
