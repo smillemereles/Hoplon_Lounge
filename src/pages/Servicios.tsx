@@ -24,6 +24,18 @@ const services = [
     features: ["Maridajes únicos", "Degustaciones", "Mesa preferencial"],
   },
   {
+    title: "Catering",
+    description:
+      "Lleva la experiencia Hoplon a tu evento. Servicio de catering personalizado con la excelencia gastronómica que nos caracteriza.",
+    image: "/CATERING.JPG",
+    features: [
+      "Servicio a domicilio",
+      "Menús personalizados",
+      "Personal profesional",
+      "Montaje incluido",
+    ],
+  },
+  {
     title: "Fiestas",
     description:
       "Celebra tus momentos especiales en un ambiente único. Música, cocteles y gastronomía de primer nivel.",

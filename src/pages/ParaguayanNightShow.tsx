@@ -116,44 +116,45 @@ const ParaguayanNightShow = () => {
 
       <HoplonNavigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 relative">
-        <div className="container mx-auto px-6 relative z-10">
+      {/* Hero Section - Optimizado para móviles */}
+      <section className="pt-24 md:pt-32 pb-16 md:pb-24 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-20"
           >
             <div className="relative inline-block">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="absolute -top-4 -left-4 w-16 h-16 border-2 border-hoplon-gold/30 rounded-full"
+                className="absolute -top-2 -left-2 md:-top-4 md:-left-4 w-12 h-12 md:w-16 md:h-16 border-2 border-hoplon-gold/30 rounded-full"
               ></motion.div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute -bottom-4 -right-4 w-12 h-12 border border-hoplon-gold/20 rotate-45"
+                className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 w-8 h-8 md:w-12 md:h-12 border border-hoplon-gold/20 rotate-45"
               ></motion.div>
-              <h1 className="text-4xl md:text-7xl font-cinzel font-bold text-hoplon-white mb-6 relative z-10 tracking-wider">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-cinzel font-bold text-hoplon-white mb-4 md:mb-6 relative z-10 tracking-wider px-4">
                 PARAGUAYAN NIGHT SHOW
               </h1>
             </div>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-6"></div>
-            <p className="text-xl text-hoplon-gold font-medium tracking-wide uppercase mb-8">
+            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4 md:mb-6"></div>
+            <p className="text-base sm:text-lg md:text-xl text-hoplon-gold font-medium tracking-wide uppercase mb-6 md:mb-8 px-4">
               Una velada única de cultura, música y gastronomía paraguaya
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
+              className="px-4"
             >
               <Button
                 onClick={handleReservation}
-                className="bg-gradient-to-r from-hoplon-garnet to-hoplon-garnet/80 text-hoplon-white font-bold px-10 py-4 text-lg rounded-xl border border-hoplon-gold/30 hover:shadow-xl hover:shadow-hoplon-garnet/40 transition-all duration-300"
+                className="w-full sm:w-auto bg-gradient-to-r from-hoplon-garnet to-hoplon-garnet/80 text-hoplon-white font-bold px-6 sm:px-10 py-3 md:py-4 text-base md:text-lg rounded-xl border border-hoplon-gold/30 hover:shadow-xl hover:shadow-hoplon-garnet/40 transition-all duration-300"
                 size="lg"
               >
                 RESERVAR AHORA
@@ -161,8 +162,8 @@ const ParaguayanNightShow = () => {
             </motion.div>
           </motion.div>
 
-          {/* Show Details */}
-          <div className="space-y-32">
+          {/* Show Details - Optimizado para móviles */}
+          <div className="space-y-16 md:space-y-32">
             {Object.entries(showDetails).map(([key, detail], index) => (
               <motion.div
                 key={key}
@@ -170,61 +171,58 @@ const ParaguayanNightShow = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`relative bg-gradient-to-br from-hoplon-black/80 to-hoplon-garnet/20 backdrop-blur-sm rounded-3xl p-8 border border-hoplon-gold/20 shadow-2xl ${
+                className={`relative bg-gradient-to-br from-hoplon-black/80 to-hoplon-garnet/20 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 border border-hoplon-gold/20 shadow-2xl ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                } flex flex-col lg:flex-row items-center gap-12`}
+                } flex flex-col lg:flex-row items-center gap-6 md:gap-12`}
               >
                 {/* Decorative elements */}
-                <div className="absolute top-4 left-4">
-                  <div className="w-16 h-1 bg-gradient-to-r from-hoplon-gold to-transparent"></div>
+                <div className="absolute top-2 md:top-4 left-2 md:left-4">
+                  <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-hoplon-gold to-transparent"></div>
                 </div>
-                <div className="absolute bottom-4 right-4">
-                  <div className="w-8 h-8 border border-hoplon-gold/30 rotate-45"></div>
+                <div className="absolute bottom-2 md:bottom-4 right-2 md:right-4">
+                  <div className="w-6 md:w-8 h-6 md:h-8 border border-hoplon-gold/30 rotate-45"></div>
                 </div>
 
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
                   <motion.div
-                    whileHover={{ scale: 1.02, rotateY: 5 }}
-                    className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-hoplon-gold/30"
+                    whileHover={{ scale: 1.02 }}
+                    className="relative overflow-hidden rounded-xl md:rounded-2xl shadow-2xl border-2 border-hoplon-gold/30"
                   >
                     <img
                       src={detail.image}
                       alt={detail.title}
-                      className="w-full h-96 object-cover"
+                      className="w-full h-64 md:h-96 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-hoplon-black/60 via-transparent to-hoplon-gold/10"></div>
-                    <div className="absolute top-4 right-4">
-                      <div className="w-12 h-12 bg-hoplon-gold/20 rounded-full flex items-center justify-center">
-                        <div className="w-6 h-6 border-2 border-hoplon-gold rounded-full"></div>
+                    <div className="absolute top-2 md:top-4 right-2 md:right-4">
+                      <div className="w-8 md:w-12 h-8 md:h-12 bg-hoplon-gold/20 rounded-full flex items-center justify-center">
+                        <div className="w-4 md:w-6 h-4 md:h-6 border-2 border-hoplon-gold rounded-full"></div>
                       </div>
                     </div>
                   </motion.div>
                 </div>
 
                 {/* Content */}
-                <div className="w-full lg:w-1/2 space-y-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-1 bg-hoplon-gold"></div>
-                      <span className="text-hoplon-gold text-sm font-medium tracking-widest uppercase">
+                <div className="w-full lg:w-1/2 space-y-4 md:space-y-8">
+                  <div className="space-y-3 md:space-y-4">
+                    <div className="flex items-center space-x-3 md:space-x-4">
+                      <div className="w-8 md:w-12 h-1 bg-hoplon-gold"></div>
+                      <span className="text-hoplon-gold text-xs md:text-sm font-medium tracking-widest uppercase">
                         EXPERIENCIA CULTURAL
                       </span>
                     </div>
-                    <motion.h2
-                      className="text-3xl md:text-5xl font-cinzel font-bold text-hoplon-white leading-tight"
-                      whileHover={{ color: "hsl(var(--hoplon-gold))" }}
-                    >
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-cinzel font-bold text-hoplon-white leading-tight">
                       {detail.title}
-                    </motion.h2>
+                    </h2>
                   </div>
 
-                  <p className="text-lg text-hoplon-white/80 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base md:text-lg text-hoplon-white/80 leading-relaxed font-light">
                     {detail.description}
                   </p>
 
                   {/* Features */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-3 md:gap-4">
                     {detail.features.map((feature, featureIndex) => (
                       <motion.div
                         key={featureIndex}
@@ -236,8 +234,8 @@ const ParaguayanNightShow = () => {
                         }}
                         className="flex items-center space-x-3 bg-hoplon-black/30 p-3 rounded-lg border border-hoplon-gold/10"
                       >
-                        <div className="w-2 h-2 bg-hoplon-gold rounded-full"></div>
-                        <span className="text-hoplon-white font-medium text-sm">
+                        <div className="w-2 h-2 bg-hoplon-gold rounded-full flex-shrink-0"></div>
+                        <span className="text-hoplon-white font-medium text-sm md:text-base">
                           {feature}
                         </span>
                       </motion.div>
@@ -248,112 +246,31 @@ const ParaguayanNightShow = () => {
             ))}
           </div>
 
-          {/* Packages Section */}
-          {/*<motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mt-32"
-          >
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-cinzel font-bold text-hoplon-white mb-4">
-                PAQUETES DISPONIBLES
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4"></div>
-              <p className="text-xl text-hoplon-gold font-medium">
-                Elige la experiencia perfecta para ti
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages.map((pkg, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className={`relative p-8 rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                    pkg.popular
-                      ? "bg-gradient-to-br from-hoplon-gold/20 to-hoplon-gold-dark/30 border-hoplon-gold shadow-lg shadow-hoplon-gold/20"
-                      : "bg-gradient-to-br from-hoplon-black/80 to-hoplon-garnet/20 border-hoplon-gold/20"
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-hoplon-gold text-hoplon-black px-4 py-1 rounded-full text-sm font-bold uppercase">
-                        Más Popular
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="text-center space-y-4">
-                    <h3 className="text-2xl font-cinzel font-bold text-hoplon-white">
-                      {pkg.name}
-                    </h3>
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-hoplon-gold">
-                        {pkg.price}
-                      </div>
-                      <div className="text-hoplon-white/60 text-sm">
-                        {pkg.duration}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 space-y-3">
-                    {pkg.includes.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className="flex items-center space-x-3"
-                      >
-                        <div className="w-2 h-2 bg-hoplon-gold rounded-full"></div>
-                        <span className="text-hoplon-white/90 text-sm">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8">
-                    <Button
-                      onClick={handleReservation}
-                      className={`w-full font-bold py-3 rounded-xl transition-all duration-300 ${
-                        pkg.popular
-                          ? "bg-hoplon-gold text-hoplon-black hover:bg-hoplon-gold/90"
-                          : "bg-transparent border border-hoplon-gold text-hoplon-gold hover:bg-hoplon-gold hover:text-hoplon-black"
-                      }`}
-                    >
-                      RESERVAR
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>*/}
-
-          {/* Call to Action Final */}
+          {/* Call to Action Final - Optimizado para móviles */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mt-32 p-16 bg-gradient-to-br from-hoplon-garnet via-hoplon-black to-hoplon-garnet/80 rounded-3xl border border-hoplon-gold/30"
+            className="text-center mt-16 md:mt-32 p-6 sm:p-10 md:p-16 bg-gradient-to-br from-hoplon-garnet via-hoplon-black to-hoplon-garnet/80 rounded-2xl md:rounded-3xl border border-hoplon-gold/30"
           >
-            <h3 className="text-3xl md:text-4xl font-cinzel font-bold text-hoplon-white mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-cinzel font-bold text-hoplon-white mb-4 md:mb-6 px-2">
               ¿Listo para una Noche Inolvidable?
             </h3>
-            <div className="w-32 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-8"></div>
-            <p className="text-xl text-hoplon-gold/90 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-6 md:mb-8"></div>
+            <p className="text-base sm:text-lg md:text-xl text-hoplon-gold/90 mb-8 md:mb-12 font-light max-w-2xl mx-auto leading-relaxed px-4">
               Sumérgete en la rica cultura paraguaya con una experiencia única
               que combina música tradicional, danzas folclóricas y la mejor
               gastronomía local
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4"
+            >
               <Button
                 onClick={handleReservation}
-                className="bg-transparent border-2 border-hoplon-gold text-hoplon-gold hover:bg-hoplon-gold hover:text-hoplon-black font-bold px-12 py-4 text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-hoplon-gold/30"
+                className="w-full sm:w-auto bg-transparent border-2 border-hoplon-gold text-hoplon-gold hover:bg-hoplon-gold hover:text-hoplon-black font-bold px-6 sm:px-8 md:px-12 py-3 md:py-4 text-sm sm:text-base md:text-lg rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-hoplon-gold/30"
                 size="lg"
               >
                 CONSULTAR DISPONIBILIDAD
