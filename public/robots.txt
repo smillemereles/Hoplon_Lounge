@@ -11,4 +11,6 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: *
-Allow: /
+Disallow:
+
+Sitemap: https://tudominio.com/sitemap.xml
