@@ -1,0 +1,29 @@
+{
+  "short_name": "Hoplon",
+  "name": "Hoplon Lounge - Ciudad del Este",
+  "description": "Experiencias culturales, shows en vivo y gastronomía paraguaya de primer nivel",
+  "icons": [
+    {
+      "src": "/faviconhoplon/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/faviconhoplon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-hoplon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#C9A24B",
+  "background_color": "#000000",
+  "lang": "es",
+  "orientation": "portrait-primary"
+}

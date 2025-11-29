@@ -11,6 +11,8 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+Disallow: /*.json$
 
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://hoplonclub.com.py/sitemap.xml

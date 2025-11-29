@@ -1,86 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
     <!-- SEO básico -->
-    <title>Hoplon Lounge — Cultura, Música y Gastronomía</title>
+    <title>Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya</title>
     <meta
       name="description"
-      content="Hoplon Lounge — Experiencias culturales, shows y gastronomía en Ciudad del Este. Reserva tu mesa ahora."
+      content="Hoplon Lounge en Ciudad del Este. Experiencias culturales únicas con música en vivo, danzas típicas paraguayas y gastronomía de primer nivel. Reserva tu mesa ahora."
     />
-    <link rel="canonical" href="https://tudominio.com/" />
+    <meta
+      name="keywords"
+      content="Hoplon Lounge, Ciudad del Este, restaurante paraguayo, música en vivo, danzas paraguayas, gastronomía, parrilla, buffet, reservas"
+    />
+    <link rel="canonical" href="https://hoplonclub.com.py/" />
 
-    <!-- Favicon / PWA -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- Favicon con logo de Hoplon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/faviconhoplon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/faviconhoplon/favicon.svg" />
+    <link rel="shortcut icon" href="/faviconhoplon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/faviconhoplon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/faviconhoplon/site.webmanifest" />
     <meta name="theme-color" content="#C9A24B" />
 
     <!-- Open Graph (Facebook / WhatsApp previews) -->
     <meta
       property="og:title"
-      content="Hoplon Lounge — Cultura, Música y Gastronomía"
+      content="Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya"
     />
     <meta
       property="og:description"
-      content="Una velada única de cultura, música y gastronomía paraguaya. Reserva tu mesa."
+      content="Experiencias culturales únicas con música en vivo, danzas típicas paraguayas y gastronomía de primer nivel en Ciudad del Este."
     />
-    <meta property="og:image" content="https://tudominio.com/og-image.jpg" />
     <meta
-      property="og:url"
-      content="https://tudominio.com/paraguayan-night-show"
+      property="og:image"
+      content="https://hoplonclub.com.py/og-image.jpg"
     />
+    <meta property="og:url" content="https://hoplonclub.com.py/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PY" />
+    <meta property="og:site_name" content="Hoplon Lounge" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Hoplon Lounge — Cultura, Música y Gastronomía"
+      content="Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya"
     />
     <meta
       name="twitter:description"
-      content="Una velada única de cultura, música y gastronomía paraguaya. Reserva tu mesa."
+      content="Experiencias culturales únicas en Ciudad del Este. Reserva tu mesa ahora."
     />
-    <meta name="twitter:image" content="https://tudominio.com/og-image.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://hoplonclub.com.py/og-image.jpg"
+    />
 
-    <!-- Google site verification (si te lo da Search Console) -->
-    <!-- <meta name="google-site-verification" content="TU_TOKEN_AQUI" /> -->
-
-    <!-- JSON-LD / Schema.org (LocalBusiness) -->
+    <!-- JSON-LD / Schema.org (Restaurant) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Hoplon Lounge",
-        "image": "https://tudominio.com/og-image.jpg",
-        "@id": "https://tudominio.com/",
-        "url": "https://tudominio.com/",
+        "image": [
+          "https://hoplonclub.com.py/logo-hoplon.png",
+          "https://hoplonclub.com.py/og-image.jpg"
+        ],
+        "@id": "https://hoplonclub.com.py/",
+        "url": "https://hoplonclub.com.py/",
         "telephone": "+595994467566",
+        "priceRange": "$$",
+        "servesCuisine": "Paraguayan",
+        "acceptsReservations": true,
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Avenida Mariscal José F. Estrigarriba con, Picuiba 5",
           "addressLocality": "Ciudad del Este",
           "addressRegion": "Alto Paraná",
-          "postalCode": "",
           "addressCountry": "PY"
         },
-        "openingHours": ["Tue-Sat 19:00-00:00"],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -25.520011,
+          "longitude": -54.624559
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "19:00",
+            "closes": "00:00"
+          }
+        ],
         "sameAs": [
           "https://www.instagram.com/hoplonclubpy",
           "https://www.facebook.com/hoplonclub"
-        ]
+        ],
+        "hasMenu": "https://hoplonclub.com.py/menu-bebidas"
       }
     </script>
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
