@@ -234,7 +234,7 @@ const HoplonNavigation = () => {
                       value: 1,
                     });
                   }
-                  handleNavClick("/#reserva");
+                  scrollToSection("reserva");
                 }}
                 className="bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold hover:shadow-lg hover:shadow-hoplon-gold/30"
               >
@@ -409,7 +409,7 @@ const HoplonNavigation = () => {
                             }
                           );
                         }
-                        handleNavClick("/#reserva");
+                        scrollToSection("reserva");
                       }}
                       className="w-full mt-4 bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold"
                     >
