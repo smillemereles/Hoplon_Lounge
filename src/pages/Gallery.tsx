@@ -25,7 +25,7 @@ const galleryImages = [
   {
     id: 4,
     category: "Bebidas",
-    title: "Pina Colada",
+    title: "Piña Colada",
     image: "/pinhacolada.jpg",
   },
   {
@@ -61,7 +61,7 @@ const galleryImages = [
   {
     id: 10,
     category: "Nuestros Platos",
-    title: "Picanha a la parrilla",
+    title: "Picaña a la parrilla",
     image: "/picañaalaparrilla.jpg",
   },
   {

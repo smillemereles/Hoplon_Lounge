@@ -116,3 +116,11 @@ backup-images-*/
 # Analysis scripts
 analyze-images.mjs
 delete-unused-images.sh
+
+# Build files para producción
+hoplon-cpanel-build/
+*.tar.gz
+hoplonfinal.zip
+hoplon-production.tar.gz
+public/favicon.zip
+public/favicon/

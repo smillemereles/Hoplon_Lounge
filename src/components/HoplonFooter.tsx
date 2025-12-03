@@ -15,7 +15,7 @@ const HoplonFooter = () => {
     },
     {
       icon: MessageCircle,
-      href: "https://wa.me/595981234567",
+      href: "https://api.whatsapp.com/send/?phone=595994467566&text=Hola+Hoplon+Lounge%21+%EF%BF%BD%0A%0AQuiero+hacer+una+reserva%3A%0A-+Fecha%3A+%0A-+Hora%3A+%0A-+Cantidad+de+personas%3A+%0A-+Ocasi%C3%B3n+especial%3A+&type=phone_number&app_absent=0",
       label: "WhatsApp",
     },
   ];

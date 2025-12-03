@@ -28,14 +28,19 @@ const HoplonHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.VERY_SLOW, delay: 0.5 }}
         >
+          {/* ============================================ */}
+          {/* H1 OPTIMIZADO PARA SEO */}
+          {/* ============================================ */}
           <motion.h1
             className="text-5xl md:text-7xl font-cinzel font-bold text-hoplon-white mb-6 leading-tight uppercase tracking-wider"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.7 }}
           >
-            Solo Servimos Platos{" "}
-            <span className="text-hoplon-gold">Legendarios</span>
+            Hoplon Club{" "}
+            <span className="block text-3xl md:text-4xl mt-4 text-hoplon-gold/90">
+              Parrilla Premium & Shows en Vivo
+            </span>
           </motion.h1>
 
           <motion.p
@@ -46,6 +51,9 @@ const HoplonHero = () => {
           >
             Donde el honor espartano se encuentra con el sabor Paraguayo y
             Español.
+            <span className="block mt-2 text-lg text-hoplon-white/80">
+              Danzas Paraguayas | Gastronomía de Primer Nivel
+            </span>
           </motion.p>
 
           <motion.div
@@ -54,11 +62,25 @@ const HoplonHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: ANIMATION_DURATIONS.VERY_SLOW, delay: 1.3 }}
           >
+            {/* ============================================ */}
+            {/* BOTONES CON TRACKING DE ANALYTICS */}
+            {/* ============================================ */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => scrollToSection(SECTIONS.RESERVA)}
+                onClick={() => {
+                  // Tracking de Google Analytics
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "click_reservar_hero", {
+                      event_category: "conversion",
+                      event_label: "boton_reservar_mesa_hero",
+                      value: 1,
+                    });
+                  }
+                  scrollToSection(SECTIONS.RESERVA);
+                }}
                 className="bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold px-8 py-6 text-lg hover:shadow-lg hover:shadow-hoplon-gold/30 transition-all duration-300"
                 size="lg"
+                aria-label="Reservar mesa en Hoplon Lounge"
               >
                 RESERVAR MESA
               </Button>
@@ -66,10 +88,14 @@ const HoplonHero = () => {
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => scrollToSection(SECTIONS.MENU)}
+                onClick={() => {
+                  trackButtonClick("ver_servicios_hero");
+                  scrollToSection(SECTIONS.MENU);
+                }}
                 variant="outline"
                 className="bg-hoplon-garnet/80 border-hoplon-garnet text-hoplon-white hover:bg-hoplon-garnet hover:text-hoplon-white font-bold px-8 py-6 text-lg backdrop-blur-sm transition-all duration-300"
                 size="lg"
+                aria-label="Ver servicios de Hoplon Lounge"
               >
                 NUESTROS SERVICIOS
               </Button>
@@ -83,6 +109,7 @@ const HoplonHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: ANIMATION_DURATIONS.VERY_SLOW, delay: 2 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

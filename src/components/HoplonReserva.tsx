@@ -1,194 +1,193 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Navigation } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { Phone, Clock, MapPin } from "lucide-react";
 
 const HoplonReserva = () => {
-  // Información de contacto actualizada
-  const contactInfo = {
-    address: {
-      full: "Avenida Mariscal José F. Estrigarriba con, Picuiba 5, Lago de la República, Ciudad del Este, Paraguay",
-      display:
-        "Avenida Mariscal José F. Estrigarriba con, Picuiba 5\nLago de la República\nCiudad del Este, Paraguay",
-    },
-    phone: {
-      number: "+595994467566",
-      display: "+595 994 467566",
-    },
-    email: "reservas@hoplonclub.com.py",
-    hours: "Mart-Sáb: 19:00-00:00",
-  };
-
-  // Función para manejar WhatsApp
+  // ============================================
+  // FUNCIÓN PARA TRACKING DE WHATSAPP
+  // ============================================
   const handleWhatsAppClick = () => {
-    const message = "Hola, quiero hacer una reserva en Hoplon Lounge";
-    const cleanNumber = contactInfo.phone.number.replace(/\s+/g, "");
-    const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    // Google Analytics tracking
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "reserva_whatsapp", {
+        event_category: "conversion",
+        event_label: "click_whatsapp",
+        value: 1,
+      });
+    }
+
+    const message = `Hola Hoplon Lounge! 🍽️\n\nQuiero hacer una reserva:\n- Fecha: \n- Hora: \n- Cantidad de personas: \n- Ocasión especial: `;
+    const whatsappUrl = `https://wa.me/595994467566?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
   };
 
-  // Función para abrir Google Maps con direcciones
-  const handleGetDirections = () => {
-    const encodedAddress = encodeURIComponent(contactInfo.address.full);
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
-    window.open(url, "_blank");
+  const handlePhoneClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "llamada_telefono", {
+        event_category: "conversion",
+        event_label: "click_phone",
+        value: 1,
+      });
+    }
   };
 
-  // Función para abrir email
-  const handleEmailClick = () => {
-    window.open(`mailto:${contactInfo.email}`, "_blank");
+  const handleMapClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "ver_mapa", {
+        event_category: "engagement",
+        event_label: "click_google_maps",
+        value: 1,
+      });
+    }
   };
 
   return (
-    <section
-      id="reserva"
-      className="relative py-16 md:py-20 overflow-hidden"
-      style={{ scrollMarginTop: "80px" }}
-    >
-      {/* Background Image */}
+    <section id="reserva" className="relative py-16 overflow-hidden">
+      {/* ============================================ */}
+      {/* IMAGEN DE FONDO CON OVERLAY */}
+      {/* ============================================ */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/RESERVA.jpg')`,
+          backgroundImage: `url('/mesas1.jpg')`,
         }}
       >
-        <div className="absolute inset-0 bg-hoplon-black/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-hoplon-black/90 via-hoplon-black/85 to-hoplon-black/90"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6">
-        {/* Main CTA - Más compacto */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-10 md:mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-cinzel font-bold text-hoplon-gold text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-cinzel font-bold text-hoplon-white mb-4 uppercase tracking-wider">
-            Reservá Tu Mesa
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-hoplon-gold to-transparent mx-auto mb-4"></div>
-          <p className="text-hoplon-white/80 text-base md:text-lg max-w-xl mx-auto">
-            Contactanos para vivir una experiencia única
-          </p>
-        </motion.div>
+          Reserva tu Experiencia
+        </motion.h2>
 
-        {/* Main Content - Compacto y centrado */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 md:gap-8">
-            {/* Left Column - Contact Information más compacto */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-4"
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Información de Contacto - Más Compacta */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-5"
+          >
+            <div className="flex items-start gap-3">
+              <Phone className="w-6 h-6 text-hoplon-gold flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold text-hoplon-white mb-1">
+                  Teléfono
+                </h3>
+                <a
+                  href="tel:+595994467566"
+                  onClick={handlePhoneClick}
+                  className="text-hoplon-gold hover:text-hoplon-gold-dark transition-colors"
+                >
+                  +595 994 467 566
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Clock className="w-6 h-6 text-hoplon-gold flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold text-hoplon-white mb-1">
+                  Horarios
+                </h3>
+                <p className="text-hoplon-white/80 text-sm">
+                  Martes a Sábado | 19:00 - 00:00
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <MapPin className="w-6 h-6 text-hoplon-gold flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold text-hoplon-white mb-1">
+                  Ubicación
+                </h3>
+                <p className="text-hoplon-white/80 text-sm">
+                  Av. Pioneros del Este, Ciudad del Este
+                </p>
+                <a
+                  href="https://www.google.com/maps/place/Hoplon+Club/@-25.520010936460874,-54.62455952373067,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleMapClick}
+                  className="inline-block mt-1 text-hoplon-gold hover:text-hoplon-gold-dark transition-colors text-sm underline"
+                >
+                  Ver en Google Maps →
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Botón de WhatsApp - Más Compacto */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-hoplon-garnet/30 backdrop-blur-md rounded-lg p-6 border border-hoplon-gold/30 shadow-xl"
+          >
+            <h3 className="text-xl font-bold text-hoplon-gold mb-3 text-center">
+              Reserva por WhatsApp
+            </h3>
+            <p className="text-hoplon-white/80 text-center mb-4 text-sm">
+              Respuesta inmediata. Confirma tu reserva en minutos.
+            </p>
+            <button
+              onClick={handleWhatsAppClick}
+              className="w-full bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-hoplon-gold/30 transition-all flex items-center justify-center gap-2"
             >
-              {/* Email Section - Compacto */}
-              <div className="bg-hoplon-black/40 backdrop-blur-sm rounded-xl p-4 border border-hoplon-gold/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 bg-hoplon-gold/20 rounded-full flex items-center justify-center">
-                    <Mail className="w-4 h-4 text-hoplon-gold" />
-                  </div>
-                  <h3 className="text-sm font-cinzel font-bold text-hoplon-gold">
-                    Email
-                  </h3>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  onClick={handleEmailClick}
-                  className="text-hoplon-white text-xs hover:text-hoplon-gold transition-colors duration-300 cursor-pointer break-all"
-                >
-                  {contactInfo.email}
-                </motion.button>
-              </div>
-
-              {/* Hours Section - Compacto */}
-              <div className="bg-hoplon-black/40 backdrop-blur-sm rounded-xl p-4 border border-hoplon-gold/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-8 bg-hoplon-gold/20 rounded-full flex items-center justify-center">
-                    <Clock className="w-4 h-4 text-hoplon-gold" />
-                  </div>
-                  <h3 className="text-sm font-cinzel font-bold text-hoplon-gold">
-                    Horarios
-                  </h3>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-hoplon-white text-xs">Lun: Cerrado</p>
-                  <p className="text-hoplon-gold text-xs font-medium">
-                    Mart-Sáb: 19:00-00:00
-                  </p>
-                  <p className="text-hoplon-white text-xs">Dom: Cerrado</p>
-                </div>
-              </div>
-
-              {/* CTA Button - Compacto */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-br from-hoplon-gold/20 to-hoplon-gold-dark/30 backdrop-blur-sm rounded-xl p-4 border border-hoplon-gold/40 text-center"
-              >
-                <h4 className="text-base font-cinzel font-bold text-hoplon-white mb-2">
-                  ¿Listo para reservar?
-                </h4>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleWhatsAppClick}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2.5 rounded-lg transition-all duration-300 text-sm flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-4 h-4" />
-                  RESERVAR POR WHATSAPP
-                </motion.button>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Column - Google Maps más grande */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-hoplon-black/40 backdrop-blur-sm rounded-xl p-4 border border-hoplon-gold/20 h-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-hoplon-gold/20 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-hoplon-gold" />
-                  </div>
-                  <h3 className="text-lg font-cinzel font-bold text-hoplon-gold">
-                    Nuestra Ubicación
-                  </h3>
-                </div>
-
-                {/* Google Maps Iframe - Más grande y proporcional */}
-                <div className="relative w-full h-64 md:h-80 lg:h-[400px] rounded-lg overflow-hidden border-2 border-hoplon-gold/30 mb-3">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.551178867289!2d-54.62455952385496!3d-25.520010936460665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68f5d1d10f461%3A0x651fbfacea0623df!2sHoplon%20Club!5e0!3m2!1ses-419!2spy!4v1761652531968!5m2!1ses-419!2spy"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Ubicación de Hoplon Club"
-                    className="absolute inset-0"
-                  ></iframe>
-                  <div className="absolute inset-0 bg-gradient-to-t from-hoplon-black/20 via-transparent to-hoplon-black/20 pointer-events-none"></div>
-                </div>
-
-                {/* Map Button - Más compacto */}
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={handleGetDirections}
-                  className="w-full bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold px-4 py-2.5 rounded-lg hover:shadow-lg hover:shadow-hoplon-gold/40 transition-all duration-300 flex items-center justify-center gap-2 text-sm"
-                >
-                  <Navigation className="w-4 h-4" />
-                  Ver en Google Maps
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              RESERVAR AHORA
+            </button>
+          </motion.div>
         </div>
+
+        {/* ============================================ */}
+        {/* MAPA COMPACTO */}
+        {/* ============================================ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10"
+        >
+          <h3 className="text-2xl font-cinzel font-bold text-hoplon-gold text-center mb-4">
+            Cómo Llegar
+          </h3>
+          <div className="relative w-full h-[350px] rounded-lg overflow-hidden shadow-2xl border-2 border-hoplon-gold/30">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.5511788672825!2d-54.62455952373067!3d-25.520010936460874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68f5d1d10f461%3A0x651fbfacea0623df!2sHoplon%20Club!5e0!3m2!1ses!2spy!4v1764445635889!5m2!1ses!2spy"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación de Hoplon Club en Ciudad del Este"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            />
+            {/* Overlay compacto */}
+            <div className="absolute bottom-3 left-3 bg-hoplon-black/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-hoplon-gold/50 pointer-events-none">
+              <p className="text-hoplon-gold font-bold text-xs">
+                📍 Hoplon Club - Ciudad del Este
+              </p>
+              <p className="text-hoplon-white/80 text-[10px] mt-0.5">
+                Estacionamiento disponible
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

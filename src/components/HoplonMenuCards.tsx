@@ -28,8 +28,16 @@ const menuCategories = [
 const HoplonMenuCards = () => {
   const navigate = useNavigate();
 
-  const handleCardClick = (route: string) => {
-    navigate(route);
+  const handleMenuClick = (path: string) => {
+    // Google Analytics tracking - YA EXISTE ✅
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "menu_category_click", {
+        event_category: "navigation",
+        event_label: path,
+        value: 1,
+      });
+    }
+    navigate(path);
   };
 
   return (
@@ -93,7 +101,7 @@ const HoplonMenuCards = () => {
                 transition: { duration: 0.3 },
               }}
               className="group cursor-pointer"
-              onClick={() => handleCardClick(category.route)}
+              onClick={() => handleMenuClick(category.route)}
             >
               <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-hoplon-gold/95 to-hoplon-gold-dark/90 backdrop-blur-sm shadow-2xl hover:shadow-xl hover:shadow-hoplon-gold/40 transition-all duration-500 border border-hoplon-gold/30 hover:border-hoplon-gold/60">
                 {/* Image */}

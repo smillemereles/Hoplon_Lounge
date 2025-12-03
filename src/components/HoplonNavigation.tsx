@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // ✅ CAMBIO AQUÍ
+import { Button } from "@/components/ui/button"; // ✅ AGREGAR IMPORT
 
 const navigationItems = [
   { name: "INICIO", href: "/" },
@@ -16,7 +17,7 @@ const navigationItems = [
       { name: "Postres", href: "/menu-postres" },
     ],
   },
-  { name: "PARAGUAYAN NIGHT SHOW", href: "/paraguayan-night-show" }, // Nueva entrada
+  { name: "PARAGUAYAN NIGHT SHOW", href: "/paraguayan-night-show" },
   { name: "SERVICIOS", href: "/servicios" },
   { name: "GALERÍA", href: "/gallery" },
 ];
@@ -26,6 +27,7 @@ const HoplonNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // ✅ USAR EL HOOK AQUÍ
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,6 +81,34 @@ const HoplonNavigation = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleNavClick = (path: string) => {
+    // Tracking para navegación
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "navigation_click", {
+        event_category: "navigation",
+        event_label: path,
+        value: 1,
+      });
+    }
+
+    if (path.includes("#")) {
+      const [route, hash] = path.split("#");
+      if (route === "" || route === "/") {
+        const element = document.getElementById(hash);
+        element?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate(route);
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          element?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      navigate(path);
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       <motion.nav
@@ -107,7 +137,7 @@ const HoplonNavigation = () => {
             </motion.div>
 
             {/* Menú de escritorio */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -194,14 +224,22 @@ const HoplonNavigation = () => {
                 </Link>
               </motion.div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleContactoClick}
-                className="text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium"
+              {/* Desktop Menu - Botón RESERVAR */}
+              <Button
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "click_reservar_navbar", {
+                      event_category: "conversion",
+                      event_label: "boton_reservar_navbar",
+                      value: 1,
+                    });
+                  }
+                  handleNavClick("/#reserva");
+                }}
+                className="bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold hover:shadow-lg hover:shadow-hoplon-gold/30"
               >
-                Contacto
-              </motion.button>
+                RESERVAR
+              </Button>
             </div>
 
             {/* Botón hamburguesa para móviles */}
@@ -354,14 +392,29 @@ const HoplonNavigation = () => {
                       </Link>
                     </motion.div>
 
-                    <motion.button
-                      whileHover={{ x: 10 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={handleContactoClick}
-                      className="text-left py-4 text-hoplon-white hover:text-hoplon-gold transition-colors duration-300 font-medium border-b border-hoplon-gold/10"
+                    {/* Mobile Menu - Botón RESERVAR */}
+                    <Button
+                      onClick={() => {
+                        if (
+                          typeof window !== "undefined" &&
+                          (window as any).gtag
+                        ) {
+                          (window as any).gtag(
+                            "event",
+                            "click_reservar_mobile",
+                            {
+                              event_category: "conversion",
+                              event_label: "boton_reservar_mobile",
+                              value: 1,
+                            }
+                          );
+                        }
+                        handleNavClick("/#reserva");
+                      }}
+                      className="w-full mt-4 bg-gradient-to-r from-hoplon-gold to-hoplon-gold-dark text-hoplon-black font-bold"
                     >
-                      Contacto
-                    </motion.button>
+                      RESERVAR
+                    </Button>
                   </div>
                 </div>
 
