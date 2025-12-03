@@ -6,6 +6,12 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Deploy files - ZIP files for cPanel (keep locally, don't push to GitHub)
+*.zip
+hoplon-cpanel-ready.zip
+hoplon-lounge-optimized.zip
+hoplon-lounge-optimized-*.zip
+
 # Dependencies
 /node_modules
 /.pnp
@@ -124,3 +130,9 @@ hoplonfinal.zip
 hoplon-production.tar.gz
 public/favicon.zip
 public/favicon/
+
+# Large archive files
+*.zip
+hoplon-cpanel-ready.zip
+hoplon-lounge-optimized-20251028.zip
+hoplon-lounge-optimized.zip
