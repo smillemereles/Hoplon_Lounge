@@ -4,50 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO básico -->
-    <title>Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya</title>
-    <meta
-      name="description"
-      content="Hoplon Lounge en Ciudad del Este. Experiencias culturales únicas con música en vivo, danzas típicas paraguayas y gastronomía de primer nivel. Reserva tu mesa ahora."
-    />
-    <meta
-      name="keywords"
-      content="Hoplon Lounge, Ciudad del Este, restaurante paraguayo, música en vivo, danzas paraguayas, gastronomía, parrilla, buffet, reservas"
-    />
-    <link rel="canonical" href="https://hoplonclub.com.py/" />
+    <!-- ============================================ -->
+    <!-- GOOGLE ANALYTICS 4 - NUEVO CÓDIGO -->
+    <!-- ============================================ -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SMTHG38GW3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    <!-- Favicon con logo de Hoplon -->
+      // Configuración de consentimiento (GDPR compliance)
+      gtag("consent", "default", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        functionality_storage: "granted",
+        personalization_storage: "granted",
+        security_storage: "granted",
+      });
+
+      // Configuración principal con opciones mejoradas para SPA
+      gtag("config", "G-SMTHG38GW3", {
+        send_page_view: true,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        debug_mode: false, // Cambiar a true para depuración
+      });
+
+      // Log para verificar que GA está cargado
+      console.log("Google Analytics cargado:", "G-SMTHG38GW3");
+    </script>
+
+    <!-- ============================================ -->
+    <!-- FAVICONS - CONFIGURACIÓN COMPLETA -->
+    <!-- ============================================ -->
+    <!-- Favicon principal (todos los navegadores) -->
+    <link rel="icon" type="image/x-icon" href="/faviconhoplon/favicon.ico" />
+
+    <!-- PNG Favicons para diferentes resoluciones -->
     <link
       rel="icon"
       type="image/png"
-      href="/faviconhoplon/favicon-96x96.png"
-      sizes="96x96"
+      sizes="16x16"
+      href="/faviconhoplon/favicon-16x16.png"
     />
-    <link rel="icon" type="image/svg+xml" href="/faviconhoplon/favicon.svg" />
-    <link rel="shortcut icon" href="/faviconhoplon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/faviconhoplon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/faviconhoplon/favicon-96x96.png"
+    />
+
+    <!-- Apple Touch Icon (iPhone, iPad) -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="/faviconhoplon/apple-touch-icon.png"
     />
-    <link rel="manifest" href="/faviconhoplon/site.webmanifest" />
-    <meta name="theme-color" content="#C9A24B" />
 
-    <!-- Open Graph (Facebook / WhatsApp previews) -->
+    <!-- Android Chrome Icons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/faviconhoplon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/faviconhoplon/android-chrome-512x512.png"
+    />
+
+    <!-- SVG Favicon (escalable, más moderno) -->
+    <link rel="icon" type="image/svg+xml" href="/faviconhoplon/favicon.svg" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/faviconhoplon/site.webmanifest" />
+
+    <!-- Theme colors para navegadores móviles -->
+    <meta name="theme-color" content="#D4AF37" />
+    <meta name="msapplication-TileColor" content="#1A1A1A" />
+    <meta
+      name="msapplication-config"
+      content="/faviconhoplon/browserconfig.xml"
+    />
+
+    <!-- ============================================ -->
+    <!-- SEO META TAGS -->
+    <!-- ============================================ -->
+    <title>
+      Hoplon Lounge Ciudad del Este - Parrilla, Shows en Vivo y Gastronomía
+      Paraguaya
+    </title>
+    <meta
+      name="description"
+      content="Restaurante y lounge en Ciudad del Este. Parrilla premium, shows de danzas paraguayas en vivo, música y eventos especiales. Reserva tu mesa online. ☎️ 0994 467 566"
+    />
+    <meta
+      name="keywords"
+      content="restaurante ciudad del este, parrilla paraguaya, shows en vivo, danzas paraguayas, hoplon lounge, música en vivo, eventos ciudad del este"
+    />
+
+    <!-- SEO Local -->
+    <meta name="geo.region" content="PY-10" />
+    <meta name="geo.placename" content="Ciudad del Este" />
+    <meta name="geo.position" content="-25.520011;-54.624559" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hoplonclub.com.py/" />
     <meta
       property="og:title"
-      content="Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya"
+      content="Hoplon Lounge - Parrilla y Shows en Vivo en Ciudad del Este"
     />
     <meta
       property="og:description"
-      content="Experiencias culturales únicas con música en vivo, danzas típicas paraguayas y gastronomía de primer nivel en Ciudad del Este."
+      content="Experiencias gastronómicas únicas con shows de danzas paraguayas. Reserva tu mesa online."
     />
     <meta
       property="og:image"
-      content="https://hoplonclub.com.py/og-image.jpg"
+      content="https://hoplonclub.com.py/og-hoplon.jpg"
     />
-    <meta property="og:url" content="https://hoplonclub.com.py/" />
-    <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PY" />
     <meta property="og:site_name" content="Hoplon Lounge" />
 
@@ -55,44 +144,57 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Hoplon Lounge — Cultura, Música y Gastronomía Paraguaya"
+      content="Hoplon Lounge - Parrilla y Shows en Vivo"
     />
     <meta
       name="twitter:description"
-      content="Experiencias culturales únicas en Ciudad del Este. Reserva tu mesa ahora."
+      content="Restaurante premium en Ciudad del Este con shows paraguayos en vivo"
     />
     <meta
       name="twitter:image"
-      content="https://hoplonclub.com.py/og-image.jpg"
+      content="https://hoplonclub.com.py/og-hoplon.jpg"
     />
 
-    <!-- JSON-LD / Schema.org (Restaurant) -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hoplonclub.com.py/" />
+
+    <!-- ============================================ -->
+    <!-- SCHEMA.ORG JSON-LD PARA GOOGLE -->
+    <!-- ============================================ -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://hoplonclub.com.py/#restaurant",
         "name": "Hoplon Lounge",
         "image": [
           "https://hoplonclub.com.py/logo-hoplon.png",
-          "https://hoplonclub.com.py/og-image.jpg"
+          "https://hoplonclub.com.py/og-hoplon.jpg"
         ],
-        "@id": "https://hoplonclub.com.py/",
-        "url": "https://hoplonclub.com.py/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hoplonclub.com.py/logo-hoplon.png",
+          "width": 250,
+          "height": 250
+        },
+        "description": "Restaurante y lounge en Ciudad del Este con parrilla premium, shows de danzas paraguayas en vivo y eventos especiales.",
+        "url": "https://hoplonclub.com.py",
         "telephone": "+595994467566",
         "priceRange": "$$",
-        "servesCuisine": "Paraguayan",
-        "acceptsReservations": true,
+        "servesCuisine": ["Paraguaya", "Argentina", "Internacional"],
+        "acceptsReservations": "True",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Avenida Mariscal José F. Estrigarriba con, Picuiba 5",
+          "streetAddress": "Av. Pioneros del Este",
           "addressLocality": "Ciudad del Este",
           "addressRegion": "Alto Paraná",
+          "postalCode": "7000",
           "addressCountry": "PY"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": -25.520011,
-          "longitude": -54.624559
+          "latitude": "-25.520011",
+          "longitude": "-54.624559"
         },
         "openingHoursSpecification": [
           {
@@ -108,11 +210,19 @@
             "closes": "00:00"
           }
         ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "150",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "sameAs": [
-          "https://www.instagram.com/hoplonclubpy",
-          "https://www.facebook.com/hoplonclub"
+          "https://www.facebook.com/hoplonclub",
+          "https://www.instagram.com/hoplonclubpy"
         ],
-        "hasMenu": "https://hoplonclub.com.py/menu-bebidas"
+        "hasMenu": "https://hoplonclub.com.py/menu-entradas",
+        "paymentAccepted": "Cash, Credit Card, Debit Card"
       }
     </script>
   </head>

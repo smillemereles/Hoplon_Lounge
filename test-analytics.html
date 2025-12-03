@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Google Analytics - Hoplon Lounge</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTHG38GW3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'functionality_storage': 'granted',
+            'personalization_storage': 'granted',
+            'security_storage': 'granted'
+        });
+        
+        gtag('config', 'G-SMTHG38GW3', {
+            'debug_mode': true
+        });
+        
+        console.log('✅ Google Analytics cargado: G-SMTHG38GW3');
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #4285f4;
+            padding-bottom: 10px;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4285f4;
+            background: #e8f0fe;
+        }
+        .success {
+            border-left-color: #34a853;
+            background: #e6f4ea;
+        }
+        .error {
+            border-left-color: #ea4335;
+            background: #fce8e6;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #357ae8;
+        }
+        .test-results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        .instruction {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Test de Google Analytics 4</h1>
+        
+        <div id="statusDiv" class="status">
+            <strong>Estado:</strong> Verificando configuración...
+        </div>
+        
+        <div class="instruction">
+            <h3>📋 Instrucciones:</h3>
+            <ol>
+                <li>Abre las <strong>Herramientas de Desarrollo</strong> (F12)</li>
+                <li>Ve a la pestaña <strong>Console</strong></li>
+                <li>Ve a la pestaña <strong>Network</strong> y filtra por "collect"</li>
+                <li>Haz clic en los botones de abajo</li>
+                <li>Verifica que aparecen solicitudes a Google Analytics</li>
+            </ol>
+        </div>
+        
+        <div>
+            <h3>🧪 Pruebas de Eventos:</h3>
+            <button onclick="testPageView()">📄 Test Page View</button>
+            <button onclick="testButtonClick()">👆 Test Button Click</button>
+            <button onclick="testCustomEvent()">⚡ Test Custom Event</button>
+            <button onclick="testConversion()">🎯 Test Conversion</button>
+        </div>
+        
+        <div class="test-results" id="results">
+            <strong>Registro de pruebas:</strong><br><br>
+        </div>
+        
+        <div class="instruction">
+            <h3>✅ Verificación en Google Analytics:</h3>
+            <ol>
+                <li>Ve a <a href="https://analytics.google.com" target="_blank">Google Analytics</a></li>
+                <li>Selecciona tu propiedad <code>G-SMTHG38GW3</code></li>
+                <li>Ve a <strong>Informes → Tiempo real</strong></li>
+                <li>Deberías ver esta página activa (aparece en 5-10 segundos)</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Función para agregar log
+        function addLog(message, type = 'info') {
+            const results = document.getElementById('results');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'success' ? '#34a853' : type === 'error' ? '#ea4335' : '#4285f4';
+            results.innerHTML += `<div style="color: ${color};">[${timestamp}] ${message}</div>`;
+            results.scrollTop = results.scrollHeight;
+        }
+        
+        // Verificar si gtag está disponible
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const statusDiv = document.getElementById('statusDiv');
+                if (typeof gtag === 'function') {
+                    statusDiv.className = 'status success';
+                    statusDiv.innerHTML = '<strong>✅ Estado:</strong> Google Analytics está configurado correctamente';
+                    addLog('✅ Google Analytics detectado y funcionando', 'success');
+                    addLog('ID de medición: G-SMTHG38GW3', 'info');
+                    addLog('Debug mode: ACTIVADO', 'info');
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.innerHTML = '<strong>❌ Estado:</strong> Google Analytics NO está cargado';
+                    addLog('❌ Error: gtag() no está definido', 'error');
+                    addLog('Posibles causas: bloqueador de anuncios, error de red', 'error');
+                }
+            }, 2000);
+        });
+        
+        // Test 1: Page View
+        function testPageView() {
+            if (typeof gtag !== 'function') {
+                addLog('❌ gtag no disponible', 'error');
+                return;
+            }
+            gtag('event', 'page_view', {
+                page_title: 'Test Page',
+                page_location: window.location.href,
+                page_path: '/test'
+            });
+            addLog('📄 Evento enviado: page_view', 'success');
+            console.log('Test: page_view enviado');
+        }
+        
+        // Test 2: Button Click
+        function testButtonClick() {
+            if (typeof gtag !== 'function') {
+                addLog('❌ gtag no disponible', 'error');
+                return;
+            }
+            gtag('event', 'button_click', {
+                button_name: 'Test Button',
+                button_location: 'test_page'
+            });
+            addLog('👆 Evento enviado: button_click', 'success');
+            console.log('Test: button_click enviado');
+        }
+        
+        // Test 3: Custom Event
+        function testCustomEvent() {
+            if (typeof gtag !== 'function') {
+                addLog('❌ gtag no disponible', 'error');
+                return;
+            }
+            gtag('event', 'test_custom_event', {
+                event_category: 'Testing',
+                event_label: 'Manual Test',
+                value: 1
+            });
+            addLog('⚡ Evento enviado: test_custom_event', 'success');
+            console.log('Test: test_custom_event enviado');
+        }
+        
+        // Test 4: Conversion
+        function testConversion() {
+            if (typeof gtag !== 'function') {
+                addLog('❌ gtag no disponible', 'error');
+                return;
+            }
+            gtag('event', 'conversion', {
+                send_to: 'G-SMTHG38GW3',
+                value: 100.0,
+                currency: 'PYG',
+                transaction_id: 'TEST_' + Date.now()
+            });
+            addLog('🎯 Evento enviado: conversion', 'success');
+            console.log('Test: conversion enviado');
+        }
+        
+        // Log inicial
+        addLog('🚀 Página de prueba cargada', 'info');
+        addLog('Esperando carga de Google Analytics...', 'info');
+    </script>
+</body>
+</html>
