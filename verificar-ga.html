@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación Rápida Google Analytics</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SMTHG38GW3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("consent", "default", {
+        ad_storage: "granted",
+        analytics_storage: "granted",
+        functionality_storage: "granted",
+        personalization_storage: "granted",
+        security_storage: "granted",
+      });
+
+      gtag("config", "G-SMTHG38GW3", {
+        debug_mode: true,
+        send_page_view: true,
+      });
+
+      console.log(
+        "%c✅ Google Analytics Iniciado",
+        "color: green; font-size: 16px; font-weight: bold"
+      );
+      console.log("ID de Medición: G-SMTHG38GW3");
+      console.log("Debug Mode: ACTIVADO");
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        padding: 40px;
+      }
+
+      h1 {
+        color: #667eea;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        font-weight: 600;
+      }
+
+      .status.success {
+        background: #d4edda;
+        color: #155724;
+        border: 2px solid #28a745;
+      }
+
+      .status.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 2px solid #dc3545;
+      }
+
+      .status.warning {
+        background: #fff3cd;
+        color: #856404;
+        border: 2px solid #ffc107;
+      }
+
+      .icon {
+        font-size: 24px;
+      }
+
+      .instructions {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .instructions h3 {
+        color: #495057;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .instructions ol {
+        padding-left: 20px;
+      }
+
+      .instructions li {
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      .button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .button:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .code {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        margin: 10px 0;
+        overflow-x: auto;
+      }
+
+      .highlight {
+        background: #fff3cd;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-weight: 600;
+      }
+
+      .link {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔍 Verificación Google Analytics</h1>
+      <p style="color: #6c757d; margin-bottom: 20px">
+        Hoplon Lounge - ID: <span class="highlight">G-SMTHG38GW3</span>
+      </p>
+
+      <div id="statusDiv" class="status warning">
+        <span class="icon">⏳</span>
+        <span>Verificando conexión con Google Analytics...</span>
+      </div>
+
+      <div class="instructions">
+        <h3>📋 Pasos para Verificar:</h3>
+        <ol>
+          <li>
+            Abre las <strong>Herramientas de Desarrollo</strong> (presiona
+            <span class="highlight">F12</span>)
+          </li>
+          <li>Ve a la pestaña <span class="highlight">Console</span></li>
+          <li>
+            Busca el mensaje:
+            <span class="highlight">✅ Google Analytics Iniciado</span>
+          </li>
+          <li>Ve a la pestaña <span class="highlight">Network</span></li>
+          <li>Filtra por <span class="highlight">collect</span></li>
+          <li>Haz clic en los botones de abajo</li>
+          <li>Verifica que aparezcan solicitudes a Google Analytics</li>
+        </ol>
+      </div>
+
+      <button class="button" onclick="testPageView()">📄 Test Page View</button>
+      <button class="button" onclick="testEvent()">
+        ⚡ Test Evento Personalizado
+      </button>
+      <button class="button" onclick="testClick()">👆 Test Click</button>
+
+      <div class="instructions" style="margin-top: 30px">
+        <h3>✅ Verificar en Google Analytics:</h3>
+        <ol>
+          <li>
+            Ve a
+            <a href="https://analytics.google.com" target="_blank" class="link"
+              >analytics.google.com</a
+            >
+          </li>
+          <li>
+            Selecciona tu propiedad <span class="highlight">G-SMTHG38GW3</span>
+          </li>
+          <li>Ve a <span class="highlight">Informes → Tiempo real</span></li>
+          <li>
+            <strong>Deberías ver esta página activa en 5-10 segundos</strong>
+          </li>
+        </ol>
+      </div>
+
+      <div id="testResults" style="margin-top: 20px"></div>
+    </div>
+
+    <script>
+      // Verificar si gtag está disponible
+      setTimeout(() => {
+        const statusDiv = document.getElementById("statusDiv");
+        if (typeof gtag === "function") {
+          statusDiv.className = "status success";
+          statusDiv.innerHTML =
+            '<span class="icon">✅</span><span>Google Analytics está funcionando correctamente</span>';
+          console.log(
+            "%c✅ Verificación exitosa",
+            "color: green; font-size: 14px; font-weight: bold"
+          );
+
+          // Enviar pageview inicial
+          gtag("event", "page_view", {
+            page_title: "Verificación GA",
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+          });
+        } else {
+          statusDiv.className = "status error";
+          statusDiv.innerHTML =
+            '<span class="icon">❌</span><span>Google Analytics NO está cargado. Verifica tu conexión o bloqueadores de anuncios.</span>';
+          console.error("❌ gtag no está definido");
+        }
+      }, 2000);
+
+      function showResult(message, type = "success") {
+        const resultsDiv = document.getElementById("testResults");
+        const color = type === "success" ? "#28a745" : "#dc3545";
+        resultsDiv.innerHTML = `<div style="padding: 15px; background: ${type === "success" ? "#d4edda" : "#f8d7da"}; color: ${color}; border-radius: 10px; margin-top: 10px; font-weight: 600;">${message}</div>`;
+
+        setTimeout(() => {
+          resultsDiv.innerHTML = "";
+        }, 3000);
+      }
+
+      function testPageView() {
+        if (typeof gtag !== "function") {
+          showResult("❌ gtag no disponible", "error");
+          return;
+        }
+
+        gtag("event", "page_view", {
+          page_title: "Test Page View",
+          page_location: window.location.href,
+          page_path: "/test",
+        });
+
+        showResult("✅ Page View enviado a Google Analytics");
+        console.log(
+          "%c📄 Page View Test enviado",
+          "color: blue; font-weight: bold"
+        );
+      }
+
+      function testEvent() {
+        if (typeof gtag !== "function") {
+          showResult("❌ gtag no disponible", "error");
+          return;
+        }
+
+        gtag("event", "test_custom_event", {
+          event_category: "Verificación",
+          event_label: "Test desde verificación",
+          value: 1,
+        });
+
+        showResult("✅ Evento personalizado enviado");
+        console.log(
+          "%c⚡ Evento personalizado Test enviado",
+          "color: purple; font-weight: bold"
+        );
+      }
+
+      function testClick() {
+        if (typeof gtag !== "function") {
+          showResult("❌ gtag no disponible", "error");
+          return;
+        }
+
+        gtag("event", "button_click", {
+          button_name: "Test Button",
+          button_location: "verificacion_page",
+        });
+
+        showResult("✅ Click event enviado");
+        console.log(
+          "%c👆 Click Test enviado",
+          "color: orange; font-weight: bold"
+        );
+      }
+
+      // Enviar evento cada 30 segundos para mantener la sesión activa
+      setInterval(() => {
+        if (typeof gtag === "function") {
+          gtag("event", "page_heartbeat", {
+            engagement_time_msec: 30000,
+          });
+          console.log("💓 Heartbeat enviado");
+        }
+      }, 30000);
+    </script>
+  </body>
+</html>
