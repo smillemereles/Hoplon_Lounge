@@ -89,7 +89,14 @@ const HoplonHero = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => {
-                  trackButtonClick("ver_servicios_hero");
+                  // Tracking de Google Analytics
+                  if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "click_servicios_hero", {
+                      event_category: "navigation",
+                      event_label: "boton_ver_servicios_hero",
+                      value: 1,
+                    });
+                  }
                   scrollToSection(SECTIONS.MENU);
                 }}
                 variant="outline"
