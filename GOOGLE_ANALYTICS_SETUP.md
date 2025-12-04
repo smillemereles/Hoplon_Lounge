@@ -3,18 +3,22 @@
 ## ✅ Configuración Implementada
 
 ### 1. **Script de Google Analytics en index.html**
+
 - ✅ Google tag (gtag.js) cargado con ID: `G-SMTHG38GW3`
 - ✅ Configuración de consentimiento para GDPR
 - ✅ Configuración optimizada para Single Page Applications (SPA)
 - ✅ Debug mode disponible para pruebas
 
 ### 2. **Tracking Automático de Páginas**
+
 - ✅ Componente `usePageTracking` hook implementado
 - ✅ Rastreo automático de cambios de ruta en React Router
 - ✅ Pageviews se envían en cada navegación
 
 ### 3. **Librería de Eventos Personalizados** (`src/lib/analytics.ts`)
+
 Funciones disponibles para rastrear:
+
 - `sendPageView()` - Vista de página
 - `sendEvent()` - Evento genérico
 - `trackButtonClick()` - Clics en botones
@@ -53,16 +57,19 @@ Funciones disponibles para rastrear:
 ### Paso 4: Activar Debug Mode (Para Desarrollo)
 
 En `index.html`, cambia:
+
 ```javascript
 debug_mode: false, // Cambiar a true para depuración
 ```
 
 a:
+
 ```javascript
 debug_mode: true, // Modo de depuración activado
 ```
 
 Luego en DevTools:
+
 1. Ir a **Network** → Filtrar por "collect"
 2. Navegar por el sitio
 3. Verás las solicitudes a Google Analytics
@@ -72,12 +79,14 @@ Luego en DevTools:
 ### Problema 1: "No se recopilan datos"
 
 **Posibles causas:**
+
 - ✅ Bloqueador de anuncios (AdBlock, uBlock Origin)
 - ✅ Navegación privada/incógnito
 - ✅ Extensiones de privacidad
 - ✅ DNS filtrado (NextDNS, Pi-hole)
 
 **Solución:**
+
 - Desactivar bloqueadores temporalmente
 - Probar en modo normal (no incógnito)
 - Usar otro navegador/dispositivo
@@ -85,6 +94,7 @@ Luego en DevTools:
 ### Problema 2: "Las etiquetas no están configuradas correctamente"
 
 **Verificar:**
+
 1. El ID de medición es correcto (`G-SMTHG38GW3`)
 2. El script está en el `<head>` antes de otros scripts
 3. No hay errores de JavaScript en la consola
@@ -92,6 +102,7 @@ Luego en DevTools:
 ### Problema 3: "Datos no aparecen en informes"
 
 **Nota importante:**
+
 - Los datos en tiempo real aparecen en 5-10 segundos
 - Los informes estándar pueden tardar **24-48 horas**
 - Si acabas de crear la propiedad, espera 24 horas
@@ -99,6 +110,7 @@ Luego en DevTools:
 ## 📊 Eventos que se Rastrean Automáticamente
 
 Por defecto, GA4 rastrea:
+
 - ✅ `page_view` - Vista de página
 - ✅ `scroll` - Scroll del 90%
 - ✅ `click` - Clics en enlaces salientes
@@ -198,6 +210,7 @@ git push origin main
 ## 📞 Contacto y Soporte
 
 Si después de 48 horas no ves datos:
+
 1. Verificar que el ID `G-SMTHG38GW3` es correcto en Google Analytics
 2. Comprobar que la propiedad está activa
 3. Revisar permisos de usuario en GA4

@@ -98,7 +98,10 @@ export const trackNavigation = (destination: string, source?: string) => {
 /**
  * Tracking de reservas
  */
-export const trackReservation = (action: string, details?: Record<string, any>) => {
+export const trackReservation = (
+  action: string,
+  details?: Record<string, any>
+) => {
   sendEvent("reservation_action", {
     action: action,
     ...details,
